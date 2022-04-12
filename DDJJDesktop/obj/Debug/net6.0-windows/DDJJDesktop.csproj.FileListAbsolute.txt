@@ -1,0 +1,17 @@
+C:\Users\Usuario\source\repos\DDJJAdministrator\DDJJDesktop\bin\Debug\net6.0-windows\DDJJDesktop.exe
+C:\Users\Usuario\source\repos\DDJJAdministrator\DDJJDesktop\bin\Debug\net6.0-windows\DDJJDesktop.deps.json
+C:\Users\Usuario\source\repos\DDJJAdministrator\DDJJDesktop\bin\Debug\net6.0-windows\DDJJDesktop.runtimeconfig.json
+C:\Users\Usuario\source\repos\DDJJAdministrator\DDJJDesktop\bin\Debug\net6.0-windows\DDJJDesktop.dll
+C:\Users\Usuario\source\repos\DDJJAdministrator\DDJJDesktop\bin\Debug\net6.0-windows\ref\DDJJDesktop.dll
+C:\Users\Usuario\source\repos\DDJJAdministrator\DDJJDesktop\bin\Debug\net6.0-windows\DDJJDesktop.pdb
+C:\Users\Usuario\source\repos\DDJJAdministrator\DDJJDesktop\obj\Debug\net6.0-windows\DDJJDesktop.csproj.AssemblyReference.cache
+C:\Users\Usuario\source\repos\DDJJAdministrator\DDJJDesktop\obj\Debug\net6.0-windows\DDJJDesktop.FrmLogin.resources
+C:\Users\Usuario\source\repos\DDJJAdministrator\DDJJDesktop\obj\Debug\net6.0-windows\DDJJDesktop.csproj.GenerateResource.cache
+C:\Users\Usuario\source\repos\DDJJAdministrator\DDJJDesktop\obj\Debug\net6.0-windows\DDJJDesktop.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\source\repos\DDJJAdministrator\DDJJDesktop\obj\Debug\net6.0-windows\DDJJDesktop.AssemblyInfoInputs.cache
+C:\Users\Usuario\source\repos\DDJJAdministrator\DDJJDesktop\obj\Debug\net6.0-windows\DDJJDesktop.AssemblyInfo.cs
+C:\Users\Usuario\source\repos\DDJJAdministrator\DDJJDesktop\obj\Debug\net6.0-windows\DDJJDesktop.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\source\repos\DDJJAdministrator\DDJJDesktop\obj\Debug\net6.0-windows\DDJJDesktop.dll
+C:\Users\Usuario\source\repos\DDJJAdministrator\DDJJDesktop\obj\Debug\net6.0-windows\ref\DDJJDesktop.dll
+C:\Users\Usuario\source\repos\DDJJAdministrator\DDJJDesktop\obj\Debug\net6.0-windows\DDJJDesktop.pdb
+C:\Users\Usuario\source\repos\DDJJAdministrator\DDJJDesktop\obj\Debug\net6.0-windows\DDJJDesktop.genruntimeconfig.cache
