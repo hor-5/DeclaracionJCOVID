@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,29 +11,30 @@ using System.Windows.Forms;
 
 namespace DDJJDesktop
 {
-    public partial class FrmLogin : Form
+    public partial class FrmLogin : MaterialForm
     {
+        readonly MaterialSkin.MaterialSkinManager materialSkinManager;
         public FrmLogin()
         {
             InitializeComponent();
+            materialSkinManager = MaterialSkin.MaterialSkinManager.Instance;
+            materialSkinManager.EnforceBackcolorOnAllComponents = true;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Indigo500, MaterialSkin.Primary.Indigo700, MaterialSkin.Primary.Indigo100, MaterialSkin.Accent.DeepOrange200,MaterialSkin.TextShade.WHITE);
         }
 
-        private void btnNoUser_Click(object sender, EventArgs e)
-        {
-    
-            
-        }
 
         private void btnWUser_Click(object sender, EventArgs e)
         {
             grpLogin.Visible = true;
-            grpWelcome.Visible = false;
+            grpWelcome.Visible = false;            
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
             grpLogin.Visible = false;
-            grpWelcome.Visible = true;
+            grpWelcome.Visible = true;            
         }
     }
 }
