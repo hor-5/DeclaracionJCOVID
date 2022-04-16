@@ -60,10 +60,10 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnVolver.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAABySURBVEhL7ZXLCYBAEEMH7MBGFLRXbUDtxlJsYUwgB48L+wF1HuQygZfj2H9x9w5ZkUmnckh+
-        IORCBlX5QPaUkxPpVecBUXX5TqsIeRv5Rqt4iZxAVneAQBgj6UAYI+lA2HyED2dUVQ5IObIgs06fxOwG
-        I1GOT7zzopkAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAHJJREFUSEvt
+        lcsJgEAQQwfswEYUtFdtQO3GUmxhTCAHjwv7AXUe5DKBl+PYf3H3DlmRSadySH4g5EIGVflA9pSTE+lV
+        5wFRdflOqwh5G/lGq3iJnEBWd4BAGCPpQBgj6UDYfIQPZ1RVDkg5siCzTp/E7AYjUY5PvPOimQAAAABJ
+        RU5ErkJggg==
 </value>
   </data>
 </root>
