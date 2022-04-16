@@ -69,10 +69,9 @@
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(40, 41);
             this.btnVolver.TabIndex = 7;
-            this.btnVolver.Text = "<";
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.UseWaitCursor = true;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);            
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // txtClave
             // 
@@ -143,7 +142,7 @@
             this.grpWelcome.BackColor = System.Drawing.SystemColors.Menu;
             this.grpWelcome.Controls.Add(this.btnNoUser);
             this.grpWelcome.Controls.Add(this.btnWUser);
-            this.grpWelcome.Location = new System.Drawing.Point(165, 68);
+            this.grpWelcome.Location = new System.Drawing.Point(200, 68);
             this.grpWelcome.Margin = new System.Windows.Forms.Padding(4);
             this.grpWelcome.Name = "grpWelcome";
             this.grpWelcome.Padding = new System.Windows.Forms.Padding(4);
