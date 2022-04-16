@@ -37,7 +37,7 @@
             this.grpWelcome = new System.Windows.Forms.GroupBox();
             this.btnNoUser = new MaterialSkin.Controls.MaterialButton();
             this.btnWUser = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            this.lblWelcome = new MaterialSkin.Controls.MaterialLabel();
             this.grpLogin.SuspendLayout();
             this.grpWelcome.SuspendLayout();
             this.SuspendLayout();
@@ -141,7 +141,7 @@
             // grpWelcome
             // 
             this.grpWelcome.BackColor = System.Drawing.SystemColors.Menu;
-            this.grpWelcome.Controls.Add(this.materialButton1);
+            this.grpWelcome.Controls.Add(this.lblWelcome);
             this.grpWelcome.Controls.Add(this.btnNoUser);
             this.grpWelcome.Controls.Add(this.btnWUser);
             this.grpWelcome.Location = new System.Drawing.Point(200, 68);
@@ -191,24 +191,18 @@
             this.btnWUser.UseVisualStyleBackColor = true;
             this.btnWUser.Click += new System.EventHandler(this.btnWUser_Click);
             // 
-            // materialButton1
+            // lblWelcome
             // 
-            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton1.Depth = 0;
-            this.materialButton1.HighEmphasis = true;
-            this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(190, 49);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton1.Size = new System.Drawing.Size(158, 36);
-            this.materialButton1.TabIndex = 5;
-            this.materialButton1.Text = "materialButton1";
-            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton1.UseAccentColor = false;
-            this.materialButton1.UseVisualStyleBackColor = true;
+            this.lblWelcome.AutoSize = true;
+            this.lblWelcome.Depth = 0;
+            this.lblWelcome.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lblWelcome.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
+            this.lblWelcome.Location = new System.Drawing.Point(180, 37);
+            this.lblWelcome.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(126, 29);
+            this.lblWelcome.TabIndex = 5;
+            this.lblWelcome.Text = "Bienvenido!";
             // 
             // FrmLogin
             // 
@@ -242,6 +236,6 @@
         private MaterialSkin.Controls.MaterialTextBox txtClave;
         private MaterialSkin.Controls.MaterialTextBox txtUsuario;
         private MaterialSkin.Controls.MaterialFloatingActionButton btnVolver;
-        private MaterialSkin.Controls.MaterialButton materialButton1;
+        private MaterialSkin.Controls.MaterialLabel lblWelcome;
     }
 }
