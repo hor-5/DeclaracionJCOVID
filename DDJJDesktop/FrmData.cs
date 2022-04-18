@@ -31,26 +31,26 @@ namespace DDJJDesktop
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            tbForm.SelectedIndex = tbForm.TabPages.IndexOf(tabPage2);
+            tbForm.SelectedIndex++;
             
                        
         }
 
         private void btnNext2_Click(object sender, EventArgs e)
         {
-            tbForm.SelectedIndex = tbForm.TabPages.IndexOf(tabPage3);
+            tbForm.SelectedIndex++;
            
         }
 
         private void btnBack2_Click(object sender, EventArgs e)
         {
-            tbForm.SelectedIndex = tbForm.TabPages.IndexOf(tabPage1);
+            tbForm.SelectedIndex--;
             
         }
 
         private void btnBack3_Click(object sender, EventArgs e)
         {
-            tbForm.SelectedIndex = tbForm.TabPages.IndexOf(tabPage2);            
+            tbForm.SelectedIndex--;            
         }
     }
 }
