@@ -38,3 +38,4 @@ C:\Users\pc250282\source\repos\tp\DeclaracionJCOVID\DDJJDesktop\obj\Debug\net6.0
 C:\Users\pc250282\source\repos\tp\DeclaracionJCOVID\DDJJDesktop\obj\Debug\net6.0-windows\DDJJDesktop.pdb
 C:\Users\pc250282\source\repos\tp\DeclaracionJCOVID\DDJJDesktop\obj\Debug\net6.0-windows\DDJJDesktop.genruntimeconfig.cache
 C:\Users\pc250282\source\repos\tp\DeclaracionJCOVID\DDJJDesktop\obj\Debug\net6.0-windows\ref\DDJJDesktop.dll
+C:\Users\Usuario\source\repos\DDJJAdministrator\DDJJDesktop\obj\Debug\net6.0-windows\DDJJDesktop.FrmData.resources

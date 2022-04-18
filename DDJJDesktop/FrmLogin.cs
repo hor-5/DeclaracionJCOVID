@@ -36,5 +36,12 @@ namespace DDJJDesktop
             grpLogin.Visible = false;
             grpWelcome.Visible = true;            
         }
+
+        private void txtIngresar_Click(object sender, EventArgs e)
+        {
+            FrmData frmData = new FrmData();
+            frmData.Show();
+            this.Hide();
+        }
     }
 }
