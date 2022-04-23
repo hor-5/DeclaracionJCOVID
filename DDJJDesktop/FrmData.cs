@@ -84,5 +84,31 @@ namespace DDJJDesktop
             cardVaccine.Visible = false;
             cardModalGR.Visible = true;            
         }
+
+        private void btnSy_Click(object sender, EventArgs e)
+        {
+            cardSy.Visible = false;
+            ModalSy.Visible = true;
+        }
+
+        private void btnCloseSy_Click(object sender, EventArgs e)
+        {            
+            ModalSy.Visible = false;
+            cardSy.Visible = true;
+        }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            string imagePath = Path.Combine(Application.StartupPath, "../../../img/success.png");
+            imgResult.Image = Image.FromFile(imagePath);
+            imgResult.Location = new System.Drawing.Point(195, 60);
+            materialCard4.Visible = false;
+            materialCard5.Visible = false;
+            materialCard6.Visible = false;
+            cardSy.Visible = false;
+            btnConfirm.Visible = false;
+            btnBack3.Visible = false;
+            TabSelector.Visible = false;
+        }
     }
 }

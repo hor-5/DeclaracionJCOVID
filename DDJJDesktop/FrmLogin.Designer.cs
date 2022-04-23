@@ -215,9 +215,10 @@
             this.Controls.Add(this.grpLogin);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "FrmLogin";
             this.Padding = new System.Windows.Forms.Padding(4, 64, 4, 4);
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bienvenido a la declaración jurada COVID-19";
             this.grpLogin.ResumeLayout(false);
             this.grpLogin.PerformLayout();
