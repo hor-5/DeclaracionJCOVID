@@ -63,26 +63,26 @@ namespace DDJJDesktop
 
         }
 
-       
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        private void materialLabel7_Click(object sender, EventArgs e)
+        {
 
         }
+
+        private void materialLabel9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCloseModal_Click(object sender, EventArgs e)
+        {
+            cardModalGR.Visible = false;
+            cardVaccine.Visible = true;
+        }
+
+        private void btnRiskGroup_Click(object sender, EventArgs e)
+        {
+            cardVaccine.Visible = false;
+            cardModalGR.Visible = true;            
+        }
+    }
 }
