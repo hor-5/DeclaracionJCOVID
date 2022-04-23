@@ -30,6 +30,16 @@
         {
             this.tbForm = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.sltDate = new System.Windows.Forms.DateTimePicker();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialComboBox1 = new MaterialSkin.Controls.MaterialComboBox();
+            this.txtMail = new MaterialSkin.Controls.MaterialTextBox2();
+            this.txtTelNumber = new MaterialSkin.Controls.MaterialTextBox2();
+            this.txtCodArea = new MaterialSkin.Controls.MaterialTextBox2();
+            this.sltCodArea = new MaterialSkin.Controls.MaterialComboBox();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.txtEnterprise = new MaterialSkin.Controls.MaterialTextBox2();
             this.txtSurname = new MaterialSkin.Controls.MaterialTextBox2();
             this.txtName = new MaterialSkin.Controls.MaterialTextBox2();
             this.txtDni = new MaterialSkin.Controls.MaterialTextBox2();
@@ -43,6 +53,11 @@
             this.btnConfirm = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.TabSelector = new MaterialSkin.Controls.MaterialTabSelector();
+            this.txtAge = new MaterialSkin.Controls.MaterialTextBox2();
+            this.sltNationality = new MaterialSkin.Controls.MaterialComboBox();
+            this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
+            this.sltResidence = new MaterialSkin.Controls.MaterialComboBox();
+            this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.tbForm.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -65,6 +80,22 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.Transparent;
+            this.tabPage1.Controls.Add(this.sltResidence);
+            this.tabPage1.Controls.Add(this.materialLabel6);
+            this.tabPage1.Controls.Add(this.sltNationality);
+            this.tabPage1.Controls.Add(this.materialLabel5);
+            this.tabPage1.Controls.Add(this.txtAge);
+            this.tabPage1.Controls.Add(this.materialLabel4);
+            this.tabPage1.Controls.Add(this.sltDate);
+            this.tabPage1.Controls.Add(this.materialLabel3);
+            this.tabPage1.Controls.Add(this.materialComboBox1);
+            this.tabPage1.Controls.Add(this.txtMail);
+            this.tabPage1.Controls.Add(this.txtTelNumber);
+            this.tabPage1.Controls.Add(this.txtCodArea);
+            this.tabPage1.Controls.Add(this.sltCodArea);
+            this.tabPage1.Controls.Add(this.materialLabel2);
+            this.tabPage1.Controls.Add(this.txtEnterprise);
             this.tabPage1.Controls.Add(this.txtSurname);
             this.tabPage1.Controls.Add(this.txtName);
             this.tabPage1.Controls.Add(this.txtDni);
@@ -76,7 +107,231 @@
             this.tabPage1.Size = new System.Drawing.Size(787, 348);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "1";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // materialLabel4
+            // 
+            this.materialLabel4.AutoSize = true;
+            this.materialLabel4.Depth = 0;
+            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel4.Location = new System.Drawing.Point(49, 227);
+            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.Name = "materialLabel4";
+            this.materialLabel4.Size = new System.Drawing.Size(148, 19);
+            this.materialLabel4.TabIndex = 15;
+            this.materialLabel4.Text = "Fecha de nacimiento";
+            // 
+            // sltDate
+            // 
+            this.sltDate.CalendarMonthBackground = System.Drawing.SystemColors.ScrollBar;
+            this.sltDate.CalendarTitleBackColor = System.Drawing.SystemColors.ControlDark;
+            this.sltDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.sltDate.Location = new System.Drawing.Point(49, 251);
+            this.sltDate.MaxDate = new System.DateTime(2022, 12, 31, 0, 0, 0, 0);
+            this.sltDate.MinDate = new System.DateTime(1910, 1, 1, 0, 0, 0, 0);
+            this.sltDate.Name = "sltDate";
+            this.sltDate.Size = new System.Drawing.Size(194, 23);
+            this.sltDate.TabIndex = 14;
+            // 
+            // materialLabel3
+            // 
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel3.Location = new System.Drawing.Point(516, 145);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(51, 19);
+            this.materialLabel3.TabIndex = 13;
+            this.materialLabel3.Text = "Genero";
+            // 
+            // materialComboBox1
+            // 
+            this.materialComboBox1.AutoResize = false;
+            this.materialComboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialComboBox1.Depth = 0;
+            this.materialComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.materialComboBox1.DropDownHeight = 118;
+            this.materialComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.materialComboBox1.DropDownWidth = 121;
+            this.materialComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.materialComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialComboBox1.FormattingEnabled = true;
+            this.materialComboBox1.Hint = "Genero";
+            this.materialComboBox1.IntegralHeight = false;
+            this.materialComboBox1.ItemHeight = 29;
+            this.materialComboBox1.Items.AddRange(new object[] {
+            "Masculino",
+            "Femenino",
+            "Prefiero no decirlo",
+            "Otro"});
+            this.materialComboBox1.Location = new System.Drawing.Point(516, 169);
+            this.materialComboBox1.MaxDropDownItems = 4;
+            this.materialComboBox1.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialComboBox1.Name = "materialComboBox1";
+            this.materialComboBox1.Size = new System.Drawing.Size(194, 35);
+            this.materialComboBox1.StartIndex = 0;
+            this.materialComboBox1.TabIndex = 12;
+            this.materialComboBox1.UseTallSize = false;
+            // 
+            // txtMail
+            // 
+            this.txtMail.AnimateReadOnly = false;
+            this.txtMail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtMail.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtMail.Depth = 0;
+            this.txtMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtMail.HideSelection = true;
+            this.txtMail.Hint = "E-Mail";
+            this.txtMail.LeadingIcon = null;
+            this.txtMail.Location = new System.Drawing.Point(272, 169);
+            this.txtMail.MaxLength = 32767;
+            this.txtMail.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtMail.Name = "txtMail";
+            this.txtMail.PasswordChar = '\0';
+            this.txtMail.PrefixSuffixText = null;
+            this.txtMail.ReadOnly = false;
+            this.txtMail.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtMail.SelectedText = "";
+            this.txtMail.SelectionLength = 0;
+            this.txtMail.SelectionStart = 0;
+            this.txtMail.ShortcutsEnabled = true;
+            this.txtMail.Size = new System.Drawing.Size(194, 36);
+            this.txtMail.TabIndex = 11;
+            this.txtMail.TabStop = false;
+            this.txtMail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtMail.TrailingIcon = null;
+            this.txtMail.UseSystemPasswordChar = false;
+            this.txtMail.UseTallSize = false;
+            // 
+            // txtTelNumber
+            // 
+            this.txtTelNumber.AnimateReadOnly = false;
+            this.txtTelNumber.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtTelNumber.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtTelNumber.Depth = 0;
+            this.txtTelNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtTelNumber.HideSelection = true;
+            this.txtTelNumber.Hint = "Numero";
+            this.txtTelNumber.LeadingIcon = null;
+            this.txtTelNumber.Location = new System.Drawing.Point(516, 96);
+            this.txtTelNumber.MaxLength = 32767;
+            this.txtTelNumber.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtTelNumber.Name = "txtTelNumber";
+            this.txtTelNumber.PasswordChar = '\0';
+            this.txtTelNumber.PrefixSuffixText = null;
+            this.txtTelNumber.ReadOnly = false;
+            this.txtTelNumber.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtTelNumber.SelectedText = "";
+            this.txtTelNumber.SelectionLength = 0;
+            this.txtTelNumber.SelectionStart = 0;
+            this.txtTelNumber.ShortcutsEnabled = true;
+            this.txtTelNumber.Size = new System.Drawing.Size(194, 36);
+            this.txtTelNumber.TabIndex = 10;
+            this.txtTelNumber.TabStop = false;
+            this.txtTelNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtTelNumber.TrailingIcon = null;
+            this.txtTelNumber.UseSystemPasswordChar = false;
+            this.txtTelNumber.UseTallSize = false;
+            // 
+            // txtCodArea
+            // 
+            this.txtCodArea.AnimateReadOnly = false;
+            this.txtCodArea.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtCodArea.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtCodArea.Depth = 0;
+            this.txtCodArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtCodArea.HideSelection = true;
+            this.txtCodArea.Hint = "Código de area";
+            this.txtCodArea.LeadingIcon = null;
+            this.txtCodArea.Location = new System.Drawing.Point(272, 96);
+            this.txtCodArea.MaxLength = 32767;
+            this.txtCodArea.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtCodArea.Name = "txtCodArea";
+            this.txtCodArea.PasswordChar = '\0';
+            this.txtCodArea.PrefixSuffixText = null;
+            this.txtCodArea.ReadOnly = false;
+            this.txtCodArea.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtCodArea.SelectedText = "";
+            this.txtCodArea.SelectionLength = 0;
+            this.txtCodArea.SelectionStart = 0;
+            this.txtCodArea.ShortcutsEnabled = true;
+            this.txtCodArea.Size = new System.Drawing.Size(194, 36);
+            this.txtCodArea.TabIndex = 9;
+            this.txtCodArea.TabStop = false;
+            this.txtCodArea.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtCodArea.TrailingIcon = null;
+            this.txtCodArea.UseSystemPasswordChar = false;
+            this.txtCodArea.UseTallSize = false;
+            // 
+            // sltCodArea
+            // 
+            this.sltCodArea.AutoResize = false;
+            this.sltCodArea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.sltCodArea.Depth = 0;
+            this.sltCodArea.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.sltCodArea.DropDownHeight = 118;
+            this.sltCodArea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.sltCodArea.DropDownWidth = 121;
+            this.sltCodArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.sltCodArea.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.sltCodArea.FormattingEnabled = true;
+            this.sltCodArea.IntegralHeight = false;
+            this.sltCodArea.ItemHeight = 29;
+            this.sltCodArea.Items.AddRange(new object[] {
+            "Argentina: +54",
+            "Brasil: +55"});
+            this.sltCodArea.Location = new System.Drawing.Point(49, 97);
+            this.sltCodArea.MaxDropDownItems = 4;
+            this.sltCodArea.MouseState = MaterialSkin.MouseState.OUT;
+            this.sltCodArea.Name = "sltCodArea";
+            this.sltCodArea.Size = new System.Drawing.Size(194, 35);
+            this.sltCodArea.StartIndex = 0;
+            this.sltCodArea.TabIndex = 8;
+            this.sltCodArea.UseTallSize = false;
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel2.Location = new System.Drawing.Point(49, 73);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(85, 19);
+            this.materialLabel2.TabIndex = 6;
+            this.materialLabel2.Text = "Código pais";
+            this.materialLabel2.Click += new System.EventHandler(this.materialLabel2_Click);
+            // 
+            // txtEnterprise
+            // 
+            this.txtEnterprise.AnimateReadOnly = false;
+            this.txtEnterprise.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtEnterprise.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtEnterprise.Depth = 0;
+            this.txtEnterprise.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtEnterprise.HideSelection = true;
+            this.txtEnterprise.Hint = "Empresa";
+            this.txtEnterprise.LeadingIcon = null;
+            this.txtEnterprise.Location = new System.Drawing.Point(49, 169);
+            this.txtEnterprise.MaxLength = 32767;
+            this.txtEnterprise.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtEnterprise.Name = "txtEnterprise";
+            this.txtEnterprise.PasswordChar = '\0';
+            this.txtEnterprise.PrefixSuffixText = null;
+            this.txtEnterprise.ReadOnly = false;
+            this.txtEnterprise.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtEnterprise.SelectedText = "";
+            this.txtEnterprise.SelectionLength = 0;
+            this.txtEnterprise.SelectionStart = 0;
+            this.txtEnterprise.ShortcutsEnabled = true;
+            this.txtEnterprise.Size = new System.Drawing.Size(194, 36);
+            this.txtEnterprise.TabIndex = 5;
+            this.txtEnterprise.TabStop = false;
+            this.txtEnterprise.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtEnterprise.TrailingIcon = null;
+            this.txtEnterprise.UseSystemPasswordChar = false;
+            this.txtEnterprise.UseTallSize = false;
+            this.txtEnterprise.Click += new System.EventHandler(this.txtEnterprise_Click);
             // 
             // txtSurname
             // 
@@ -86,6 +341,7 @@
             this.txtSurname.Depth = 0;
             this.txtSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtSurname.HideSelection = true;
+            this.txtSurname.Hint = "Apellido";
             this.txtSurname.LeadingIcon = null;
             this.txtSurname.Location = new System.Drawing.Point(516, 24);
             this.txtSurname.MaxLength = 32767;
@@ -102,7 +358,6 @@
             this.txtSurname.Size = new System.Drawing.Size(194, 36);
             this.txtSurname.TabIndex = 4;
             this.txtSurname.TabStop = false;
-            this.txtSurname.Text = "Apellido";
             this.txtSurname.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtSurname.TrailingIcon = null;
             this.txtSurname.UseSystemPasswordChar = false;
@@ -116,6 +371,7 @@
             this.txtName.Depth = 0;
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtName.HideSelection = true;
+            this.txtName.Hint = "Nombre";
             this.txtName.LeadingIcon = null;
             this.txtName.Location = new System.Drawing.Point(272, 24);
             this.txtName.MaxLength = 32767;
@@ -132,7 +388,6 @@
             this.txtName.Size = new System.Drawing.Size(194, 36);
             this.txtName.TabIndex = 3;
             this.txtName.TabStop = false;
-            this.txtName.Text = "Nombre";
             this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtName.TrailingIcon = null;
             this.txtName.UseSystemPasswordChar = false;
@@ -146,6 +401,7 @@
             this.txtDni.Depth = 0;
             this.txtDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtDni.HideSelection = true;
+            this.txtDni.Hint = "Ingrese DNI";
             this.txtDni.LeadingIcon = null;
             this.txtDni.Location = new System.Drawing.Point(49, 24);
             this.txtDni.MaxLength = 32767;
@@ -162,7 +418,6 @@
             this.txtDni.Size = new System.Drawing.Size(194, 36);
             this.txtDni.TabIndex = 2;
             this.txtDni.TabStop = false;
-            this.txtDni.Text = "Ingrese DNI";
             this.txtDni.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtDni.TrailingIcon = null;
             this.txtDni.UseSystemPasswordChar = false;
@@ -197,7 +452,7 @@
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.tabPage2.Size = new System.Drawing.Size(780, 348);
+            this.tabPage2.Size = new System.Drawing.Size(787, 348);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -268,7 +523,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 24);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(780, 348);
+            this.tabPage3.Size = new System.Drawing.Size(787, 348);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "3";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -338,6 +593,112 @@
             this.TabSelector.TabIndicatorHeight = 4;
             this.TabSelector.Text = "none";
             // 
+            // txtAge
+            // 
+            this.txtAge.AnimateReadOnly = false;
+            this.txtAge.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtAge.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtAge.Depth = 0;
+            this.txtAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtAge.HideSelection = true;
+            this.txtAge.Hint = "Edad";
+            this.txtAge.LeadingIcon = null;
+            this.txtAge.Location = new System.Drawing.Point(272, 238);
+            this.txtAge.MaxLength = 32767;
+            this.txtAge.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtAge.Name = "txtAge";
+            this.txtAge.PasswordChar = '\0';
+            this.txtAge.PrefixSuffixText = null;
+            this.txtAge.ReadOnly = true;
+            this.txtAge.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtAge.SelectedText = "";
+            this.txtAge.SelectionLength = 0;
+            this.txtAge.SelectionStart = 0;
+            this.txtAge.ShortcutsEnabled = true;
+            this.txtAge.Size = new System.Drawing.Size(194, 36);
+            this.txtAge.TabIndex = 16;
+            this.txtAge.TabStop = false;
+            this.txtAge.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtAge.TrailingIcon = null;
+            this.txtAge.UseSystemPasswordChar = false;
+            this.txtAge.UseTallSize = false;
+            // 
+            // sltNationality
+            // 
+            this.sltNationality.AutoResize = false;
+            this.sltNationality.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.sltNationality.Depth = 0;
+            this.sltNationality.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.sltNationality.DropDownHeight = 118;
+            this.sltNationality.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.sltNationality.DropDownWidth = 121;
+            this.sltNationality.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.sltNationality.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.sltNationality.FormattingEnabled = true;
+            this.sltNationality.IntegralHeight = false;
+            this.sltNationality.ItemHeight = 29;
+            this.sltNationality.Items.AddRange(new object[] {
+            "Argentina",
+            "Brasil"});
+            this.sltNationality.Location = new System.Drawing.Point(516, 241);
+            this.sltNationality.MaxDropDownItems = 4;
+            this.sltNationality.MouseState = MaterialSkin.MouseState.OUT;
+            this.sltNationality.Name = "sltNationality";
+            this.sltNationality.Size = new System.Drawing.Size(194, 35);
+            this.sltNationality.StartIndex = 0;
+            this.sltNationality.TabIndex = 18;
+            this.sltNationality.UseTallSize = false;
+            // 
+            // materialLabel5
+            // 
+            this.materialLabel5.AutoSize = true;
+            this.materialLabel5.Depth = 0;
+            this.materialLabel5.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel5.Location = new System.Drawing.Point(516, 217);
+            this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel5.Name = "materialLabel5";
+            this.materialLabel5.Size = new System.Drawing.Size(95, 19);
+            this.materialLabel5.TabIndex = 17;
+            this.materialLabel5.Text = "Nacionalidad";
+            // 
+            // sltResidence
+            // 
+            this.sltResidence.AutoResize = false;
+            this.sltResidence.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.sltResidence.Depth = 0;
+            this.sltResidence.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.sltResidence.DropDownHeight = 118;
+            this.sltResidence.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.sltResidence.DropDownWidth = 121;
+            this.sltResidence.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.sltResidence.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.sltResidence.FormattingEnabled = true;
+            this.sltResidence.IntegralHeight = false;
+            this.sltResidence.ItemHeight = 29;
+            this.sltResidence.Items.AddRange(new object[] {
+            "Argentina",
+            "Brasil"});
+            this.sltResidence.Location = new System.Drawing.Point(49, 301);
+            this.sltResidence.MaxDropDownItems = 4;
+            this.sltResidence.MouseState = MaterialSkin.MouseState.OUT;
+            this.sltResidence.Name = "sltResidence";
+            this.sltResidence.Size = new System.Drawing.Size(194, 35);
+            this.sltResidence.StartIndex = 0;
+            this.sltResidence.TabIndex = 20;
+            this.sltResidence.UseTallSize = false;
+            // 
+            // materialLabel6
+            // 
+            this.materialLabel6.AutoSize = true;
+            this.materialLabel6.Depth = 0;
+            this.materialLabel6.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel6.Location = new System.Drawing.Point(49, 277);
+            this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel6.Name = "materialLabel6";
+            this.materialLabel6.Size = new System.Drawing.Size(129, 19);
+            this.materialLabel6.TabIndex = 19;
+            this.materialLabel6.Text = "Pais de residencia";
+            // 
             // FrmData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -377,5 +738,20 @@
         private MaterialSkin.Controls.MaterialButton btnNext2;
         private MaterialSkin.Controls.MaterialButton btnBack3;
         private MaterialSkin.Controls.MaterialButton btnConfirm;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private MaterialSkin.Controls.MaterialTextBox2 txtEnterprise;
+        private MaterialSkin.Controls.MaterialComboBox sltCodArea;
+        private MaterialSkin.Controls.MaterialTextBox2 txtTelNumber;
+        private MaterialSkin.Controls.MaterialTextBox2 txtCodArea;
+        private DateTimePicker sltDate;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private MaterialSkin.Controls.MaterialComboBox materialComboBox1;
+        private MaterialSkin.Controls.MaterialTextBox2 txtMail;
+        private MaterialSkin.Controls.MaterialLabel materialLabel4;
+        private MaterialSkin.Controls.MaterialComboBox sltResidence;
+        private MaterialSkin.Controls.MaterialLabel materialLabel6;
+        private MaterialSkin.Controls.MaterialComboBox sltNationality;
+        private MaterialSkin.Controls.MaterialLabel materialLabel5;
+        private MaterialSkin.Controls.MaterialTextBox2 txtAge;
     }
 }
