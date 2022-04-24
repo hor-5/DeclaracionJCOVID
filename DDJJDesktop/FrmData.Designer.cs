@@ -31,6 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmData));
             this.tbForm = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.txtSurname = new MaterialSkin.Controls.MaterialMaskedTextBox();
+            this.txtName = new MaterialSkin.Controls.MaterialMaskedTextBox();
+            this.txtTelNumber = new MaterialSkin.Controls.MaterialMaskedTextBox();
+            this.txtCodArea = new MaterialSkin.Controls.MaterialMaskedTextBox();
+            this.txtDni = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.sltResidence = new MaterialSkin.Controls.MaterialComboBox();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.sltNationality = new MaterialSkin.Controls.MaterialComboBox();
@@ -41,14 +46,9 @@
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.sltGender = new MaterialSkin.Controls.MaterialComboBox();
             this.txtMail = new MaterialSkin.Controls.MaterialTextBox2();
-            this.txtTelNumber = new MaterialSkin.Controls.MaterialTextBox2();
-            this.txtCodArea = new MaterialSkin.Controls.MaterialTextBox2();
             this.sltCodArea = new MaterialSkin.Controls.MaterialComboBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.txtEnterprise = new MaterialSkin.Controls.MaterialTextBox2();
-            this.txtSurname = new MaterialSkin.Controls.MaterialTextBox2();
-            this.txtName = new MaterialSkin.Controls.MaterialTextBox2();
-            this.txtDni = new MaterialSkin.Controls.MaterialTextBox2();
             this.btnNext = new MaterialSkin.Controls.MaterialButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.cardVaccine = new MaterialSkin.Controls.MaterialCard();
@@ -153,6 +153,11 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Transparent;
+            this.tabPage1.Controls.Add(this.txtSurname);
+            this.tabPage1.Controls.Add(this.txtName);
+            this.tabPage1.Controls.Add(this.txtTelNumber);
+            this.tabPage1.Controls.Add(this.txtCodArea);
+            this.tabPage1.Controls.Add(this.txtDni);
             this.tabPage1.Controls.Add(this.sltResidence);
             this.tabPage1.Controls.Add(this.materialLabel6);
             this.tabPage1.Controls.Add(this.sltNationality);
@@ -163,14 +168,9 @@
             this.tabPage1.Controls.Add(this.materialLabel3);
             this.tabPage1.Controls.Add(this.sltGender);
             this.tabPage1.Controls.Add(this.txtMail);
-            this.tabPage1.Controls.Add(this.txtTelNumber);
-            this.tabPage1.Controls.Add(this.txtCodArea);
             this.tabPage1.Controls.Add(this.sltCodArea);
             this.tabPage1.Controls.Add(this.materialLabel2);
             this.tabPage1.Controls.Add(this.txtEnterprise);
-            this.tabPage1.Controls.Add(this.txtSurname);
-            this.tabPage1.Controls.Add(this.txtName);
-            this.tabPage1.Controls.Add(this.txtDni);
             this.tabPage1.Controls.Add(this.btnNext);
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
@@ -179,6 +179,235 @@
             this.tabPage1.Size = new System.Drawing.Size(787, 451);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "1";
+            // 
+            // txtSurname
+            // 
+            this.txtSurname.AllowPromptAsInput = true;
+            this.txtSurname.AnimateReadOnly = false;
+            this.txtSurname.AsciiOnly = false;
+            this.txtSurname.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtSurname.BeepOnError = true;
+            this.txtSurname.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.txtSurname.Depth = 0;
+            this.txtSurname.ErrorMessage = "Ingrese solo letras";
+            this.txtSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtSurname.HelperText = "Apellido";
+            this.txtSurname.HidePromptOnLeave = false;
+            this.txtSurname.HideSelection = true;
+            this.txtSurname.Hint = "Apellido";
+            this.txtSurname.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
+            this.txtSurname.LeadingIcon = null;
+            this.txtSurname.Location = new System.Drawing.Point(521, 37);
+            this.txtSurname.Mask = "LL??????????????????";
+            this.txtSurname.MaxLength = 32767;
+            this.txtSurname.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtSurname.Name = "txtSurname";
+            this.txtSurname.PasswordChar = '\0';
+            this.txtSurname.PrefixSuffixText = null;
+            this.txtSurname.PromptChar = ' ';
+            this.txtSurname.ReadOnly = false;
+            this.txtSurname.RejectInputOnFirstFailure = false;
+            this.txtSurname.ResetOnPrompt = true;
+            this.txtSurname.ResetOnSpace = true;
+            this.txtSurname.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtSurname.SelectedText = "";
+            this.txtSurname.SelectionLength = 0;
+            this.txtSurname.SelectionStart = 0;
+            this.txtSurname.ShortcutsEnabled = true;
+            this.txtSurname.ShowAssistiveText = true;
+            this.txtSurname.Size = new System.Drawing.Size(194, 52);
+            this.txtSurname.SkipLiterals = true;
+            this.txtSurname.TabIndex = 87;
+            this.txtSurname.TabStop = false;
+            this.txtSurname.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtSurname.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.txtSurname.TrailingIcon = null;
+            this.txtSurname.UseSystemPasswordChar = false;
+            this.txtSurname.UseTallSize = false;
+            this.txtSurname.ValidatingType = null;
+            // 
+            // txtName
+            // 
+            this.txtName.AllowPromptAsInput = true;
+            this.txtName.AnimateReadOnly = false;
+            this.txtName.AsciiOnly = false;
+            this.txtName.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtName.BeepOnError = true;
+            this.txtName.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.txtName.Depth = 0;
+            this.txtName.ErrorMessage = "Ingrese solo letras";
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtName.HelperText = "Nombre";
+            this.txtName.HidePromptOnLeave = false;
+            this.txtName.HideSelection = true;
+            this.txtName.Hint = "Nombre";
+            this.txtName.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
+            this.txtName.LeadingIcon = null;
+            this.txtName.Location = new System.Drawing.Point(277, 37);
+            this.txtName.Mask = "LL??????????????????";
+            this.txtName.MaxLength = 32767;
+            this.txtName.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtName.Name = "txtName";
+            this.txtName.PasswordChar = '\0';
+            this.txtName.PrefixSuffixText = null;
+            this.txtName.PromptChar = ' ';
+            this.txtName.ReadOnly = false;
+            this.txtName.RejectInputOnFirstFailure = false;
+            this.txtName.ResetOnPrompt = true;
+            this.txtName.ResetOnSpace = true;
+            this.txtName.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtName.SelectedText = "";
+            this.txtName.SelectionLength = 0;
+            this.txtName.SelectionStart = 0;
+            this.txtName.ShortcutsEnabled = true;
+            this.txtName.ShowAssistiveText = true;
+            this.txtName.Size = new System.Drawing.Size(194, 52);
+            this.txtName.SkipLiterals = true;
+            this.txtName.TabIndex = 86;
+            this.txtName.TabStop = false;
+            this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtName.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.txtName.TrailingIcon = null;
+            this.txtName.UseSystemPasswordChar = false;
+            this.txtName.UseTallSize = false;
+            this.txtName.ValidatingType = null;
+            // 
+            // txtTelNumber
+            // 
+            this.txtTelNumber.AllowPromptAsInput = true;
+            this.txtTelNumber.AnimateReadOnly = false;
+            this.txtTelNumber.AsciiOnly = false;
+            this.txtTelNumber.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtTelNumber.BeepOnError = true;
+            this.txtTelNumber.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.txtTelNumber.Depth = 0;
+            this.txtTelNumber.ErrorMessage = "Ingrese un número";
+            this.txtTelNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtTelNumber.HelperText = "1556005242";
+            this.txtTelNumber.HidePromptOnLeave = false;
+            this.txtTelNumber.HideSelection = true;
+            this.txtTelNumber.Hint = "Número";
+            this.txtTelNumber.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
+            this.txtTelNumber.LeadingIcon = null;
+            this.txtTelNumber.Location = new System.Drawing.Point(521, 109);
+            this.txtTelNumber.Mask = "00000000009";
+            this.txtTelNumber.MaxLength = 32767;
+            this.txtTelNumber.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtTelNumber.Name = "txtTelNumber";
+            this.txtTelNumber.PasswordChar = '\0';
+            this.txtTelNumber.PrefixSuffixText = null;
+            this.txtTelNumber.PromptChar = ' ';
+            this.txtTelNumber.ReadOnly = false;
+            this.txtTelNumber.RejectInputOnFirstFailure = false;
+            this.txtTelNumber.ResetOnPrompt = true;
+            this.txtTelNumber.ResetOnSpace = true;
+            this.txtTelNumber.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtTelNumber.SelectedText = "";
+            this.txtTelNumber.SelectionLength = 0;
+            this.txtTelNumber.SelectionStart = 0;
+            this.txtTelNumber.ShortcutsEnabled = true;
+            this.txtTelNumber.ShowAssistiveText = true;
+            this.txtTelNumber.Size = new System.Drawing.Size(194, 52);
+            this.txtTelNumber.SkipLiterals = true;
+            this.txtTelNumber.TabIndex = 84;
+            this.txtTelNumber.TabStop = false;
+            this.txtTelNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtTelNumber.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.txtTelNumber.TrailingIcon = null;
+            this.txtTelNumber.UseSystemPasswordChar = false;
+            this.txtTelNumber.UseTallSize = false;
+            this.txtTelNumber.ValidatingType = null;
+            // 
+            // txtCodArea
+            // 
+            this.txtCodArea.AllowPromptAsInput = true;
+            this.txtCodArea.AnimateReadOnly = false;
+            this.txtCodArea.AsciiOnly = false;
+            this.txtCodArea.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtCodArea.BeepOnError = true;
+            this.txtCodArea.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.txtCodArea.Depth = 0;
+            this.txtCodArea.ErrorMessage = "Ingrese un número";
+            this.txtCodArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtCodArea.HelperText = "011";
+            this.txtCodArea.HidePromptOnLeave = false;
+            this.txtCodArea.HideSelection = true;
+            this.txtCodArea.Hint = "Código de area";
+            this.txtCodArea.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
+            this.txtCodArea.LeadingIcon = null;
+            this.txtCodArea.Location = new System.Drawing.Point(277, 109);
+            this.txtCodArea.Mask = "0009";
+            this.txtCodArea.MaxLength = 32767;
+            this.txtCodArea.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtCodArea.Name = "txtCodArea";
+            this.txtCodArea.PasswordChar = '\0';
+            this.txtCodArea.PrefixSuffixText = null;
+            this.txtCodArea.PromptChar = ' ';
+            this.txtCodArea.ReadOnly = false;
+            this.txtCodArea.RejectInputOnFirstFailure = false;
+            this.txtCodArea.ResetOnPrompt = true;
+            this.txtCodArea.ResetOnSpace = true;
+            this.txtCodArea.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtCodArea.SelectedText = "";
+            this.txtCodArea.SelectionLength = 0;
+            this.txtCodArea.SelectionStart = 0;
+            this.txtCodArea.ShortcutsEnabled = true;
+            this.txtCodArea.ShowAssistiveText = true;
+            this.txtCodArea.Size = new System.Drawing.Size(194, 52);
+            this.txtCodArea.SkipLiterals = true;
+            this.txtCodArea.TabIndex = 83;
+            this.txtCodArea.TabStop = false;
+            this.txtCodArea.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtCodArea.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.txtCodArea.TrailingIcon = null;
+            this.txtCodArea.UseSystemPasswordChar = false;
+            this.txtCodArea.UseTallSize = false;
+            this.txtCodArea.ValidatingType = null;
+            // 
+            // txtDni
+            // 
+            this.txtDni.AllowPromptAsInput = true;
+            this.txtDni.AnimateReadOnly = false;
+            this.txtDni.AsciiOnly = false;
+            this.txtDni.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtDni.BeepOnError = true;
+            this.txtDni.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.txtDni.Depth = 0;
+            this.txtDni.ErrorMessage = "Ingrese un DNI";
+            this.txtDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtDni.HidePromptOnLeave = false;
+            this.txtDni.HideSelection = true;
+            this.txtDni.Hint = "Ingrese DNI";
+            this.txtDni.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
+            this.txtDni.LeadingIcon = null;
+            this.txtDni.Location = new System.Drawing.Point(54, 37);
+            this.txtDni.Mask = "00000009";
+            this.txtDni.MaxLength = 32767;
+            this.txtDni.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtDni.Name = "txtDni";
+            this.txtDni.PasswordChar = '\0';
+            this.txtDni.PrefixSuffix = MaterialSkin.Controls.MaterialMaskedTextBox.PrefixSuffixTypes.Prefix;
+            this.txtDni.PrefixSuffixText = "DNI ";
+            this.txtDni.PromptChar = ' ';
+            this.txtDni.ReadOnly = false;
+            this.txtDni.RejectInputOnFirstFailure = false;
+            this.txtDni.ResetOnPrompt = true;
+            this.txtDni.ResetOnSpace = true;
+            this.txtDni.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtDni.SelectedText = "";
+            this.txtDni.SelectionLength = 0;
+            this.txtDni.SelectionStart = 0;
+            this.txtDni.ShortcutsEnabled = true;
+            this.txtDni.Size = new System.Drawing.Size(194, 36);
+            this.txtDni.SkipLiterals = true;
+            this.txtDni.TabIndex = 81;
+            this.txtDni.TabStop = false;
+            this.txtDni.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtDni.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.txtDni.TrailingIcon = null;
+            this.txtDni.UseSystemPasswordChar = false;
+            this.txtDni.UseTallSize = false;
+            this.txtDni.ValidatingType = null;
             // 
             // sltResidence
             // 
@@ -195,7 +424,7 @@
             this.sltResidence.Hint = "Seleccione un pais";
             this.sltResidence.IntegralHeight = false;
             this.sltResidence.ItemHeight = 29;
-            this.sltResidence.Location = new System.Drawing.Point(49, 319);
+            this.sltResidence.Location = new System.Drawing.Point(54, 332);
             this.sltResidence.MaxDropDownItems = 4;
             this.sltResidence.MouseState = MaterialSkin.MouseState.OUT;
             this.sltResidence.Name = "sltResidence";
@@ -210,7 +439,7 @@
             this.materialLabel6.AutoSize = true;
             this.materialLabel6.Depth = 0;
             this.materialLabel6.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel6.Location = new System.Drawing.Point(49, 295);
+            this.materialLabel6.Location = new System.Drawing.Point(54, 310);
             this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel6.Name = "materialLabel6";
             this.materialLabel6.Size = new System.Drawing.Size(129, 19);
@@ -232,7 +461,7 @@
             this.sltNationality.Hint = "Seleccione un pais";
             this.sltNationality.IntegralHeight = false;
             this.sltNationality.ItemHeight = 29;
-            this.sltNationality.Location = new System.Drawing.Point(516, 241);
+            this.sltNationality.Location = new System.Drawing.Point(521, 253);
             this.sltNationality.MaxDropDownItems = 4;
             this.sltNationality.MaxLength = 25;
             this.sltNationality.MouseState = MaterialSkin.MouseState.OUT;
@@ -248,7 +477,7 @@
             this.materialLabel5.AutoSize = true;
             this.materialLabel5.Depth = 0;
             this.materialLabel5.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel5.Location = new System.Drawing.Point(516, 217);
+            this.materialLabel5.Location = new System.Drawing.Point(521, 231);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
             this.materialLabel5.Size = new System.Drawing.Size(95, 19);
@@ -265,7 +494,7 @@
             this.txtAge.HideSelection = true;
             this.txtAge.Hint = "Edad";
             this.txtAge.LeadingIcon = null;
-            this.txtAge.Location = new System.Drawing.Point(272, 238);
+            this.txtAge.Location = new System.Drawing.Point(277, 251);
             this.txtAge.MaxLength = 32767;
             this.txtAge.MouseState = MaterialSkin.MouseState.OUT;
             this.txtAge.Name = "txtAge";
@@ -290,7 +519,7 @@
             this.materialLabel4.AutoSize = true;
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel4.Location = new System.Drawing.Point(49, 227);
+            this.materialLabel4.Location = new System.Drawing.Point(54, 240);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
             this.materialLabel4.Size = new System.Drawing.Size(148, 19);
@@ -302,7 +531,7 @@
             this.sltDate.CalendarMonthBackground = System.Drawing.SystemColors.ScrollBar;
             this.sltDate.CalendarTitleBackColor = System.Drawing.SystemColors.ControlDark;
             this.sltDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.sltDate.Location = new System.Drawing.Point(49, 251);
+            this.sltDate.Location = new System.Drawing.Point(54, 264);
             this.sltDate.MaxDate = new System.DateTime(2022, 12, 31, 0, 0, 0, 0);
             this.sltDate.MinDate = new System.DateTime(1910, 1, 1, 0, 0, 0, 0);
             this.sltDate.Name = "sltDate";
@@ -314,7 +543,7 @@
             this.materialLabel3.AutoSize = true;
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel3.Location = new System.Drawing.Point(516, 145);
+            this.materialLabel3.Location = new System.Drawing.Point(521, 162);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(51, 19);
@@ -341,7 +570,7 @@
             "Femenino",
             "Prefiero no decirlo",
             "Otro"});
-            this.sltGender.Location = new System.Drawing.Point(516, 169);
+            this.sltGender.Location = new System.Drawing.Point(521, 182);
             this.sltGender.MaxDropDownItems = 4;
             this.sltGender.MouseState = MaterialSkin.MouseState.OUT;
             this.sltGender.Name = "sltGender";
@@ -357,10 +586,11 @@
             this.txtMail.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtMail.Depth = 0;
             this.txtMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtMail.HelperText = "JhonDoe@gmail.com";
             this.txtMail.HideSelection = true;
             this.txtMail.Hint = "E-Mail";
             this.txtMail.LeadingIcon = null;
-            this.txtMail.Location = new System.Drawing.Point(272, 169);
+            this.txtMail.Location = new System.Drawing.Point(277, 182);
             this.txtMail.MaxLength = 32767;
             this.txtMail.MouseState = MaterialSkin.MouseState.OUT;
             this.txtMail.Name = "txtMail";
@@ -372,73 +602,15 @@
             this.txtMail.SelectionLength = 0;
             this.txtMail.SelectionStart = 0;
             this.txtMail.ShortcutsEnabled = true;
-            this.txtMail.Size = new System.Drawing.Size(194, 36);
+            this.txtMail.ShowAssistiveText = true;
+            this.txtMail.Size = new System.Drawing.Size(194, 52);
             this.txtMail.TabIndex = 11;
             this.txtMail.TabStop = false;
             this.txtMail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtMail.TrailingIcon = null;
             this.txtMail.UseSystemPasswordChar = false;
             this.txtMail.UseTallSize = false;
-            // 
-            // txtTelNumber
-            // 
-            this.txtTelNumber.AnimateReadOnly = false;
-            this.txtTelNumber.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtTelNumber.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtTelNumber.Depth = 0;
-            this.txtTelNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtTelNumber.HideSelection = true;
-            this.txtTelNumber.Hint = "Numero";
-            this.txtTelNumber.LeadingIcon = null;
-            this.txtTelNumber.Location = new System.Drawing.Point(516, 96);
-            this.txtTelNumber.MaxLength = 32767;
-            this.txtTelNumber.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtTelNumber.Name = "txtTelNumber";
-            this.txtTelNumber.PasswordChar = '\0';
-            this.txtTelNumber.PrefixSuffixText = null;
-            this.txtTelNumber.ReadOnly = false;
-            this.txtTelNumber.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtTelNumber.SelectedText = "";
-            this.txtTelNumber.SelectionLength = 0;
-            this.txtTelNumber.SelectionStart = 0;
-            this.txtTelNumber.ShortcutsEnabled = true;
-            this.txtTelNumber.Size = new System.Drawing.Size(194, 36);
-            this.txtTelNumber.TabIndex = 10;
-            this.txtTelNumber.TabStop = false;
-            this.txtTelNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtTelNumber.TrailingIcon = null;
-            this.txtTelNumber.UseSystemPasswordChar = false;
-            this.txtTelNumber.UseTallSize = false;
-            // 
-            // txtCodArea
-            // 
-            this.txtCodArea.AnimateReadOnly = false;
-            this.txtCodArea.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtCodArea.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtCodArea.Depth = 0;
-            this.txtCodArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtCodArea.HideSelection = true;
-            this.txtCodArea.Hint = "Código de area";
-            this.txtCodArea.LeadingIcon = null;
-            this.txtCodArea.Location = new System.Drawing.Point(272, 96);
-            this.txtCodArea.MaxLength = 32767;
-            this.txtCodArea.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtCodArea.Name = "txtCodArea";
-            this.txtCodArea.PasswordChar = '\0';
-            this.txtCodArea.PrefixSuffixText = null;
-            this.txtCodArea.ReadOnly = false;
-            this.txtCodArea.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtCodArea.SelectedText = "";
-            this.txtCodArea.SelectionLength = 0;
-            this.txtCodArea.SelectionStart = 0;
-            this.txtCodArea.ShortcutsEnabled = true;
-            this.txtCodArea.Size = new System.Drawing.Size(194, 36);
-            this.txtCodArea.TabIndex = 9;
-            this.txtCodArea.TabStop = false;
-            this.txtCodArea.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtCodArea.TrailingIcon = null;
-            this.txtCodArea.UseSystemPasswordChar = false;
-            this.txtCodArea.UseTallSize = false;
+            this.txtMail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMail_KeyDown);
             // 
             // sltCodArea
             // 
@@ -452,9 +624,10 @@
             this.sltCodArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.sltCodArea.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.sltCodArea.FormattingEnabled = true;
-            this.sltCodArea.Hint = "Seleccione";
+            this.sltCodArea.Hint = "Seleccione pais";
+            this.sltCodArea.IntegralHeight = false;
             this.sltCodArea.ItemHeight = 29;
-            this.sltCodArea.Location = new System.Drawing.Point(49, 97);
+            this.sltCodArea.Location = new System.Drawing.Point(54, 110);
             this.sltCodArea.MaxDropDownItems = 4;
             this.sltCodArea.MouseState = MaterialSkin.MouseState.OUT;
             this.sltCodArea.Name = "sltCodArea";
@@ -469,12 +642,12 @@
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Location = new System.Drawing.Point(49, 73);
+            this.materialLabel2.Location = new System.Drawing.Point(54, 88);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(85, 19);
+            this.materialLabel2.Size = new System.Drawing.Size(64, 19);
             this.materialLabel2.TabIndex = 6;
-            this.materialLabel2.Text = "Código pais";
+            this.materialLabel2.Text = "Telefono";
             this.materialLabel2.Click += new System.EventHandler(this.materialLabel2_Click);
             // 
             // txtEnterprise
@@ -484,10 +657,11 @@
             this.txtEnterprise.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtEnterprise.Depth = 0;
             this.txtEnterprise.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtEnterprise.HelperText = "Empresa";
             this.txtEnterprise.HideSelection = true;
             this.txtEnterprise.Hint = "Empresa";
             this.txtEnterprise.LeadingIcon = null;
-            this.txtEnterprise.Location = new System.Drawing.Point(49, 169);
+            this.txtEnterprise.Location = new System.Drawing.Point(54, 182);
             this.txtEnterprise.MaxLength = 32767;
             this.txtEnterprise.MouseState = MaterialSkin.MouseState.OUT;
             this.txtEnterprise.Name = "txtEnterprise";
@@ -499,7 +673,8 @@
             this.txtEnterprise.SelectionLength = 0;
             this.txtEnterprise.SelectionStart = 0;
             this.txtEnterprise.ShortcutsEnabled = true;
-            this.txtEnterprise.Size = new System.Drawing.Size(194, 36);
+            this.txtEnterprise.ShowAssistiveText = true;
+            this.txtEnterprise.Size = new System.Drawing.Size(194, 52);
             this.txtEnterprise.TabIndex = 5;
             this.txtEnterprise.TabStop = false;
             this.txtEnterprise.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -507,96 +682,6 @@
             this.txtEnterprise.UseSystemPasswordChar = false;
             this.txtEnterprise.UseTallSize = false;
             this.txtEnterprise.Click += new System.EventHandler(this.txtEnterprise_Click);
-            // 
-            // txtSurname
-            // 
-            this.txtSurname.AnimateReadOnly = false;
-            this.txtSurname.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtSurname.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtSurname.Depth = 0;
-            this.txtSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtSurname.HideSelection = true;
-            this.txtSurname.Hint = "Apellido";
-            this.txtSurname.LeadingIcon = null;
-            this.txtSurname.Location = new System.Drawing.Point(516, 24);
-            this.txtSurname.MaxLength = 32767;
-            this.txtSurname.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtSurname.Name = "txtSurname";
-            this.txtSurname.PasswordChar = '\0';
-            this.txtSurname.PrefixSuffixText = null;
-            this.txtSurname.ReadOnly = false;
-            this.txtSurname.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtSurname.SelectedText = "";
-            this.txtSurname.SelectionLength = 0;
-            this.txtSurname.SelectionStart = 0;
-            this.txtSurname.ShortcutsEnabled = true;
-            this.txtSurname.Size = new System.Drawing.Size(194, 36);
-            this.txtSurname.TabIndex = 4;
-            this.txtSurname.TabStop = false;
-            this.txtSurname.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtSurname.TrailingIcon = null;
-            this.txtSurname.UseSystemPasswordChar = false;
-            this.txtSurname.UseTallSize = false;
-            // 
-            // txtName
-            // 
-            this.txtName.AnimateReadOnly = false;
-            this.txtName.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtName.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtName.Depth = 0;
-            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtName.HideSelection = true;
-            this.txtName.Hint = "Nombre";
-            this.txtName.LeadingIcon = null;
-            this.txtName.Location = new System.Drawing.Point(272, 24);
-            this.txtName.MaxLength = 32767;
-            this.txtName.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtName.Name = "txtName";
-            this.txtName.PasswordChar = '\0';
-            this.txtName.PrefixSuffixText = null;
-            this.txtName.ReadOnly = false;
-            this.txtName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtName.SelectedText = "";
-            this.txtName.SelectionLength = 0;
-            this.txtName.SelectionStart = 0;
-            this.txtName.ShortcutsEnabled = true;
-            this.txtName.Size = new System.Drawing.Size(194, 36);
-            this.txtName.TabIndex = 3;
-            this.txtName.TabStop = false;
-            this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtName.TrailingIcon = null;
-            this.txtName.UseSystemPasswordChar = false;
-            this.txtName.UseTallSize = false;
-            // 
-            // txtDni
-            // 
-            this.txtDni.AnimateReadOnly = false;
-            this.txtDni.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtDni.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtDni.Depth = 0;
-            this.txtDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtDni.HideSelection = true;
-            this.txtDni.Hint = "Ingrese DNI";
-            this.txtDni.LeadingIcon = null;
-            this.txtDni.Location = new System.Drawing.Point(49, 24);
-            this.txtDni.MaxLength = 32767;
-            this.txtDni.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtDni.Name = "txtDni";
-            this.txtDni.PasswordChar = '\0';
-            this.txtDni.PrefixSuffixText = null;
-            this.txtDni.ReadOnly = false;
-            this.txtDni.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtDni.SelectedText = "";
-            this.txtDni.SelectionLength = 0;
-            this.txtDni.SelectionStart = 0;
-            this.txtDni.ShortcutsEnabled = true;
-            this.txtDni.Size = new System.Drawing.Size(194, 36);
-            this.txtDni.TabIndex = 2;
-            this.txtDni.TabStop = false;
-            this.txtDni.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtDni.TrailingIcon = null;
-            this.txtDni.UseSystemPasswordChar = false;
-            this.txtDni.UseTallSize = false;
             // 
             // btnNext
             // 
@@ -1663,7 +1748,7 @@
             this.btnBack3.Depth = 0;
             this.btnBack3.HighEmphasis = true;
             this.btnBack3.Icon = null;
-            this.btnBack3.Location = new System.Drawing.Point(6, 406);
+            this.btnBack3.Location = new System.Drawing.Point(6, 412);
             this.btnBack3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnBack3.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnBack3.Name = "btnBack3";
@@ -1683,7 +1768,7 @@
             this.btnConfirm.Depth = 0;
             this.btnConfirm.HighEmphasis = true;
             this.btnConfirm.Icon = null;
-            this.btnConfirm.Location = new System.Drawing.Point(678, 405);
+            this.btnConfirm.Location = new System.Drawing.Point(678, 411);
             this.btnConfirm.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnConfirm.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnConfirm.Name = "btnConfirm";
@@ -1760,9 +1845,6 @@
         private MaterialSkin.Controls.MaterialTabControl tbForm;
         private MaterialSkin.Controls.MaterialButton btnNext;
         private MaterialSkin.Controls.MaterialTabSelector TabSelector;
-        private MaterialSkin.Controls.MaterialTextBox2 txtSurname;
-        private MaterialSkin.Controls.MaterialTextBox2 txtName;
-        private MaterialSkin.Controls.MaterialTextBox2 txtDni;
         private TabPage tabPage3;
         private TabPage tabPage1;
         private TabPage tabPage2;
@@ -1773,8 +1855,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialTextBox2 txtEnterprise;
         private MaterialSkin.Controls.MaterialComboBox sltCodArea;
-        private MaterialSkin.Controls.MaterialTextBox2 txtTelNumber;
-        private MaterialSkin.Controls.MaterialTextBox2 txtCodArea;
         private DateTimePicker sltDate;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialComboBox sltGender;
@@ -1847,5 +1927,10 @@
         private MaterialSkin.Controls.MaterialRadioButton materialRadioButton5;
         private MaterialSkin.Controls.MaterialRadioButton materialRadioButton6;
         private MaterialSkin.Controls.MaterialLabel materialLabel33;
+        private MaterialSkin.Controls.MaterialMaskedTextBox txtDni;
+        private MaterialSkin.Controls.MaterialMaskedTextBox txtTelNumber;
+        private MaterialSkin.Controls.MaterialMaskedTextBox txtCodArea;
+        private MaterialSkin.Controls.MaterialMaskedTextBox txtSurname;
+        private MaterialSkin.Controls.MaterialMaskedTextBox txtName;
     }
 }

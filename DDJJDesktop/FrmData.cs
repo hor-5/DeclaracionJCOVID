@@ -130,5 +130,21 @@ namespace DDJJDesktop
             btnBack3.Visible = false;
             TabSelector.Visible = false;
         }
+
+        private void txtMail_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (txtMail.Text.Contains("@"))
+            {
+                if (txtMail.Text.Contains(".com"))
+                {
+                    
+                    txtMail.HelperText = "Email válido";                    
+                }
+            }
+            else
+            {
+                txtMail.HelperText = "Debe ingresar un email válido";
+            }
+        }
     }
 }
