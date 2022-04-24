@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "fwZxwfosaIOJE8p9AXRK9VoI7CnaEI1yJiBUC6gSdOUc67rdq8CIbzGXkiP+CBythEXOKNtzIxw9ZvctSJzrFA==",
+  "dgSpecHash": "g+a81Qwd1KYPL5rP6oP85chHE1Y73f+61Fo5G6q0o8K9GER+lt7klJoS5FCXnUh9zSy3YaPIqfjdRBVgdBDiiA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\DDJJDesktop\\DDJJDesktop.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Usuario\\.nuget\\packages\\materialskin.2\\2.3.1\\materialskin.2.2.3.1.nupkg.sha512"
+    "C:\\Users\\Usuario\\.nuget\\packages\\materialskin.2\\2.3.1\\materialskin.2.2.3.1.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
   "logs": []
 }

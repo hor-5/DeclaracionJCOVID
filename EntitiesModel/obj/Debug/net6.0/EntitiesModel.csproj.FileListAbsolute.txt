@@ -1,0 +1,12 @@
+C:\Users\Usuario\source\repos\DDJJAdministrator\EntitiesModel\bin\Debug\net6.0\EntitiesModel.deps.json
+C:\Users\Usuario\source\repos\DDJJAdministrator\EntitiesModel\bin\Debug\net6.0\EntitiesModel.dll
+C:\Users\Usuario\source\repos\DDJJAdministrator\EntitiesModel\bin\Debug\net6.0\ref\EntitiesModel.dll
+C:\Users\Usuario\source\repos\DDJJAdministrator\EntitiesModel\bin\Debug\net6.0\EntitiesModel.pdb
+C:\Users\Usuario\source\repos\DDJJAdministrator\EntitiesModel\obj\Debug\net6.0\EntitiesModel.csproj.AssemblyReference.cache
+C:\Users\Usuario\source\repos\DDJJAdministrator\EntitiesModel\obj\Debug\net6.0\EntitiesModel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\source\repos\DDJJAdministrator\EntitiesModel\obj\Debug\net6.0\EntitiesModel.AssemblyInfoInputs.cache
+C:\Users\Usuario\source\repos\DDJJAdministrator\EntitiesModel\obj\Debug\net6.0\EntitiesModel.AssemblyInfo.cs
+C:\Users\Usuario\source\repos\DDJJAdministrator\EntitiesModel\obj\Debug\net6.0\EntitiesModel.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\source\repos\DDJJAdministrator\EntitiesModel\obj\Debug\net6.0\EntitiesModel.dll
+C:\Users\Usuario\source\repos\DDJJAdministrator\EntitiesModel\obj\Debug\net6.0\ref\EntitiesModel.dll
+C:\Users\Usuario\source\repos\DDJJAdministrator\EntitiesModel\obj\Debug\net6.0\EntitiesModel.pdb

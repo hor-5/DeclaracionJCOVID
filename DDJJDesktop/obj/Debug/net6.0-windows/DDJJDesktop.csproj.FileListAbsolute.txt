@@ -40,3 +40,6 @@ C:\Users\pc250282\source\repos\tp\DeclaracionJCOVID\DDJJDesktop\obj\Debug\net6.0
 C:\Users\pc250282\source\repos\tp\DeclaracionJCOVID\DDJJDesktop\obj\Debug\net6.0-windows\ref\DDJJDesktop.dll
 C:\Users\Usuario\source\repos\DDJJAdministrator\DDJJDesktop\obj\Debug\net6.0-windows\DDJJDesktop.FrmData.resources
 C:\Users\pc250282\source\repos\tp\DeclaracionJCOVID\DDJJDesktop\obj\Debug\net6.0-windows\DDJJDesktop.FrmData.resources
+C:\Users\Usuario\source\repos\DDJJAdministrator\DDJJDesktop\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\Usuario\source\repos\DDJJAdministrator\DDJJDesktop\bin\Debug\net6.0-windows\EntitiesModel.dll
+C:\Users\Usuario\source\repos\DDJJAdministrator\DDJJDesktop\bin\Debug\net6.0-windows\EntitiesModel.pdb

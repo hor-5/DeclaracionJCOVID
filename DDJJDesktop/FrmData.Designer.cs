@@ -39,7 +39,7 @@
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.sltDate = new System.Windows.Forms.DateTimePicker();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialComboBox1 = new MaterialSkin.Controls.MaterialComboBox();
+            this.sltGender = new MaterialSkin.Controls.MaterialComboBox();
             this.txtMail = new MaterialSkin.Controls.MaterialTextBox2();
             this.txtTelNumber = new MaterialSkin.Controls.MaterialTextBox2();
             this.txtCodArea = new MaterialSkin.Controls.MaterialTextBox2();
@@ -161,7 +161,7 @@
             this.tabPage1.Controls.Add(this.materialLabel4);
             this.tabPage1.Controls.Add(this.sltDate);
             this.tabPage1.Controls.Add(this.materialLabel3);
-            this.tabPage1.Controls.Add(this.materialComboBox1);
+            this.tabPage1.Controls.Add(this.sltGender);
             this.tabPage1.Controls.Add(this.txtMail);
             this.tabPage1.Controls.Add(this.txtTelNumber);
             this.tabPage1.Controls.Add(this.txtCodArea);
@@ -192,16 +192,15 @@
             this.sltResidence.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.sltResidence.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.sltResidence.FormattingEnabled = true;
+            this.sltResidence.Hint = "Seleccione un pais";
             this.sltResidence.IntegralHeight = false;
             this.sltResidence.ItemHeight = 29;
-            this.sltResidence.Items.AddRange(new object[] {
-            "Argentina",
-            "Brasil"});
             this.sltResidence.Location = new System.Drawing.Point(49, 319);
             this.sltResidence.MaxDropDownItems = 4;
             this.sltResidence.MouseState = MaterialSkin.MouseState.OUT;
             this.sltResidence.Name = "sltResidence";
             this.sltResidence.Size = new System.Drawing.Size(194, 35);
+            this.sltResidence.Sorted = true;
             this.sltResidence.StartIndex = 0;
             this.sltResidence.TabIndex = 20;
             this.sltResidence.UseTallSize = false;
@@ -230,18 +229,18 @@
             this.sltNationality.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.sltNationality.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.sltNationality.FormattingEnabled = true;
+            this.sltNationality.Hint = "Seleccione un pais";
             this.sltNationality.IntegralHeight = false;
             this.sltNationality.ItemHeight = 29;
-            this.sltNationality.Items.AddRange(new object[] {
-            "Argentina",
-            "Brasil"});
             this.sltNationality.Location = new System.Drawing.Point(516, 241);
             this.sltNationality.MaxDropDownItems = 4;
+            this.sltNationality.MaxLength = 25;
             this.sltNationality.MouseState = MaterialSkin.MouseState.OUT;
             this.sltNationality.Name = "sltNationality";
             this.sltNationality.Size = new System.Drawing.Size(194, 35);
+            this.sltNationality.Sorted = true;
             this.sltNationality.StartIndex = 0;
-            this.sltNationality.TabIndex = 18;
+            this.sltNationality.TabIndex = 80;
             this.sltNationality.UseTallSize = false;
             // 
             // materialLabel5
@@ -322,34 +321,34 @@
             this.materialLabel3.TabIndex = 13;
             this.materialLabel3.Text = "Genero";
             // 
-            // materialComboBox1
+            // sltGender
             // 
-            this.materialComboBox1.AutoResize = false;
-            this.materialComboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialComboBox1.Depth = 0;
-            this.materialComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.materialComboBox1.DropDownHeight = 118;
-            this.materialComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.materialComboBox1.DropDownWidth = 121;
-            this.materialComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialComboBox1.FormattingEnabled = true;
-            this.materialComboBox1.Hint = "Genero";
-            this.materialComboBox1.IntegralHeight = false;
-            this.materialComboBox1.ItemHeight = 29;
-            this.materialComboBox1.Items.AddRange(new object[] {
+            this.sltGender.AutoResize = false;
+            this.sltGender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.sltGender.Depth = 0;
+            this.sltGender.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.sltGender.DropDownHeight = 118;
+            this.sltGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.sltGender.DropDownWidth = 121;
+            this.sltGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.sltGender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.sltGender.FormattingEnabled = true;
+            this.sltGender.Hint = "Genero";
+            this.sltGender.IntegralHeight = false;
+            this.sltGender.ItemHeight = 29;
+            this.sltGender.Items.AddRange(new object[] {
             "Masculino",
             "Femenino",
             "Prefiero no decirlo",
             "Otro"});
-            this.materialComboBox1.Location = new System.Drawing.Point(516, 169);
-            this.materialComboBox1.MaxDropDownItems = 4;
-            this.materialComboBox1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialComboBox1.Name = "materialComboBox1";
-            this.materialComboBox1.Size = new System.Drawing.Size(194, 35);
-            this.materialComboBox1.StartIndex = 0;
-            this.materialComboBox1.TabIndex = 12;
-            this.materialComboBox1.UseTallSize = false;
+            this.sltGender.Location = new System.Drawing.Point(516, 169);
+            this.sltGender.MaxDropDownItems = 4;
+            this.sltGender.MouseState = MaterialSkin.MouseState.OUT;
+            this.sltGender.Name = "sltGender";
+            this.sltGender.Size = new System.Drawing.Size(194, 35);
+            this.sltGender.StartIndex = 0;
+            this.sltGender.TabIndex = 12;
+            this.sltGender.UseTallSize = false;
             // 
             // txtMail
             // 
@@ -453,16 +452,14 @@
             this.sltCodArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.sltCodArea.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.sltCodArea.FormattingEnabled = true;
-            this.sltCodArea.IntegralHeight = false;
+            this.sltCodArea.Hint = "Seleccione";
             this.sltCodArea.ItemHeight = 29;
-            this.sltCodArea.Items.AddRange(new object[] {
-            "Argentina: +54",
-            "Brasil: +55"});
             this.sltCodArea.Location = new System.Drawing.Point(49, 97);
             this.sltCodArea.MaxDropDownItems = 4;
             this.sltCodArea.MouseState = MaterialSkin.MouseState.OUT;
             this.sltCodArea.Name = "sltCodArea";
             this.sltCodArea.Size = new System.Drawing.Size(194, 35);
+            this.sltCodArea.Sorted = true;
             this.sltCodArea.StartIndex = 0;
             this.sltCodArea.TabIndex = 8;
             this.sltCodArea.UseTallSize = false;
@@ -1780,7 +1777,7 @@
         private MaterialSkin.Controls.MaterialTextBox2 txtCodArea;
         private DateTimePicker sltDate;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        private MaterialSkin.Controls.MaterialComboBox materialComboBox1;
+        private MaterialSkin.Controls.MaterialComboBox sltGender;
         private MaterialSkin.Controls.MaterialTextBox2 txtMail;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private MaterialSkin.Controls.MaterialComboBox sltResidence;
