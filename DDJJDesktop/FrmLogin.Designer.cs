@@ -81,7 +81,7 @@
             this.txtClave.Depth = 0;
             this.txtClave.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtClave.Hint = "Contraseña";
-            this.txtClave.LeadingIcon = null;
+            this.txtClave.LeadingIcon = ((System.Drawing.Image)(resources.GetObject("txtClave.LeadingIcon")));
             this.txtClave.Location = new System.Drawing.Point(62, 129);
             this.txtClave.Margin = new System.Windows.Forms.Padding(4);
             this.txtClave.MaxLength = 50;
@@ -103,7 +103,7 @@
             this.txtUsuario.Depth = 0;
             this.txtUsuario.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtUsuario.Hint = "Usuario";
-            this.txtUsuario.LeadingIcon = null;
+            this.txtUsuario.LeadingIcon = ((System.Drawing.Image)(resources.GetObject("txtUsuario.LeadingIcon")));
             this.txtUsuario.Location = new System.Drawing.Point(62, 72);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsuario.MaxLength = 50;
@@ -145,7 +145,7 @@
             this.grpWelcome.Controls.Add(this.lblWelcome);
             this.grpWelcome.Controls.Add(this.btnNoUser);
             this.grpWelcome.Controls.Add(this.btnWUser);
-            this.grpWelcome.Location = new System.Drawing.Point(139, 85);
+            this.grpWelcome.Location = new System.Drawing.Point(163, 68);
             this.grpWelcome.Margin = new System.Windows.Forms.Padding(4);
             this.grpWelcome.Name = "grpWelcome";
             this.grpWelcome.Padding = new System.Windows.Forms.Padding(4);
