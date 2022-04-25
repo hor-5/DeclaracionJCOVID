@@ -9,25 +9,25 @@ namespace EntitiesModel
 {
     public class User
     {
-        private string userName { get; set; }
-        private string password { get; set; }
-        private int dni { get; set; }
-        private string firstName { get; set; }
-        private string surName { get; set; }
-        private int codArea { get; set; }
-        private string codCountry { get; set; }
-        private int telephone { get; set; }
-        private string enterprise { get; set; }
-        private MailAddress email { get; set; }
-        private string gender { get; set; }
-        private DateOnly birthday { get; set; }
-        private int age { get; set; }   
-        private string nationality { get; set; }
-        private string residenceCountry  { get; set; }
+        public string userName { get; set; }
+        public string password { get; set; }
+        public string dni { get; set; }
+        public string firstName { get; set; }
+        public string surName { get; set; }
+        public string codArea { get; set; }
+        public string codCountry { get; set; }
+        public string telephone { get; set; }
+        public string enterprise { get; set; }
+        public MailAddress email { get; set; }
+        public string gender { get; set; }
+        public DateTime birthday { get; set; }
+        public int age { get; set; }
+        public string nationality { get; set; }
+        public string residenceCountry  { get; set; }
 
-        public User(string userName, string password, int dni, string firstName, string surName, int codArea, string codCountry,
-            int telephone, string enterprise, MailAddress email, string gender, 
-            DateOnly birthday, int age, string nationality, string residenceCountry) {
+        public User(string userName, string password, string dni, string firstName, string surName, string codArea, string codCountry,
+            string telephone, string enterprise, MailAddress email, string gender, 
+            DateTime birthday, int age, string nationality, string residenceCountry) {
             
             this.userName = userName;
             this.password = password;
@@ -35,6 +35,7 @@ namespace EntitiesModel
             this.firstName = firstName;
             this.surName = surName;
             this.codArea = codArea;
+            this.codCountry = codCountry;
             this.telephone = telephone;
             this.enterprise = enterprise;
             this.email = email;

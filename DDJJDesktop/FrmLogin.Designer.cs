@@ -31,13 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.grpLogin = new System.Windows.Forms.GroupBox();
             this.btnVolver = new MaterialSkin.Controls.MaterialFloatingActionButton();
-            this.txtClave = new MaterialSkin.Controls.MaterialTextBox();
-            this.txtUsuario = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtPass = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtUser = new MaterialSkin.Controls.MaterialTextBox();
             this.txtIngresar = new MaterialSkin.Controls.MaterialButton();
             this.grpWelcome = new System.Windows.Forms.GroupBox();
             this.lblWelcome = new MaterialSkin.Controls.MaterialLabel();
             this.btnNoUser = new MaterialSkin.Controls.MaterialButton();
             this.btnWUser = new MaterialSkin.Controls.MaterialButton();
+            this.lblNotification = new System.Windows.Forms.Label();
             this.grpLogin.SuspendLayout();
             this.grpWelcome.SuspendLayout();
             this.SuspendLayout();
@@ -46,8 +47,8 @@
             // 
             this.grpLogin.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.grpLogin.Controls.Add(this.btnVolver);
-            this.grpLogin.Controls.Add(this.txtClave);
-            this.grpLogin.Controls.Add(this.txtUsuario);
+            this.grpLogin.Controls.Add(this.txtPass);
+            this.grpLogin.Controls.Add(this.txtUser);
             this.grpLogin.Controls.Add(this.txtIngresar);
             this.grpLogin.Location = new System.Drawing.Point(233, 127);
             this.grpLogin.Margin = new System.Windows.Forms.Padding(4);
@@ -74,49 +75,49 @@
             this.btnVolver.UseWaitCursor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // txtClave
+            // txtPass
             // 
-            this.txtClave.AnimateReadOnly = false;
-            this.txtClave.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtClave.Depth = 0;
-            this.txtClave.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtClave.Hint = "Contraseña";
-            this.txtClave.LeadingIcon = ((System.Drawing.Image)(resources.GetObject("txtClave.LeadingIcon")));
-            this.txtClave.Location = new System.Drawing.Point(62, 129);
-            this.txtClave.Margin = new System.Windows.Forms.Padding(4);
-            this.txtClave.MaxLength = 50;
-            this.txtClave.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtClave.Multiline = false;
-            this.txtClave.Name = "txtClave";
-            this.txtClave.Password = true;
-            this.txtClave.Size = new System.Drawing.Size(180, 36);
-            this.txtClave.TabIndex = 6;
-            this.txtClave.Text = "";
-            this.txtClave.TrailingIcon = null;
-            this.txtClave.UseTallSize = false;
-            this.txtClave.UseWaitCursor = true;
+            this.txtPass.AnimateReadOnly = false;
+            this.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPass.Depth = 0;
+            this.txtPass.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPass.Hint = "Contraseña";
+            this.txtPass.LeadingIcon = ((System.Drawing.Image)(resources.GetObject("txtPass.LeadingIcon")));
+            this.txtPass.Location = new System.Drawing.Point(62, 129);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPass.MaxLength = 50;
+            this.txtPass.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtPass.Multiline = false;
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Password = true;
+            this.txtPass.Size = new System.Drawing.Size(180, 36);
+            this.txtPass.TabIndex = 6;
+            this.txtPass.Text = "";
+            this.txtPass.TrailingIcon = null;
+            this.txtPass.UseTallSize = false;
+            this.txtPass.UseWaitCursor = true;
             // 
-            // txtUsuario
+            // txtUser
             // 
-            this.txtUsuario.AnimateReadOnly = false;
-            this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUsuario.Depth = 0;
-            this.txtUsuario.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtUsuario.Hint = "Usuario";
-            this.txtUsuario.LeadingIcon = ((System.Drawing.Image)(resources.GetObject("txtUsuario.LeadingIcon")));
-            this.txtUsuario.Location = new System.Drawing.Point(62, 72);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
-            this.txtUsuario.MaxLength = 50;
-            this.txtUsuario.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtUsuario.Multiline = false;
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.txtUsuario.Size = new System.Drawing.Size(180, 36);
-            this.txtUsuario.TabIndex = 5;
-            this.txtUsuario.Text = "";
-            this.txtUsuario.TrailingIcon = null;
-            this.txtUsuario.UseTallSize = false;
-            this.txtUsuario.UseWaitCursor = true;
+            this.txtUser.AnimateReadOnly = false;
+            this.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUser.Depth = 0;
+            this.txtUser.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtUser.Hint = "Usuario";
+            this.txtUser.LeadingIcon = ((System.Drawing.Image)(resources.GetObject("txtUser.LeadingIcon")));
+            this.txtUser.Location = new System.Drawing.Point(62, 72);
+            this.txtUser.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUser.MaxLength = 50;
+            this.txtUser.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtUser.Multiline = false;
+            this.txtUser.Name = "txtUser";
+            this.txtUser.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.txtUser.Size = new System.Drawing.Size(180, 36);
+            this.txtUser.TabIndex = 5;
+            this.txtUser.Text = "";
+            this.txtUser.TrailingIcon = null;
+            this.txtUser.UseTallSize = false;
+            this.txtUser.UseWaitCursor = true;
             // 
             // txtIngresar
             // 
@@ -145,7 +146,7 @@
             this.grpWelcome.Controls.Add(this.lblWelcome);
             this.grpWelcome.Controls.Add(this.btnNoUser);
             this.grpWelcome.Controls.Add(this.btnWUser);
-            this.grpWelcome.Location = new System.Drawing.Point(163, 68);
+            this.grpWelcome.Location = new System.Drawing.Point(148, 68);
             this.grpWelcome.Margin = new System.Windows.Forms.Padding(4);
             this.grpWelcome.Name = "grpWelcome";
             this.grpWelcome.Padding = new System.Windows.Forms.Padding(4);
@@ -159,7 +160,7 @@
             this.lblWelcome.Depth = 0;
             this.lblWelcome.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.lblWelcome.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-            this.lblWelcome.Location = new System.Drawing.Point(180, 37);
+            this.lblWelcome.Location = new System.Drawing.Point(171, 41);
             this.lblWelcome.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(126, 29);
@@ -184,6 +185,7 @@
             this.btnNoUser.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
             this.btnNoUser.UseAccentColor = false;
             this.btnNoUser.UseVisualStyleBackColor = true;
+            this.btnNoUser.Click += new System.EventHandler(this.btnNoUser_Click);
             // 
             // btnWUser
             // 
@@ -205,12 +207,27 @@
             this.btnWUser.UseVisualStyleBackColor = true;
             this.btnWUser.Click += new System.EventHandler(this.btnWUser_Click);
             // 
+            // lblNotification
+            // 
+            this.lblNotification.AutoSize = true;
+            this.lblNotification.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblNotification.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblNotification.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblNotification.Location = new System.Drawing.Point(277, 381);
+            this.lblNotification.Name = "lblNotification";
+            this.lblNotification.Padding = new System.Windows.Forms.Padding(5);
+            this.lblNotification.Size = new System.Drawing.Size(130, 31);
+            this.lblNotification.TabIndex = 4;
+            this.lblNotification.Text = "Ingreso exitoso!";
+            this.lblNotification.Visible = false;
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblNotification);
             this.Controls.Add(this.grpWelcome);
             this.Controls.Add(this.grpLogin);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -225,6 +242,7 @@
             this.grpWelcome.ResumeLayout(false);
             this.grpWelcome.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -235,9 +253,10 @@
         private MaterialSkin.Controls.MaterialButton btnWUser;
         private MaterialSkin.Controls.MaterialButton btnNoUser;
         private MaterialSkin.Controls.MaterialButton txtIngresar;
-        private MaterialSkin.Controls.MaterialTextBox txtClave;
-        private MaterialSkin.Controls.MaterialTextBox txtUsuario;
+        private MaterialSkin.Controls.MaterialTextBox txtPass;
+        private MaterialSkin.Controls.MaterialTextBox txtUser;
         private MaterialSkin.Controls.MaterialFloatingActionButton btnVolver;
         private MaterialSkin.Controls.MaterialLabel lblWelcome;
+        private Label lblNotification;
     }
 }

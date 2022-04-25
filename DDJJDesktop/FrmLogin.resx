@@ -66,7 +66,7 @@
         RU5ErkJggg==
 </value>
   </data>
-  <data name="txtClave.LeadingIcon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="txtPass.LeadingIcon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAdxJREFUaEPt
         l41Nw0AMRjsCIzACG8AGMAIbwAawCWxQNoANYAPYADYAPymWPt1P7pI2SYX8pCe1+Tv77uymuyAIgiAI
@@ -80,7 +80,7 @@
         AElFTkSuQmCC
 </value>
   </data>
-  <data name="txtUsuario.LeadingIcon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="txtUser.LeadingIcon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAw1JREFUaEPt
         mOFt3DAMhW+EjNARukE6QjdIN2g2aDdoNkg2SDZoN2g2SDZoN2j5AcfgHSHZpE53lx9+wAMMmSIpiaRo

@@ -67,3 +67,7 @@ C:\Users\pc250282\source\repos\DeclaracionJCOVID\DDJJDesktop\obj\Debug\net6.0-wi
 C:\Users\pc250282\source\repos\DeclaracionJCOVID\DDJJDesktop\obj\Debug\net6.0-windows\DDJJDesktop.pdb
 C:\Users\pc250282\source\repos\DeclaracionJCOVID\DDJJDesktop\obj\Debug\net6.0-windows\DDJJDesktop.genruntimeconfig.cache
 C:\Users\pc250282\source\repos\DeclaracionJCOVID\DDJJDesktop\obj\Debug\net6.0-windows\ref\DDJJDesktop.dll
+C:\Users\Usuario\source\repos\DDJJAdministrator\DDJJDesktop\bin\Debug\net6.0-windows\DataStore.dll
+C:\Users\Usuario\source\repos\DDJJAdministrator\DDJJDesktop\bin\Debug\net6.0-windows\Services.dll
+C:\Users\Usuario\source\repos\DDJJAdministrator\DDJJDesktop\bin\Debug\net6.0-windows\Services.pdb
+C:\Users\Usuario\source\repos\DDJJAdministrator\DDJJDesktop\bin\Debug\net6.0-windows\DataStore.pdb

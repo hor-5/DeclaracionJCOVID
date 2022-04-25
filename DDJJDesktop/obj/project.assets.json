@@ -23,6 +23,22 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "DataStore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "EntitiesModel": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DataStore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DataStore.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
       "EntitiesModel/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -32,6 +48,24 @@
         "runtime": {
           "bin/placeholder/EntitiesModel.dll": {}
         }
+      },
+      "Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "DataStore": "1.0.0",
+          "EntitiesModel": "1.0.0",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "bin/placeholder/Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Services.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
       }
     }
   },
@@ -80,33 +114,49 @@
         "packageIcon.png"
       ]
     },
+    "DataStore/1.0.0": {
+      "type": "project",
+      "path": "../DataStore/DataStore.csproj",
+      "msbuildProject": "../DataStore/DataStore.csproj"
+    },
     "EntitiesModel/1.0.0": {
       "type": "project",
       "path": "../EntitiesModel/EntitiesModel.csproj",
       "msbuildProject": "../EntitiesModel/EntitiesModel.csproj"
+    },
+    "Services/1.0.0": {
+      "type": "project",
+      "path": "../Services/Services.csproj",
+      "msbuildProject": "../Services/Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
       "EntitiesModel >= 1.0.0",
       "MaterialSkin.2 >= 2.3.1",
-      "Newtonsoft.Json >= 13.0.1"
+      "Newtonsoft.Json >= 13.0.1",
+      "Services >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\pc250282\\.nuget\\packages\\": {}
+    "C:\\Users\\Usuario\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pc250282\\source\\repos\\DeclaracionJCOVID\\DDJJDesktop\\DDJJDesktop.csproj",
+      "projectUniqueName": "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\DDJJDesktop\\DDJJDesktop.csproj",
       "projectName": "DDJJDesktop",
-      "projectPath": "C:\\Users\\pc250282\\source\\repos\\DeclaracionJCOVID\\DDJJDesktop\\DDJJDesktop.csproj",
-      "packagesPath": "C:\\Users\\pc250282\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pc250282\\source\\repos\\DeclaracionJCOVID\\DDJJDesktop\\obj\\",
+      "projectPath": "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\DDJJDesktop\\DDJJDesktop.csproj",
+      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\DDJJDesktop\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\pc250282\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -120,8 +170,11 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\pc250282\\source\\repos\\DeclaracionJCOVID\\EntitiesModel\\EntitiesModel.csproj": {
-              "projectPath": "C:\\Users\\pc250282\\source\\repos\\DeclaracionJCOVID\\EntitiesModel\\EntitiesModel.csproj"
+            "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\EntitiesModel\\EntitiesModel.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\EntitiesModel\\EntitiesModel.csproj"
+            },
+            "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\Services\\Services.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\Services\\Services.csproj"
             }
           }
         }
@@ -163,7 +216,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

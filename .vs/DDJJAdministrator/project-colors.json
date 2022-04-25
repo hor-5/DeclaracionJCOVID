@@ -15,7 +15,17 @@
       "ProjectGuid": "d7e67fd5-af9b-4ac5-8a8a-56ccebcf9d25",
       "DisplayName": "EntitiesModel",
       "ColorIndex": 2
+    },
+    "0bdd1061-9578-42cf-a2a2-a0e80443cf87": {
+      "ProjectGuid": "0bdd1061-9578-42cf-a2a2-a0e80443cf87",
+      "DisplayName": "Services",
+      "ColorIndex": 3
+    },
+    "3e1b494f-e692-4cf4-9586-39b057222589": {
+      "ProjectGuid": "3e1b494f-e692-4cf4-9586-39b057222589",
+      "DisplayName": "DataStore",
+      "ColorIndex": 4
     }
   },
-  "NextColorIndex": 3
+  "NextColorIndex": 5
 }

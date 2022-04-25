@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pc250282\\source\\repos\\DeclaracionJCOVID\\Services\\Services.csproj": {}
+    "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\Services\\Services.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pc250282\\source\\repos\\DeclaracionJCOVID\\Services\\Services.csproj": {
+    "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\DataStore\\DataStore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pc250282\\source\\repos\\DeclaracionJCOVID\\Services\\Services.csproj",
-        "projectName": "Services",
-        "projectPath": "C:\\Users\\pc250282\\source\\repos\\DeclaracionJCOVID\\Services\\Services.csproj",
-        "packagesPath": "C:\\Users\\pc250282\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pc250282\\source\\repos\\DeclaracionJCOVID\\Services\\obj\\",
+        "projectUniqueName": "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\DataStore\\DataStore.csproj",
+        "projectName": "DataStore",
+        "projectPath": "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\DataStore\\DataStore.csproj",
+        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\DataStore\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\pc250282\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -27,7 +31,11 @@
         "frameworks": {
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\EntitiesModel\\EntitiesModel.csproj": {
+                "projectPath": "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\EntitiesModel\\EntitiesModel.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -57,7 +65,139 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\EntitiesModel\\EntitiesModel.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\EntitiesModel\\EntitiesModel.csproj",
+        "projectName": "EntitiesModel",
+        "projectPath": "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\EntitiesModel\\EntitiesModel.csproj",
+        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\EntitiesModel\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\Services\\Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\Services\\Services.csproj",
+        "projectName": "Services",
+        "projectPath": "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\Services\\Services.csproj",
+        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0-windows7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0-windows7.0": {
+            "targetAlias": "net6.0-windows",
+            "projectReferences": {
+              "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\DataStore\\DataStore.csproj": {
+                "projectPath": "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\DataStore\\DataStore.csproj"
+              },
+              "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\EntitiesModel\\EntitiesModel.csproj": {
+                "projectPath": "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\EntitiesModel\\EntitiesModel.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

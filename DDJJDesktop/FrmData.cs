@@ -1,4 +1,5 @@
 ﻿using EntitiesModel;
+using Services;
 using MaterialSkin.Controls;
 using Newtonsoft.Json;
 using System;
@@ -14,10 +15,12 @@ using System.Windows.Forms;
 
 namespace DDJJDesktop
 {
+    
     public partial class FrmData : MaterialForm
     {
-        readonly MaterialSkin.MaterialSkinManager materialSkinManager;
-        private string url;
+        readonly MaterialSkin.MaterialSkinManager materialSkinManager;        
+        private User user;
+        private HTTPRequests httpRequests;
         public FrmData()
         {
             InitializeComponent();
@@ -26,27 +29,73 @@ namespace DDJJDesktop
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Indigo500, MaterialSkin.Primary.Indigo700, MaterialSkin.Primary.Indigo100, MaterialSkin.Accent.Blue400, MaterialSkin.TextShade.WHITE);
+
+            fillSelects();
         }
 
-        private async void FrmData_Load(object sender, EventArgs e)
+        public FrmData(User currentUser)
         {
-            string countrys = await getCountrys();
+            InitializeComponent();
+            materialSkinManager = MaterialSkin.MaterialSkinManager.Instance;
+            materialSkinManager.EnforceBackcolorOnAllComponents = true;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Indigo500, MaterialSkin.Primary.Indigo700, MaterialSkin.Primary.Indigo100, MaterialSkin.Accent.Blue400, MaterialSkin.TextShade.WHITE);
+
+            fillTextBox(currentUser);
+
+        }
+
+        private void FrmData_Load(object sender, EventArgs e)
+        {
+                  
+
+        }
+
+        private void fillTextBox(User currentUser)
+        {
+            txtDni.Text = currentUser.dni;
+            txtDni.Enabled = false;
+            txtName.Text = currentUser.firstName;
+            txtName.Enabled = false;
+            txtSurname.Text = currentUser.surName;
+            txtSurname.Enabled = false;
+            sltCodArea.Items.Add(currentUser.codCountry);
+            sltCodArea.SelectedIndex = 0;
+            sltCodArea.Enabled = false;
+            txtCodArea.Text = currentUser.codArea;
+            txtCodArea.Enabled = false;
+            txtTelNumber.Text = currentUser.telephone;
+            txtTelNumber.Enabled = false;            
+            txtEnterprise.Text = currentUser.enterprise;
+            txtEnterprise.Enabled = false;
+            txtMail.Text = currentUser.email.Address;
+            txtMail.Enabled = false;
+            sltGender.Items.Add(currentUser.gender);
+            sltGender.SelectedIndex = 0;
+            sltGender.Enabled = false;            
+            sltDate.Value = currentUser.birthday;
+            sltDate.Enabled = false;            
+            txtAge.Text = currentUser.age.ToString();
+            txtAge.Enabled = false;
+            sltNationality.Items.Add(currentUser.nationality);
+            sltNationality.SelectedIndex = 0;
+            sltNationality.Enabled = false;
+            sltResidence.Items.Add(currentUser.residenceCountry);
+            sltResidence.SelectedIndex = 0;
+            sltResidence.Enabled = false;
+
+        }
+        private async void fillSelects() {
+            httpRequests = new HTTPRequests();
+            string countrys = await httpRequests.getCountrys();
             List<Country> lstCountries = JsonConvert.DeserializeObject<List<Country>>(countrys);
-            foreach (Country country in lstCountries) {
+            foreach (Country country in lstCountries)
+            {
                 sltNationality.Items.Add(country.name.common);
                 sltResidence.Items.Add(country.name.common);
-                sltCodArea.Items.Add(country.name.common + ": " + (country.idd.root != null ? country.idd.root : "-") + (country.idd.suffixes != null ? country.idd.suffixes[0] : "-") );
+                sltCodArea.Items.Add(country.name.common + ": " + (country.idd.root != null ? country.idd.root : "-") + (country.idd.suffixes != null ? country.idd.suffixes[0] : "-"));
             }
-
-        }
-
-        private async Task<string> getCountrys() {
-            url = "https://restcountries.com/v3.1/all";
-            WebRequest webRequest = WebRequest.Create(url);
-            WebResponse response = webRequest.GetResponse();
-            StreamReader sreader = new StreamReader(response.GetResponseStream());
-            
-            return await sreader.ReadToEndAsync();
         }
 
         private void btnNext_Click(object sender, EventArgs e)

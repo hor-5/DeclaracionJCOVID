@@ -537,6 +537,7 @@
             this.sltDate.Name = "sltDate";
             this.sltDate.Size = new System.Drawing.Size(194, 23);
             this.sltDate.TabIndex = 14;
+            this.sltDate.Value = new System.DateTime(2022, 4, 24, 0, 0, 0, 0);
             // 
             // materialLabel3
             // 

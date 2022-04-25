@@ -1,26 +1,109 @@
 {
   "version": 3,
   "targets": {
-    "net6.0-windows7.0": {}
+    "net6.0-windows7.0": {
+      "Newtonsoft.Json/13.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "DataStore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "EntitiesModel": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DataStore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DataStore.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "EntitiesModel/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/EntitiesModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EntitiesModel.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Newtonsoft.Json/13.0.1": {
+      "sha512": "ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+      "type": "package",
+      "path": "newtonsoft.json/13.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.1.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    },
+    "DataStore/1.0.0": {
+      "type": "project",
+      "path": "../DataStore/DataStore.csproj",
+      "msbuildProject": "../DataStore/DataStore.csproj"
+    },
+    "EntitiesModel/1.0.0": {
+      "type": "project",
+      "path": "../EntitiesModel/EntitiesModel.csproj",
+      "msbuildProject": "../EntitiesModel/EntitiesModel.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0-windows7.0": []
+    "net6.0-windows7.0": [
+      "DataStore >= 1.0.0",
+      "EntitiesModel >= 1.0.0",
+      "Newtonsoft.Json >= 13.0.1"
+    ]
   },
   "packageFolders": {
-    "C:\\Users\\pc250282\\.nuget\\packages\\": {}
+    "C:\\Users\\Usuario\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pc250282\\source\\repos\\DeclaracionJCOVID\\Services\\Services.csproj",
+      "projectUniqueName": "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\Services\\Services.csproj",
       "projectName": "Services",
-      "projectPath": "C:\\Users\\pc250282\\source\\repos\\DeclaracionJCOVID\\Services\\Services.csproj",
-      "packagesPath": "C:\\Users\\pc250282\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pc250282\\source\\repos\\DeclaracionJCOVID\\Services\\obj\\",
+      "projectPath": "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\Services\\Services.csproj",
+      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\Services\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\pc250282\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -33,7 +116,14 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\DataStore\\DataStore.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\DataStore\\DataStore.csproj"
+            },
+            "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\EntitiesModel\\EntitiesModel.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\EntitiesModel\\EntitiesModel.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -45,6 +135,12 @@
     "frameworks": {
       "net6.0-windows7.0": {
         "targetAlias": "net6.0-windows",
+        "dependencies": {
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.1, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -63,7 +159,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
