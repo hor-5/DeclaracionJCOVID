@@ -10,3 +10,15 @@ C:\Users\Usuario\source\repos\DDJJAdministrator\EntitiesModel\obj\Debug\net6.0\E
 C:\Users\Usuario\source\repos\DDJJAdministrator\EntitiesModel\obj\Debug\net6.0\EntitiesModel.dll
 C:\Users\Usuario\source\repos\DDJJAdministrator\EntitiesModel\obj\Debug\net6.0\ref\EntitiesModel.dll
 C:\Users\Usuario\source\repos\DDJJAdministrator\EntitiesModel\obj\Debug\net6.0\EntitiesModel.pdb
+C:\Users\pc250282\source\repos\DeclaracionJCOVID\EntitiesModel\bin\Debug\net6.0\EntitiesModel.deps.json
+C:\Users\pc250282\source\repos\DeclaracionJCOVID\EntitiesModel\bin\Debug\net6.0\EntitiesModel.dll
+C:\Users\pc250282\source\repos\DeclaracionJCOVID\EntitiesModel\bin\Debug\net6.0\EntitiesModel.pdb
+C:\Users\pc250282\source\repos\DeclaracionJCOVID\EntitiesModel\obj\Debug\net6.0\EntitiesModel.csproj.AssemblyReference.cache
+C:\Users\pc250282\source\repos\DeclaracionJCOVID\EntitiesModel\obj\Debug\net6.0\EntitiesModel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pc250282\source\repos\DeclaracionJCOVID\EntitiesModel\obj\Debug\net6.0\EntitiesModel.AssemblyInfoInputs.cache
+C:\Users\pc250282\source\repos\DeclaracionJCOVID\EntitiesModel\obj\Debug\net6.0\EntitiesModel.AssemblyInfo.cs
+C:\Users\pc250282\source\repos\DeclaracionJCOVID\EntitiesModel\obj\Debug\net6.0\EntitiesModel.csproj.CoreCompileInputs.cache
+C:\Users\pc250282\source\repos\DeclaracionJCOVID\EntitiesModel\obj\Debug\net6.0\EntitiesModel.dll
+C:\Users\pc250282\source\repos\DeclaracionJCOVID\EntitiesModel\obj\Debug\net6.0\refint\EntitiesModel.dll
+C:\Users\pc250282\source\repos\DeclaracionJCOVID\EntitiesModel\obj\Debug\net6.0\EntitiesModel.pdb
+C:\Users\pc250282\source\repos\DeclaracionJCOVID\EntitiesModel\obj\Debug\net6.0\ref\EntitiesModel.dll
