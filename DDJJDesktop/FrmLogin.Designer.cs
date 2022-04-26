@@ -38,9 +38,10 @@
             this.lblWelcome = new MaterialSkin.Controls.MaterialLabel();
             this.btnNoUser = new MaterialSkin.Controls.MaterialButton();
             this.btnWUser = new MaterialSkin.Controls.MaterialButton();
-            this.lblNotification = new System.Windows.Forms.Label();
+            this.imgNotification = new System.Windows.Forms.PictureBox();
             this.grpLogin.SuspendLayout();
             this.grpWelcome.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgNotification)).BeginInit();
             this.SuspendLayout();
             // 
             // grpLogin
@@ -118,6 +119,7 @@
             this.txtUser.TrailingIcon = null;
             this.txtUser.UseTallSize = false;
             this.txtUser.UseWaitCursor = true;
+            this.txtUser.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUser_KeyDown);
             // 
             // txtIngresar
             // 
@@ -146,11 +148,11 @@
             this.grpWelcome.Controls.Add(this.lblWelcome);
             this.grpWelcome.Controls.Add(this.btnNoUser);
             this.grpWelcome.Controls.Add(this.btnWUser);
-            this.grpWelcome.Location = new System.Drawing.Point(148, 68);
+            this.grpWelcome.Location = new System.Drawing.Point(148, 82);
             this.grpWelcome.Margin = new System.Windows.Forms.Padding(4);
             this.grpWelcome.Name = "grpWelcome";
             this.grpWelcome.Padding = new System.Windows.Forms.Padding(4);
-            this.grpWelcome.Size = new System.Drawing.Size(476, 357);
+            this.grpWelcome.Size = new System.Drawing.Size(476, 295);
             this.grpWelcome.TabIndex = 3;
             this.grpWelcome.TabStop = false;
             // 
@@ -158,12 +160,12 @@
             // 
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Depth = 0;
-            this.lblWelcome.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.lblWelcome.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-            this.lblWelcome.Location = new System.Drawing.Point(171, 41);
+            this.lblWelcome.Font = new System.Drawing.Font("Roboto", 34F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lblWelcome.FontType = MaterialSkin.MaterialSkinManager.fontType.H4;
+            this.lblWelcome.Location = new System.Drawing.Point(150, 20);
             this.lblWelcome.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(126, 29);
+            this.lblWelcome.Size = new System.Drawing.Size(175, 41);
             this.lblWelcome.TabIndex = 5;
             this.lblWelcome.Text = "Bienvenido!";
             // 
@@ -207,19 +209,17 @@
             this.btnWUser.UseVisualStyleBackColor = true;
             this.btnWUser.Click += new System.EventHandler(this.btnWUser_Click);
             // 
-            // lblNotification
+            // imgNotification
             // 
-            this.lblNotification.AutoSize = true;
-            this.lblNotification.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblNotification.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblNotification.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblNotification.Location = new System.Drawing.Point(277, 381);
-            this.lblNotification.Name = "lblNotification";
-            this.lblNotification.Padding = new System.Windows.Forms.Padding(5);
-            this.lblNotification.Size = new System.Drawing.Size(130, 31);
-            this.lblNotification.TabIndex = 4;
-            this.lblNotification.Text = "Ingreso exitoso!";
-            this.lblNotification.Visible = false;
+            this.imgNotification.Image = ((System.Drawing.Image)(resources.GetObject("imgNotification.Image")));
+            this.imgNotification.InitialImage = ((System.Drawing.Image)(resources.GetObject("imgNotification.InitialImage")));
+            this.imgNotification.Location = new System.Drawing.Point(260, 384);
+            this.imgNotification.Name = "imgNotification";
+            this.imgNotification.Size = new System.Drawing.Size(236, 59);
+            this.imgNotification.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgNotification.TabIndex = 4;
+            this.imgNotification.TabStop = false;
+            this.imgNotification.Visible = false;
             // 
             // FrmLogin
             // 
@@ -227,7 +227,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lblNotification);
+            this.Controls.Add(this.imgNotification);
             this.Controls.Add(this.grpWelcome);
             this.Controls.Add(this.grpLogin);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -241,8 +241,8 @@
             this.grpLogin.PerformLayout();
             this.grpWelcome.ResumeLayout(false);
             this.grpWelcome.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgNotification)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -257,6 +257,6 @@
         private MaterialSkin.Controls.MaterialTextBox txtUser;
         private MaterialSkin.Controls.MaterialFloatingActionButton btnVolver;
         private MaterialSkin.Controls.MaterialLabel lblWelcome;
-        private Label lblNotification;
+        private PictureBox imgNotification;
     }
 }

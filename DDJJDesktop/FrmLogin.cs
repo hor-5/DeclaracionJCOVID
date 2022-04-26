@@ -17,7 +17,7 @@ namespace DDJJDesktop
     {
         readonly MaterialSkin.MaterialSkinManager materialSkinManager;
         private SecurityServices securityServices = new SecurityServices();
-
+        private System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
         public FrmLogin()
         {
             InitializeComponent();
@@ -39,28 +39,42 @@ namespace DDJJDesktop
         {
             grpLogin.Visible = false;
             grpWelcome.Visible = true;
-            lblNotification.Visible = false;
+            imgNotification.Visible = false;
         }
 
         private void txtIngresar_Click(object sender, EventArgs e)
         {            
             User currentUser = securityServices.login(txtUser.Text,txtPass.Text);
-            FrmData frmData = new FrmData(currentUser);
+            
             if (currentUser != null)
             {
+                showNotification("success");
+                FrmData frmData = new FrmData(currentUser);
                 frmData.Show();
                 this.Hide();
-                lblNotification.Visible = true;
-                lblNotification.BackColor = Color.Green;
+                
+                
             }
-            else {
-
-                lblNotification.Visible = true;
-                lblNotification.Text = "Los datos ingresados son incorrectos!";
-                lblNotification.BackColor = Color.Red;
-                lblNotification.ForeColor = Color.AntiqueWhite;
+            else {                
+                showNotification("danger");
             }
 
+        }
+
+ 
+        public void showNotification(string type) {
+            imgNotification.Visible = true;
+            string imagePath;
+            if (type == "success")
+            {
+                imagePath = Path.Combine(Application.StartupPath, "../../../img/notificacionIngreso.png");
+                imgNotification.Image = Image.FromFile(imagePath);                 
+            }
+            else if (type == "danger") {
+                imagePath = Path.Combine(Application.StartupPath, "../../../img/errorIngreso.png");
+                imgNotification.Image = Image.FromFile(imagePath);
+            }          
+            
         }
 
         private void btnNoUser_Click(object sender, EventArgs e)
@@ -68,6 +82,11 @@ namespace DDJJDesktop
             FrmData frmData = new FrmData();
             frmData.Show();
             this.Hide();
+        }
+
+        private void txtUser_KeyDown(object sender, KeyEventArgs e)
+        {
+            imgNotification.Visible = false;
         }
     }
 }

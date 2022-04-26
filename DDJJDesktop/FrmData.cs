@@ -47,8 +47,7 @@ namespace DDJJDesktop
         }
 
         private void FrmData_Load(object sender, EventArgs e)
-        {
-                  
+        {                  
 
         }
 
