@@ -167,9 +167,9 @@ namespace DDJJDesktop
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            string imagePath = Path.Combine(Application.StartupPath, "../../../img/success.png");
+            string imagePath = Path.Combine(Application.StartupPath, "../../../img/successNotification.png");
             imgResult.Image = Image.FromFile(imagePath);
-            imgResult.Location = new System.Drawing.Point(195, 60);
+            imgResult.Location = new System.Drawing.Point(160, 60);
             materialCard4.Visible = false;
             materialCard5.Visible = false;
             materialCard6.Visible = false;
