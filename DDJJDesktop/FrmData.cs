@@ -59,8 +59,8 @@ namespace DDJJDesktop
             txtName.Enabled = false;
             txtSurname.Text = currentUser.surName;
             txtSurname.Enabled = false;
-            sltCodArea.Items.Add(currentUser.codCountry);
-            sltCodArea.SelectedIndex = 0;
+            sltCodArea.Items.Add(currentUser.codCountry);            
+            sltCodArea.SelectedItem = currentUser.codCountry;
             sltCodArea.Enabled = false;
             txtCodArea.Text = currentUser.codArea;
             txtCodArea.Enabled = false;
@@ -70,18 +70,18 @@ namespace DDJJDesktop
             txtEnterprise.Enabled = false;
             txtMail.Text = currentUser.email.Address;
             txtMail.Enabled = false;
-            sltGender.Items.Add(currentUser.gender);
-            sltGender.SelectedIndex = 0;
+            sltGender.Items.Add(currentUser.gender);            
+            sltGender.SelectedItem = currentUser.gender;
             sltGender.Enabled = false;            
             sltDate.Value = currentUser.birthday;
             sltDate.Enabled = false;            
             txtAge.Text = currentUser.age.ToString();
             txtAge.Enabled = false;
-            sltNationality.Items.Add(currentUser.nationality);
-            sltNationality.SelectedIndex = 0;
+            sltNationality.Items.Add(currentUser.nationality);            
+            sltNationality.SelectedItem = currentUser.nationality;
             sltNationality.Enabled = false;
-            sltResidence.Items.Add(currentUser.residenceCountry);
-            sltResidence.SelectedIndex = 0;
+            sltResidence.Items.Add(currentUser.residenceCountry);            
+            sltResidence.SelectedItem = currentUser.residenceCountry;
             sltResidence.Enabled = false;
 
         }
@@ -167,16 +167,52 @@ namespace DDJJDesktop
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            string imagePath = Path.Combine(Application.StartupPath, "../../../img/successNotification.png");
-            imgResult.Image = Image.FromFile(imagePath);
-            imgResult.Location = new System.Drawing.Point(160, 60);
-            materialCard4.Visible = false;
-            materialCard5.Visible = false;
-            materialCard6.Visible = false;
-            cardSy.Visible = false;
-            btnConfirm.Visible = false;
-            btnBack3.Visible = false;
-            TabSelector.Visible = false;
+            if (requiredFieldsTab1())
+            {
+                if (requiredFieldsTab2())
+                {
+                    if (requiredFieldsTab3()) {
+                        if (declarationResult())
+                        {
+                            string imagePath = Path.Combine(Application.StartupPath, "../../../img/successNotification.png");
+                            imgResult.Image = Image.FromFile(imagePath);
+                            imgResult.Location = new System.Drawing.Point(160, 60);
+                            materialCard4.Visible = false;
+                            materialCard5.Visible = false;
+                            materialCard6.Visible = false;
+                            cardSy.Visible = false;
+                            btnConfirm.Visible = false;
+                            btnBack3.Visible = false;
+                            TabSelector.Visible = false;
+                        }
+                        else {
+                            string imagePath = Path.Combine(Application.StartupPath, "../../../img/errorNotification.png");
+                            imgResult.Image = Image.FromFile(imagePath);
+                            imgResult.Location = new System.Drawing.Point(160, 60);
+                            materialCard4.Visible = false;
+                            materialCard5.Visible = false;
+                            materialCard6.Visible = false;
+                            cardSy.Visible = false;
+                            btnConfirm.Visible = false;
+                            btnBack3.Visible = false;
+                            TabSelector.Visible = false;
+                        }
+                    }
+                    else {
+                        imgAlertTab3.Visible = true;
+                    }
+                }
+                else {
+                    tbForm.SelectedIndex = 1;
+                    imgAlertTab2.Visible = true;
+                }
+
+            }
+            else {
+                tbForm.SelectedIndex = 0;
+                imgAlert.Visible = true;
+            }
+
         }
 
         private void CalulateAge(DateTime birthday) {
@@ -226,6 +262,66 @@ namespace DDJJDesktop
         private void sltDate_KeyDown(object sender, KeyEventArgs e)
         {
             CalulateAge(sltDate.Value);
+        }
+
+        private bool requiredFieldsTab1() {
+            bool result = false;
+            if (txtDni.Text.Length>=1 && txtName.Text.Length>=1 && txtSurname.Text.Length>=1 &&
+                sltCodArea.SelectedItem!=null && txtCodArea.Text.Length>=1 &&
+                txtTelNumber.Text.Length>=1 && txtEnterprise.Text.Length>=1 && txtMail.Text.Length>=1 &&
+                sltGender.SelectedItem!=null && sltNationality.SelectedItem!=null &&
+                sltResidence.SelectedItem!=null) {
+
+                result = true;
+            }
+
+            return result;
+        }
+
+        private bool requiredFieldsTab2() {
+            bool result = false;
+            if ((optRGroupYes.Checked || optRGroupNo.Checked) && 
+                (optVacYes.Checked || optVacNo.Checked) &&
+                (optTravelerY.Checked || optTravelerN.Checked) ) {
+                result = true;
+            }
+            return result;
+        }
+
+        private bool requiredFieldsTab3() {
+            bool result = false;
+            if ((optYTravelOth.Checked || optNTravelOth.Checked)&&
+                (optYCContact.Checked||optNCContact.Checked)&&
+                (optCloseContactY.Checked||optCloseContactN.Checked)&&
+                (optSymY.Checked||optSymN.Checked)) {
+                result = true;
+            }
+            return result;
+        }
+
+        private bool declarationResult() {
+            bool result = true;
+            if ( optVacNo.Checked || optSymY.Checked || 
+                optYCContact.Checked || optCloseContactY.Checked ) {
+                result = false;
+
+            }
+            return result;
+        }
+
+        private void imgAlert_Click(object sender, EventArgs e)
+        {
+            imgAlert.Visible = false;
+        }
+
+        private void imgAlertTab2_Click(object sender, EventArgs e)
+        {
+            imgAlertTab2.Visible = false;
+        }
+
+        private void imgAlertTab3_Click(object sender, EventArgs e)
+        {
+            imgAlertTab3.Visible = false;
         }
     }
 }

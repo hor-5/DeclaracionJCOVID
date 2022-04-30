@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmData));
             this.tbForm = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.imgAlert = new System.Windows.Forms.PictureBox();
             this.txtSurname = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.txtName = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.txtTelNumber = new MaterialSkin.Controls.MaterialMaskedTextBox();
@@ -51,6 +52,7 @@
             this.txtEnterprise = new MaterialSkin.Controls.MaterialTextBox2();
             this.btnNext = new MaterialSkin.Controls.MaterialButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.imgAlertTab2 = new System.Windows.Forms.PictureBox();
             this.cardVaccine = new MaterialSkin.Controls.MaterialCard();
             this.optVacNo = new MaterialSkin.Controls.MaterialRadioButton();
             this.optVacYes = new MaterialSkin.Controls.MaterialRadioButton();
@@ -65,8 +67,8 @@
             this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
             this.lblGroupRisk2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard3 = new MaterialSkin.Controls.MaterialCard();
-            this.materialRadioButton1 = new MaterialSkin.Controls.MaterialRadioButton();
-            this.materialRadioButton2 = new MaterialSkin.Controls.MaterialRadioButton();
+            this.optTravelerN = new MaterialSkin.Controls.MaterialRadioButton();
+            this.optTravelerY = new MaterialSkin.Controls.MaterialRadioButton();
             this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
             this.lblInDate = new MaterialSkin.Controls.MaterialLabel();
@@ -83,8 +85,8 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.cardSy = new MaterialSkin.Controls.MaterialCard();
             this.btnSy = new MaterialSkin.Controls.MaterialButton();
-            this.materialRadioButton5 = new MaterialSkin.Controls.MaterialRadioButton();
-            this.materialRadioButton6 = new MaterialSkin.Controls.MaterialRadioButton();
+            this.optSymN = new MaterialSkin.Controls.MaterialRadioButton();
+            this.optSymY = new MaterialSkin.Controls.MaterialRadioButton();
             this.materialLabel33 = new MaterialSkin.Controls.MaterialLabel();
             this.imgResult = new System.Windows.Forms.PictureBox();
             this.ModalSy = new MaterialSkin.Controls.MaterialCard();
@@ -102,8 +104,8 @@
             this.materialLabel28 = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard6 = new MaterialSkin.Controls.MaterialCard();
             this.materialLabel19 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialRadioButton3 = new MaterialSkin.Controls.MaterialRadioButton();
-            this.materialRadioButton4 = new MaterialSkin.Controls.MaterialRadioButton();
+            this.optCloseContactN = new MaterialSkin.Controls.MaterialRadioButton();
+            this.optCloseContactY = new MaterialSkin.Controls.MaterialRadioButton();
             this.materialLabel20 = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard5 = new MaterialSkin.Controls.MaterialCard();
             this.materialLabel18 = new MaterialSkin.Controls.MaterialLabel();
@@ -119,9 +121,12 @@
             this.btnBack3 = new MaterialSkin.Controls.MaterialButton();
             this.btnConfirm = new MaterialSkin.Controls.MaterialButton();
             this.TabSelector = new MaterialSkin.Controls.MaterialTabSelector();
+            this.imgAlertTab3 = new System.Windows.Forms.PictureBox();
             this.tbForm.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAlert)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAlertTab2)).BeginInit();
             this.cardVaccine.SuspendLayout();
             this.cardModalGR.SuspendLayout();
             this.materialCard3.SuspendLayout();
@@ -134,6 +139,7 @@
             this.materialCard6.SuspendLayout();
             this.materialCard5.SuspendLayout();
             this.materialCard4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAlertTab3)).BeginInit();
             this.SuspendLayout();
             // 
             // tbForm
@@ -153,6 +159,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Transparent;
+            this.tabPage1.Controls.Add(this.imgAlert);
             this.tabPage1.Controls.Add(this.txtSurname);
             this.tabPage1.Controls.Add(this.txtName);
             this.tabPage1.Controls.Add(this.txtTelNumber);
@@ -179,6 +186,17 @@
             this.tabPage1.Size = new System.Drawing.Size(787, 451);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "1";
+            // 
+            // imgAlert
+            // 
+            this.imgAlert.Image = ((System.Drawing.Image)(resources.GetObject("imgAlert.Image")));
+            this.imgAlert.Location = new System.Drawing.Point(300, 360);
+            this.imgAlert.Name = "imgAlert";
+            this.imgAlert.Size = new System.Drawing.Size(327, 84);
+            this.imgAlert.TabIndex = 88;
+            this.imgAlert.TabStop = false;
+            this.imgAlert.Visible = false;
+            this.imgAlert.Click += new System.EventHandler(this.imgAlert_Click);
             // 
             // txtSurname
             // 
@@ -565,7 +583,7 @@
             this.sltGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.sltGender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.sltGender.FormattingEnabled = true;
-            this.sltGender.Hint = "Genero";
+            this.sltGender.Hint = "Seleccione genero";
             this.sltGender.IntegralHeight = false;
             this.sltGender.ItemHeight = 29;
             this.sltGender.Items.AddRange(new object[] {
@@ -708,6 +726,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.imgAlertTab2);
             this.tabPage2.Controls.Add(this.cardVaccine);
             this.tabPage2.Controls.Add(this.cardModalGR);
             this.tabPage2.Controls.Add(this.materialCard3);
@@ -723,6 +742,17 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // imgAlertTab2
+            // 
+            this.imgAlertTab2.Image = ((System.Drawing.Image)(resources.GetObject("imgAlertTab2.Image")));
+            this.imgAlertTab2.Location = new System.Drawing.Point(240, 381);
+            this.imgAlertTab2.Name = "imgAlertTab2";
+            this.imgAlertTab2.Size = new System.Drawing.Size(327, 84);
+            this.imgAlertTab2.TabIndex = 89;
+            this.imgAlertTab2.TabStop = false;
+            this.imgAlertTab2.Visible = false;
+            this.imgAlertTab2.Click += new System.EventHandler(this.imgAlertTab2_Click);
             // 
             // cardVaccine
             // 
@@ -925,8 +955,8 @@
             // materialCard3
             // 
             this.materialCard3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard3.Controls.Add(this.materialRadioButton1);
-            this.materialCard3.Controls.Add(this.materialRadioButton2);
+            this.materialCard3.Controls.Add(this.optTravelerN);
+            this.materialCard3.Controls.Add(this.optTravelerY);
             this.materialCard3.Controls.Add(this.materialLabel8);
             this.materialCard3.Depth = 0;
             this.materialCard3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -938,37 +968,37 @@
             this.materialCard3.Size = new System.Drawing.Size(302, 161);
             this.materialCard3.TabIndex = 6;
             // 
-            // materialRadioButton1
+            // optTravelerN
             // 
-            this.materialRadioButton1.AutoSize = true;
-            this.materialRadioButton1.Depth = 0;
-            this.materialRadioButton1.Location = new System.Drawing.Point(157, 73);
-            this.materialRadioButton1.Margin = new System.Windows.Forms.Padding(0);
-            this.materialRadioButton1.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialRadioButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRadioButton1.Name = "materialRadioButton1";
-            this.materialRadioButton1.Ripple = true;
-            this.materialRadioButton1.Size = new System.Drawing.Size(55, 37);
-            this.materialRadioButton1.TabIndex = 3;
-            this.materialRadioButton1.TabStop = true;
-            this.materialRadioButton1.Text = "No";
-            this.materialRadioButton1.UseVisualStyleBackColor = true;
+            this.optTravelerN.AutoSize = true;
+            this.optTravelerN.Depth = 0;
+            this.optTravelerN.Location = new System.Drawing.Point(157, 73);
+            this.optTravelerN.Margin = new System.Windows.Forms.Padding(0);
+            this.optTravelerN.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.optTravelerN.MouseState = MaterialSkin.MouseState.HOVER;
+            this.optTravelerN.Name = "optTravelerN";
+            this.optTravelerN.Ripple = true;
+            this.optTravelerN.Size = new System.Drawing.Size(55, 37);
+            this.optTravelerN.TabIndex = 3;
+            this.optTravelerN.TabStop = true;
+            this.optTravelerN.Text = "No";
+            this.optTravelerN.UseVisualStyleBackColor = true;
             // 
-            // materialRadioButton2
+            // optTravelerY
             // 
-            this.materialRadioButton2.AutoSize = true;
-            this.materialRadioButton2.Depth = 0;
-            this.materialRadioButton2.Location = new System.Drawing.Point(61, 73);
-            this.materialRadioButton2.Margin = new System.Windows.Forms.Padding(0);
-            this.materialRadioButton2.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialRadioButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRadioButton2.Name = "materialRadioButton2";
-            this.materialRadioButton2.Ripple = true;
-            this.materialRadioButton2.Size = new System.Drawing.Size(49, 37);
-            this.materialRadioButton2.TabIndex = 2;
-            this.materialRadioButton2.TabStop = true;
-            this.materialRadioButton2.Text = "Si";
-            this.materialRadioButton2.UseVisualStyleBackColor = true;
+            this.optTravelerY.AutoSize = true;
+            this.optTravelerY.Depth = 0;
+            this.optTravelerY.Location = new System.Drawing.Point(61, 73);
+            this.optTravelerY.Margin = new System.Windows.Forms.Padding(0);
+            this.optTravelerY.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.optTravelerY.MouseState = MaterialSkin.MouseState.HOVER;
+            this.optTravelerY.Name = "optTravelerY";
+            this.optTravelerY.Ripple = true;
+            this.optTravelerY.Size = new System.Drawing.Size(49, 37);
+            this.optTravelerY.TabIndex = 2;
+            this.optTravelerY.TabStop = true;
+            this.optTravelerY.Text = "Si";
+            this.optTravelerY.UseVisualStyleBackColor = true;
             // 
             // materialLabel8
             // 
@@ -1194,6 +1224,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.imgAlertTab3);
             this.tabPage3.Controls.Add(this.cardSy);
             this.tabPage3.Controls.Add(this.imgResult);
             this.tabPage3.Controls.Add(this.ModalSy);
@@ -1214,8 +1245,8 @@
             // 
             this.cardSy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cardSy.Controls.Add(this.btnSy);
-            this.cardSy.Controls.Add(this.materialRadioButton5);
-            this.cardSy.Controls.Add(this.materialRadioButton6);
+            this.cardSy.Controls.Add(this.optSymN);
+            this.cardSy.Controls.Add(this.optSymY);
             this.cardSy.Controls.Add(this.materialLabel33);
             this.cardSy.Depth = 0;
             this.cardSy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -1247,37 +1278,37 @@
             this.btnSy.UseVisualStyleBackColor = true;
             this.btnSy.Click += new System.EventHandler(this.btnSy_Click);
             // 
-            // materialRadioButton5
+            // optSymN
             // 
-            this.materialRadioButton5.AutoSize = true;
-            this.materialRadioButton5.Depth = 0;
-            this.materialRadioButton5.Location = new System.Drawing.Point(162, 77);
-            this.materialRadioButton5.Margin = new System.Windows.Forms.Padding(0);
-            this.materialRadioButton5.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialRadioButton5.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRadioButton5.Name = "materialRadioButton5";
-            this.materialRadioButton5.Ripple = true;
-            this.materialRadioButton5.Size = new System.Drawing.Size(55, 37);
-            this.materialRadioButton5.TabIndex = 3;
-            this.materialRadioButton5.TabStop = true;
-            this.materialRadioButton5.Text = "No";
-            this.materialRadioButton5.UseVisualStyleBackColor = true;
+            this.optSymN.AutoSize = true;
+            this.optSymN.Depth = 0;
+            this.optSymN.Location = new System.Drawing.Point(162, 77);
+            this.optSymN.Margin = new System.Windows.Forms.Padding(0);
+            this.optSymN.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.optSymN.MouseState = MaterialSkin.MouseState.HOVER;
+            this.optSymN.Name = "optSymN";
+            this.optSymN.Ripple = true;
+            this.optSymN.Size = new System.Drawing.Size(55, 37);
+            this.optSymN.TabIndex = 3;
+            this.optSymN.TabStop = true;
+            this.optSymN.Text = "No";
+            this.optSymN.UseVisualStyleBackColor = true;
             // 
-            // materialRadioButton6
+            // optSymY
             // 
-            this.materialRadioButton6.AutoSize = true;
-            this.materialRadioButton6.Depth = 0;
-            this.materialRadioButton6.Location = new System.Drawing.Point(66, 77);
-            this.materialRadioButton6.Margin = new System.Windows.Forms.Padding(0);
-            this.materialRadioButton6.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialRadioButton6.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRadioButton6.Name = "materialRadioButton6";
-            this.materialRadioButton6.Ripple = true;
-            this.materialRadioButton6.Size = new System.Drawing.Size(49, 37);
-            this.materialRadioButton6.TabIndex = 2;
-            this.materialRadioButton6.TabStop = true;
-            this.materialRadioButton6.Text = "Si";
-            this.materialRadioButton6.UseVisualStyleBackColor = true;
+            this.optSymY.AutoSize = true;
+            this.optSymY.Depth = 0;
+            this.optSymY.Location = new System.Drawing.Point(66, 77);
+            this.optSymY.Margin = new System.Windows.Forms.Padding(0);
+            this.optSymY.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.optSymY.MouseState = MaterialSkin.MouseState.HOVER;
+            this.optSymY.Name = "optSymY";
+            this.optSymY.Ripple = true;
+            this.optSymY.Size = new System.Drawing.Size(49, 37);
+            this.optSymY.TabIndex = 2;
+            this.optSymY.TabStop = true;
+            this.optSymY.Text = "Si";
+            this.optSymY.UseVisualStyleBackColor = true;
             // 
             // materialLabel33
             // 
@@ -1502,8 +1533,8 @@
             // 
             this.materialCard6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialCard6.Controls.Add(this.materialLabel19);
-            this.materialCard6.Controls.Add(this.materialRadioButton3);
-            this.materialCard6.Controls.Add(this.materialRadioButton4);
+            this.materialCard6.Controls.Add(this.optCloseContactN);
+            this.materialCard6.Controls.Add(this.optCloseContactY);
             this.materialCard6.Controls.Add(this.materialLabel20);
             this.materialCard6.Depth = 0;
             this.materialCard6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -1529,37 +1560,37 @@
             this.materialLabel19.Text = "sea caso sospechoso o confirmado de COVID-19?";
             this.materialLabel19.UseAccent = true;
             // 
-            // materialRadioButton3
+            // optCloseContactN
             // 
-            this.materialRadioButton3.AutoSize = true;
-            this.materialRadioButton3.Depth = 0;
-            this.materialRadioButton3.Location = new System.Drawing.Point(162, 73);
-            this.materialRadioButton3.Margin = new System.Windows.Forms.Padding(0);
-            this.materialRadioButton3.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialRadioButton3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRadioButton3.Name = "materialRadioButton3";
-            this.materialRadioButton3.Ripple = true;
-            this.materialRadioButton3.Size = new System.Drawing.Size(55, 37);
-            this.materialRadioButton3.TabIndex = 3;
-            this.materialRadioButton3.TabStop = true;
-            this.materialRadioButton3.Text = "No";
-            this.materialRadioButton3.UseVisualStyleBackColor = true;
+            this.optCloseContactN.AutoSize = true;
+            this.optCloseContactN.Depth = 0;
+            this.optCloseContactN.Location = new System.Drawing.Point(162, 73);
+            this.optCloseContactN.Margin = new System.Windows.Forms.Padding(0);
+            this.optCloseContactN.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.optCloseContactN.MouseState = MaterialSkin.MouseState.HOVER;
+            this.optCloseContactN.Name = "optCloseContactN";
+            this.optCloseContactN.Ripple = true;
+            this.optCloseContactN.Size = new System.Drawing.Size(55, 37);
+            this.optCloseContactN.TabIndex = 3;
+            this.optCloseContactN.TabStop = true;
+            this.optCloseContactN.Text = "No";
+            this.optCloseContactN.UseVisualStyleBackColor = true;
             // 
-            // materialRadioButton4
+            // optCloseContactY
             // 
-            this.materialRadioButton4.AutoSize = true;
-            this.materialRadioButton4.Depth = 0;
-            this.materialRadioButton4.Location = new System.Drawing.Point(66, 73);
-            this.materialRadioButton4.Margin = new System.Windows.Forms.Padding(0);
-            this.materialRadioButton4.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialRadioButton4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRadioButton4.Name = "materialRadioButton4";
-            this.materialRadioButton4.Ripple = true;
-            this.materialRadioButton4.Size = new System.Drawing.Size(49, 37);
-            this.materialRadioButton4.TabIndex = 2;
-            this.materialRadioButton4.TabStop = true;
-            this.materialRadioButton4.Text = "Si";
-            this.materialRadioButton4.UseVisualStyleBackColor = true;
+            this.optCloseContactY.AutoSize = true;
+            this.optCloseContactY.Depth = 0;
+            this.optCloseContactY.Location = new System.Drawing.Point(66, 73);
+            this.optCloseContactY.Margin = new System.Windows.Forms.Padding(0);
+            this.optCloseContactY.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.optCloseContactY.MouseState = MaterialSkin.MouseState.HOVER;
+            this.optCloseContactY.Name = "optCloseContactY";
+            this.optCloseContactY.Ripple = true;
+            this.optCloseContactY.Size = new System.Drawing.Size(49, 37);
+            this.optCloseContactY.TabIndex = 2;
+            this.optCloseContactY.TabStop = true;
+            this.optCloseContactY.Text = "Si";
+            this.optCloseContactY.UseVisualStyleBackColor = true;
             // 
             // materialLabel20
             // 
@@ -1798,6 +1829,17 @@
             this.TabSelector.TabIndicatorHeight = 4;
             this.TabSelector.Text = "none";
             // 
+            // imgAlertTab3
+            // 
+            this.imgAlertTab3.Image = ((System.Drawing.Image)(resources.GetObject("imgAlertTab3.Image")));
+            this.imgAlertTab3.Location = new System.Drawing.Point(203, 390);
+            this.imgAlertTab3.Name = "imgAlertTab3";
+            this.imgAlertTab3.Size = new System.Drawing.Size(327, 84);
+            this.imgAlertTab3.TabIndex = 90;
+            this.imgAlertTab3.TabStop = false;
+            this.imgAlertTab3.Visible = false;
+            this.imgAlertTab3.Click += new System.EventHandler(this.imgAlertTab3_Click);
+            // 
             // FrmData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1813,8 +1855,10 @@
             this.tbForm.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAlert)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAlertTab2)).EndInit();
             this.cardVaccine.ResumeLayout(false);
             this.cardVaccine.PerformLayout();
             this.cardModalGR.ResumeLayout(false);
@@ -1838,6 +1882,7 @@
             this.materialCard5.PerformLayout();
             this.materialCard4.ResumeLayout(false);
             this.materialCard4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAlertTab3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1878,8 +1923,8 @@
         private MaterialSkin.Controls.MaterialComboBox sltDepartment;
         private MaterialSkin.Controls.MaterialLabel materialLabel7;
         private MaterialSkin.Controls.MaterialCard materialCard3;
-        private MaterialSkin.Controls.MaterialRadioButton materialRadioButton1;
-        private MaterialSkin.Controls.MaterialRadioButton materialRadioButton2;
+        private MaterialSkin.Controls.MaterialRadioButton optTravelerN;
+        private MaterialSkin.Controls.MaterialRadioButton optTravelerY;
         private MaterialSkin.Controls.MaterialLabel materialLabel8;
         private MaterialSkin.Controls.MaterialLabel lblInDate;
         private MaterialSkin.Controls.MaterialCard cardModalGR;
@@ -1911,8 +1956,8 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel28;
         private MaterialSkin.Controls.MaterialCard materialCard6;
         private MaterialSkin.Controls.MaterialLabel materialLabel19;
-        private MaterialSkin.Controls.MaterialRadioButton materialRadioButton3;
-        private MaterialSkin.Controls.MaterialRadioButton materialRadioButton4;
+        private MaterialSkin.Controls.MaterialRadioButton optCloseContactN;
+        private MaterialSkin.Controls.MaterialRadioButton optCloseContactY;
         private MaterialSkin.Controls.MaterialLabel materialLabel20;
         private MaterialSkin.Controls.MaterialCard materialCard5;
         private MaterialSkin.Controls.MaterialLabel materialLabel18;
@@ -1927,13 +1972,16 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialCard cardSy;
         private MaterialSkin.Controls.MaterialButton btnSy;
-        private MaterialSkin.Controls.MaterialRadioButton materialRadioButton5;
-        private MaterialSkin.Controls.MaterialRadioButton materialRadioButton6;
+        private MaterialSkin.Controls.MaterialRadioButton optSymN;
+        private MaterialSkin.Controls.MaterialRadioButton optSymY;
         private MaterialSkin.Controls.MaterialLabel materialLabel33;
         private MaterialSkin.Controls.MaterialMaskedTextBox txtDni;
         private MaterialSkin.Controls.MaterialMaskedTextBox txtTelNumber;
         private MaterialSkin.Controls.MaterialMaskedTextBox txtCodArea;
         private MaterialSkin.Controls.MaterialMaskedTextBox txtSurname;
         private MaterialSkin.Controls.MaterialMaskedTextBox txtName;
+        private PictureBox imgAlert;
+        private PictureBox imgAlertTab2;
+        private PictureBox imgAlertTab3;
     }
 }
