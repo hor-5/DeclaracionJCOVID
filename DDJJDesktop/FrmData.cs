@@ -179,6 +179,29 @@ namespace DDJJDesktop
             TabSelector.Visible = false;
         }
 
+        private void CalulateAge(DateTime birthday) {
+
+            int age;
+            DateTime localDate = DateTime.Now;
+
+            if (localDate.Month <= birthday.Month)
+            {
+                if (localDate.Day <= birthday.Day)
+                {
+                    age = (localDate.Year - birthday.Year);                    
+                }
+                else
+                {
+                    age = (localDate.Year - birthday.Year) - 1;                    
+                }
+            }
+            else
+            {
+                age = (localDate.Year - birthday.Year);                
+            }
+
+            txtAge.Text = age.ToString();
+        }
         private void txtMail_KeyDown(object sender, KeyEventArgs e)
         {
             if (txtMail.Text.Contains("@"))
@@ -193,6 +216,16 @@ namespace DDJJDesktop
             {
                 txtMail.HelperText = "Debe ingresar un email válido";
             }
+        }
+
+        private void sltDate_MouseEnter(object sender, EventArgs e)
+        {
+            CalulateAge(sltDate.Value);
+        }
+
+        private void sltDate_KeyDown(object sender, KeyEventArgs e)
+        {
+            CalulateAge(sltDate.Value);
         }
     }
 }

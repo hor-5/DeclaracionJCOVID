@@ -532,12 +532,14 @@
             this.sltDate.CalendarTitleBackColor = System.Drawing.SystemColors.ControlDark;
             this.sltDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.sltDate.Location = new System.Drawing.Point(54, 264);
-            this.sltDate.MaxDate = new System.DateTime(2022, 12, 31, 0, 0, 0, 0);
+            this.sltDate.MaxDate = new System.DateTime(2004, 5, 1, 0, 0, 0, 0);
             this.sltDate.MinDate = new System.DateTime(1910, 1, 1, 0, 0, 0, 0);
             this.sltDate.Name = "sltDate";
             this.sltDate.Size = new System.Drawing.Size(194, 23);
             this.sltDate.TabIndex = 14;
-            this.sltDate.Value = new System.DateTime(2022, 4, 24, 0, 0, 0, 0);
+            this.sltDate.Value = new System.DateTime(2004, 5, 1, 0, 0, 0, 0);
+            this.sltDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.sltDate_KeyDown);
+            this.sltDate.MouseEnter += new System.EventHandler(this.sltDate_MouseEnter);
             // 
             // materialLabel3
             // 
