@@ -172,6 +172,7 @@ namespace DDJJDesktop
                 if (requiredFieldsTab2())
                 {
                     if (requiredFieldsTab3()) {
+
                         if (declarationResult())
                         {
                             string imagePath = Path.Combine(Application.StartupPath, "../../../img/successNotification.png");
@@ -186,16 +187,33 @@ namespace DDJJDesktop
                             TabSelector.Visible = false;
                         }
                         else {
-                            string imagePath = Path.Combine(Application.StartupPath, "../../../img/errorNotification.png");
-                            imgResult.Image = Image.FromFile(imagePath);
-                            imgResult.Location = new System.Drawing.Point(160, 60);
-                            materialCard4.Visible = false;
-                            materialCard5.Visible = false;
-                            materialCard6.Visible = false;
-                            cardSy.Visible = false;
-                            btnConfirm.Visible = false;
-                            btnBack3.Visible = false;
-                            TabSelector.Visible = false;
+                            if (sltDepartment.SelectedItem.ToString() == "Ventas" && optRGroupYes.Checked)
+                            {
+                                //Si pertenece al grupo de riesgo debe estar vacunado para ingresar al departamento de ventas.
+                                string imagePath = Path.Combine(Application.StartupPath, "../../../img/GroupRiskNotification.png");
+                                imgResult.Image = Image.FromFile(imagePath);
+                                imgResult.Location = new System.Drawing.Point(160, 60);
+                                materialCard4.Visible = false;
+                                materialCard5.Visible = false;
+                                materialCard6.Visible = false;
+                                cardSy.Visible = false;
+                                btnConfirm.Visible = false;
+                                btnBack3.Visible = false;
+                                TabSelector.Visible = false;
+                            }
+                            else {
+                                string imagePath = Path.Combine(Application.StartupPath, "../../../img/errorNotification.png");
+                                imgResult.Image = Image.FromFile(imagePath);
+                                imgResult.Location = new System.Drawing.Point(160, 60);
+                                materialCard4.Visible = false;
+                                materialCard5.Visible = false;
+                                materialCard6.Visible = false;
+                                cardSy.Visible = false;
+                                btnConfirm.Visible = false;
+                                btnBack3.Visible = false;
+                                TabSelector.Visible = false;
+                            }
+
                         }
                     }
                     else {
@@ -302,9 +320,11 @@ namespace DDJJDesktop
         private bool declarationResult() {
             bool result = true;
             if ( optVacNo.Checked || optSymY.Checked || 
-                optYCContact.Checked || optCloseContactY.Checked ) {
+                optYCContact.Checked || optCloseContactY.Checked ) {               
                 result = false;
-
+            }
+            if (sltDepartment.SelectedItem.ToString() == "Ventas") {
+                result = false;
             }
             return result;
         }
