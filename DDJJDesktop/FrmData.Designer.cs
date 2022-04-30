@@ -122,6 +122,7 @@
             this.btnConfirm = new MaterialSkin.Controls.MaterialButton();
             this.TabSelector = new MaterialSkin.Controls.MaterialTabSelector();
             this.imgAlertTab2 = new System.Windows.Forms.PictureBox();
+            this.btnBackToMain = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.tbForm.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgAlert)).BeginInit();
@@ -1213,6 +1214,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.btnBackToMain);
             this.tabPage3.Controls.Add(this.imgAlertTab3);
             this.tabPage3.Controls.Add(this.cardSy);
             this.tabPage3.Controls.Add(this.imgResult);
@@ -1840,6 +1842,19 @@
             this.imgAlertTab2.Visible = false;
             this.imgAlertTab2.Click += new System.EventHandler(this.imgAlertTab2_Click);
             // 
+            // btnBackToMain
+            // 
+            this.btnBackToMain.Depth = 0;
+            this.btnBackToMain.Icon = ((System.Drawing.Image)(resources.GetObject("btnBackToMain.Icon")));
+            this.btnBackToMain.Location = new System.Drawing.Point(731, 3);
+            this.btnBackToMain.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnBackToMain.Name = "btnBackToMain";
+            this.btnBackToMain.Size = new System.Drawing.Size(56, 56);
+            this.btnBackToMain.TabIndex = 91;
+            this.btnBackToMain.UseVisualStyleBackColor = true;
+            this.btnBackToMain.Visible = false;
+            this.btnBackToMain.Click += new System.EventHandler(this.btnBackToMain_Click);
+            // 
             // FrmData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1983,5 +1998,6 @@
         private PictureBox imgAlert;
         private PictureBox imgAlertTab3;
         private PictureBox imgAlertTab2;
+        private MaterialSkin.Controls.MaterialFloatingActionButton btnBackToMain;
     }
 }

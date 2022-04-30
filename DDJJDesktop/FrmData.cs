@@ -175,43 +175,20 @@ namespace DDJJDesktop
 
                         if (declarationResult())
                         {
-                            string imagePath = Path.Combine(Application.StartupPath, "../../../img/successNotification.png");
-                            imgResult.Image = Image.FromFile(imagePath);
-                            imgResult.Location = new System.Drawing.Point(160, 60);
-                            materialCard4.Visible = false;
-                            materialCard5.Visible = false;
-                            materialCard6.Visible = false;
-                            cardSy.Visible = false;
-                            btnConfirm.Visible = false;
-                            btnBack3.Visible = false;
-                            TabSelector.Visible = false;
+                            //Ingreso aprobado
+                            processDeclarationResult("../../../img/successNotification.png");
+
                         }
                         else {
                             if (sltDepartment.SelectedItem.ToString() == "Ventas" && optRGroupYes.Checked)
                             {
+                                //Ingreso denegado
                                 //Si pertenece al grupo de riesgo debe estar vacunado para ingresar al departamento de ventas.
-                                string imagePath = Path.Combine(Application.StartupPath, "../../../img/GroupRiskNotification.png");
-                                imgResult.Image = Image.FromFile(imagePath);
-                                imgResult.Location = new System.Drawing.Point(160, 60);
-                                materialCard4.Visible = false;
-                                materialCard5.Visible = false;
-                                materialCard6.Visible = false;
-                                cardSy.Visible = false;
-                                btnConfirm.Visible = false;
-                                btnBack3.Visible = false;
-                                TabSelector.Visible = false;
+                                processDeclarationResult("../../../img/GroupRiskNotification.png");
                             }
                             else {
-                                string imagePath = Path.Combine(Application.StartupPath, "../../../img/errorNotification.png");
-                                imgResult.Image = Image.FromFile(imagePath);
-                                imgResult.Location = new System.Drawing.Point(160, 60);
-                                materialCard4.Visible = false;
-                                materialCard5.Visible = false;
-                                materialCard6.Visible = false;
-                                cardSy.Visible = false;
-                                btnConfirm.Visible = false;
-                                btnBack3.Visible = false;
-                                TabSelector.Visible = false;
+                                //Ingreso rechazado
+                                processDeclarationResult("../../../img/errorNotification.png");
                             }
 
                         }
@@ -236,22 +213,22 @@ namespace DDJJDesktop
         private void CalulateAge(DateTime birthday) {
 
             int age;
-            DateTime localDate = DateTime.Now;
+            DateTime currentDate = DateTime.Now;
 
-            if (localDate.Month <= birthday.Month)
+            if (currentDate.Month <= birthday.Month)
             {
-                if (localDate.Day <= birthday.Day)
+                if (currentDate.Day <= birthday.Day)
                 {
-                    age = (localDate.Year - birthday.Year);                    
+                    age = (currentDate.Year - birthday.Year);                    
                 }
                 else
                 {
-                    age = (localDate.Year - birthday.Year) - 1;                    
+                    age = (currentDate.Year - birthday.Year) - 1;                    
                 }
             }
             else
             {
-                age = (localDate.Year - birthday.Year);                
+                age = (currentDate.Year - birthday.Year);                
             }
 
             txtAge.Text = age.ToString();
@@ -284,9 +261,10 @@ namespace DDJJDesktop
 
         private bool requiredFieldsTab1() {
             bool result = false;
-            if (txtDni.Text.Length>=1 && txtName.Text.Length>=1 && txtSurname.Text.Length>=1 &&
-                sltCodArea.SelectedItem!=null && txtCodArea.Text.Length>=1 &&
-                txtTelNumber.Text.Length>=1 && txtEnterprise.Text.Length>=1 && txtMail.Text.Length>=1 &&
+            if (txtDni.Text.Trim().Length>=1 && txtName.Text.Trim().Length>=1 &&
+                txtSurname.Text.Trim().Length>=1 && sltCodArea.SelectedItem!=null &&
+                txtCodArea.Text.Trim().Length>=1 && txtTelNumber.Text.Trim().Length>=1 &&
+                txtEnterprise.Text.Trim().Length>=1 && txtMail.Text.Trim().Length>=1 &&
                 sltGender.SelectedItem!=null && sltNationality.SelectedItem!=null &&
                 sltResidence.SelectedItem!=null) {
 
@@ -323,10 +301,24 @@ namespace DDJJDesktop
                 optYCContact.Checked || optCloseContactY.Checked ) {               
                 result = false;
             }
-            if (sltDepartment.SelectedItem.ToString() == "Ventas") {
+            if ((sltDepartment.SelectedItem.ToString() == "Ventas" && optVacNo.Checked) && optRGroupYes.Checked) {
                 result = false;
             }
             return result;
+        }
+
+        private void processDeclarationResult(string imgPathString) {
+            string imagePath = Path.Combine(Application.StartupPath, imgPathString);
+            imgResult.Image = Image.FromFile(imagePath);
+            imgResult.Location = new System.Drawing.Point(160, 60);
+            materialCard4.Visible = false;
+            materialCard5.Visible = false;
+            materialCard6.Visible = false;
+            cardSy.Visible = false;
+            btnConfirm.Visible = false;
+            btnBack3.Visible = false;
+            TabSelector.Visible = false;
+            btnBackToMain.Visible = true;
         }
 
         private void imgAlert_Click(object sender, EventArgs e)
@@ -342,6 +334,12 @@ namespace DDJJDesktop
         private void imgAlertTab3_Click(object sender, EventArgs e)
         {
             imgAlertTab3.Visible = false;
+        }
+
+        private void btnBackToMain_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            new FrmLogin().Show();
         }
     }
 }
