@@ -12,15 +12,17 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Mail;
 
 namespace DDJJDesktop
 {
-    
+
     public partial class FrmData : MaterialForm
     {
-        readonly MaterialSkin.MaterialSkinManager materialSkinManager;        
-        private User user;
+        readonly MaterialSkin.MaterialSkinManager materialSkinManager;
+
         private HTTPRequests httpRequests;
+        public ValidationServices validationFinal = new ValidationServices();
         public FrmData()
         {
             InitializeComponent();
@@ -47,7 +49,7 @@ namespace DDJJDesktop
         }
 
         private void FrmData_Load(object sender, EventArgs e)
-        {                  
+        {
 
         }
 
@@ -59,28 +61,28 @@ namespace DDJJDesktop
             txtName.Enabled = false;
             txtSurname.Text = currentUser.surName;
             txtSurname.Enabled = false;
-            sltCodArea.Items.Add(currentUser.codCountry);            
+            sltCodArea.Items.Add(currentUser.codCountry);
             sltCodArea.SelectedItem = currentUser.codCountry;
             sltCodArea.Enabled = false;
             txtCodArea.Text = currentUser.codArea;
             txtCodArea.Enabled = false;
             txtTelNumber.Text = currentUser.telephone;
-            txtTelNumber.Enabled = false;            
+            txtTelNumber.Enabled = false;
             txtEnterprise.Text = currentUser.enterprise;
             txtEnterprise.Enabled = false;
             txtMail.Text = currentUser.email.Address;
             txtMail.Enabled = false;
-            sltGender.Items.Add(currentUser.gender);            
+            sltGender.Items.Add(currentUser.gender);
             sltGender.SelectedItem = currentUser.gender;
-            sltGender.Enabled = false;            
+            sltGender.Enabled = false;
             sltDate.Value = currentUser.birthday;
-            sltDate.Enabled = false;            
+            sltDate.Enabled = false;
             txtAge.Text = currentUser.age.ToString();
             txtAge.Enabled = false;
-            sltNationality.Items.Add(currentUser.nationality);            
+            sltNationality.Items.Add(currentUser.nationality);
             sltNationality.SelectedItem = currentUser.nationality;
             sltNationality.Enabled = false;
-            sltResidence.Items.Add(currentUser.residenceCountry);            
+            sltResidence.Items.Add(currentUser.residenceCountry);
             sltResidence.SelectedItem = currentUser.residenceCountry;
             sltResidence.Enabled = false;
 
@@ -100,25 +102,25 @@ namespace DDJJDesktop
         private void btnNext_Click(object sender, EventArgs e)
         {
             tbForm.SelectedIndex++;
-            
-                       
+
+
         }
 
         private void btnNext2_Click(object sender, EventArgs e)
         {
             tbForm.SelectedIndex++;
-           
+
         }
 
         private void btnBack2_Click(object sender, EventArgs e)
         {
             tbForm.SelectedIndex--;
-            
+
         }
 
         private void btnBack3_Click(object sender, EventArgs e)
         {
-            tbForm.SelectedIndex--;            
+            tbForm.SelectedIndex--;
         }
 
         private void materialLabel2_Click(object sender, EventArgs e)
@@ -150,7 +152,7 @@ namespace DDJJDesktop
         private void btnRiskGroup_Click(object sender, EventArgs e)
         {
             cardVaccine.Visible = false;
-            cardModalGR.Visible = true;            
+            cardModalGR.Visible = true;
         }
 
         private void btnSy_Click(object sender, EventArgs e)
@@ -160,13 +162,47 @@ namespace DDJJDesktop
         }
 
         private void btnCloseSy_Click(object sender, EventArgs e)
-        {            
+        {
             ModalSy.Visible = false;
             cardSy.Visible = true;
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+            User newUser = new User()
+            {
+                firstName = txtName.Text,
+                dni = txtDni.Text,
+                surName=txtSurname.Text,
+                codArea=sltCodArea.SelectedText,
+                telephone=txtTelNumber.Text,
+                enterprise=txtEnterprise.Text,
+                email=new MailAddress(txtMail.Text),
+                gender=sltGender.SelectedText,
+                birthday=sltDate.Value,
+                nationality=sltNationality.SelectedText,
+                residenceCountry=sltResidence.SelectedText,
+                age=Convert.ToInt32(txtAge.Text)
+            };
+            DeclaracionJurada declaracionJuradaTmp = new DeclaracionJurada() { newUser = newUser };
+            bool resultado = validationFinal.validationDeclaracionFields(declaracionJuradaTmp);
+
+            if (resultado == true) {
+                MessageBox.Show("Aceptado");
+            }
+            else { MessageBox.Show("Rechazado"); }
+
+        }
+
+
+
+
+
+
+
+
+
+        /*{
             if (requiredFieldsTab1())
             {
                 if (requiredFieldsTab2())
@@ -208,7 +244,7 @@ namespace DDJJDesktop
                 imgAlert.Visible = true;
             }
 
-        }
+        }*/
 
         private void CalulateAge(DateTime birthday) {
 

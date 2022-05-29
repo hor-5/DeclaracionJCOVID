@@ -79,6 +79,7 @@ namespace DDJJDesktop
 
         private void btnNoUser_Click(object sender, EventArgs e)
         {
+            
             FrmData frmData = new FrmData();
             frmData.Show();
             this.Hide();

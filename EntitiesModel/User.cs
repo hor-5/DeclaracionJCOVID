@@ -46,7 +46,10 @@ namespace EntitiesModel
             this.residenceCountry = residenceCountry;
         }
 
+        public User()
+        {
 
+        }
 
     }
 }
