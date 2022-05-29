@@ -166,48 +166,63 @@ namespace DDJJDesktop
             ModalSy.Visible = false;
             cardSy.Visible = true;
         }
-
-        private void btnConfirm_Click(object sender, EventArgs e)
-        {
-            //chequear bien los null.
-            User newUser = new User(){
+        private void executeValidationService() {
+            try
+            {
+                User newUser = new User()
+            {
                 firstName = txtName.Text,
                 dni = txtDni.Text,
                 surName = txtSurname.Text,
-                codArea=sltCodArea.SelectedItem!=null? sltCodArea.SelectedItem.ToString() : "",
+                codArea = sltCodArea.SelectedItem != null ? sltCodArea.SelectedItem.ToString() : "",
                 telephone = txtTelNumber.Text,
                 enterprise = txtEnterprise.Text,
-                email =txtMail.Text.Contains('@')? new MailAddress(txtMail.Text): new MailAddress("vacio@vacio.com"),
-                gender = sltGender.SelectedItem!=null? sltGender.SelectedItem.ToString() : "",
-                birthday = sltDate.Value!=null? sltDate.Value :new DateTime(2022, 28, 05),
-                nationality = sltNationality.SelectedItem!=null? sltNationality.SelectedItem.ToString() : "",
-                residenceCountry = sltResidence.SelectedItem!=null? sltResidence.SelectedItem.ToString() : "",
-                age = txtAge.Text.Length>0?Convert.ToInt32(txtAge.Text):0
+                email = txtMail.Text.Contains('@') ? new MailAddress(txtMail.Text) : new MailAddress("vacio@vacio.com"),
+                gender = sltGender.SelectedItem != null ? sltGender.SelectedItem.ToString() : "",
+                birthday = sltDate.Value != null ? sltDate.Value : new DateTime(2022, 28, 05),
+                nationality = sltNationality.SelectedItem != null ? sltNationality.SelectedItem.ToString() : "",
+                residenceCountry = sltResidence.SelectedItem != null ? sltResidence.SelectedItem.ToString() : "",
+                age = txtAge.Text.Length > 0 ? Convert.ToInt32(txtAge.Text) : 0
             };
 
-            DeclarationFields declarationFields = new DeclarationFields() {
+            DeclarationFields declarationFields = new DeclarationFields()
+            {
                 isRiskGroup = optRGroupYes.Checked || optRGroupNo.Checked,
                 isVaccinated = optVacYes.Checked || optVacNo.Checked,
                 departamentName = sltDepartment.SelectedItem.ToString(),
                 visitDate = sltDateTime.Value,
                 isTraveler = optTravelerY.Checked || optTravelerN.Checked,
                 closeContact = (optYTravelOth.Checked || optNTravelOth.Checked) &&
-                               (optYCContact.Checked || optNCContact.Checked)   &&
+                               (optYCContact.Checked || optNCContact.Checked) &&
                                (optCloseContactY.Checked || optCloseContactN.Checked),
                 hasSymptom = optSymY.Checked || optSymN.Checked
             };
 
-            DeclaracionJurada declaracionJuradaTmp = new DeclaracionJurada() { 
-                        newUser = newUser, 
-                        declarationFields = declarationFields,
-                        createdAt = DateTime.Now,
+           DeclaracionJurada declaracionJuradaTmp = new DeclaracionJurada()
+            {
+                newUser = newUser,
+                declarationFields = declarationFields,
+                createdAt = DateTime.Now,
             };
-            bool resultado = validationFinal.validationDeclaracionFields(declaracionJuradaTmp);
 
-            if (resultado == true) {
-                MessageBox.Show("Aceptado " + declaracionJuradaTmp.createdAt.ToShortDateString());
+                
+                bool resultado = validationFinal.validationDeclaracionFields(declaracionJuradaTmp);
+
+                if (resultado == true)
+                {
+                    MessageBox.Show("Aceptado " + declaracionJuradaTmp.createdAt.ToShortDateString());
+                }
+                else { MessageBox.Show("Rechazado " + declaracionJuradaTmp.createdAt.ToShortDateString()); }
             }
-            else { MessageBox.Show("Rechazado " + declaracionJuradaTmp.createdAt.ToShortDateString()); }
+            catch (Exception error)
+            {
+                MessageBox.Show("Algo salió mal : " + error);
+            }
+        }
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            //chequear bien los null.
+            executeValidationService();
 
         }
 
