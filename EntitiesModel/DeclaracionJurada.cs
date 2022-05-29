@@ -16,6 +16,13 @@ namespace EntitiesModel
 
         public DateTime createdAt { get; set; }
 
+        public DeclaracionJurada(User user, DeclarationFields declarationFields) {
+            this.idDeclaracion = idDeclaracion++;
+            this.newUser = user;
+            this.declarationFields = declarationFields;
+            this.createdAt = DateTime.Now;
+        }
+        
         
     }
 }

@@ -7,10 +7,10 @@ namespace Services
 {
     public class SecurityServices
     {
+        SecurityData data = new SecurityData();
         public User login(String txtUser, String txtPass)
         {
-            User result = null;
-            SecurityData data = new SecurityData();
+            User result = null;            
             List<User> users = data.getUsers();
             foreach (User u in users)
             {
@@ -21,6 +21,13 @@ namespace Services
                 }
             }
             return result;
+        }
+
+        public void createDeclaration(DeclaracionJurada declaracion) {
+
+           data.setDeclaraciones(declaracion);         
+            
+
         }
 
 

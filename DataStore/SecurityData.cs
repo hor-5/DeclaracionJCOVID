@@ -8,6 +8,7 @@ namespace DataStore
     public class SecurityData
     {
         private List<User> dataUsers = new List<User>();
+        private List<DeclaracionJurada> declaracionesJuradas = new List<DeclaracionJurada>();
         public List<User> getUsers() {
         
             User user1 = new User("horacio","horacio", "37880949", "horacio","capdevila", "011", "Argentina: +54",
@@ -22,6 +23,16 @@ namespace DataStore
             dataUsers.Add(user2);
             return dataUsers;
         }
+
+
+        public List<DeclaracionJurada> getDeclaraciones() {
+            return declaracionesJuradas;
+        }
+
+        public void setDeclaraciones(DeclaracionJurada declaracion) {
+            declaracionesJuradas.Add(declaracion);
+        }
+
        
 
     }

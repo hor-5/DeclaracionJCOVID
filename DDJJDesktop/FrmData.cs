@@ -23,6 +23,7 @@ namespace DDJJDesktop
 
         private HTTPRequests httpRequests;
         public ValidationServices validationFinal = new ValidationServices();
+        private SecurityServices securityServices = new SecurityServices();
         public FrmData()
         {
             InitializeComponent();
@@ -169,78 +170,68 @@ namespace DDJJDesktop
         private void executeValidationService() {
             try
             {
-                User newUser = new User()
-            {
-                firstName = txtName.Text,
-                dni = txtDni.Text,
-                surName = txtSurname.Text,
-                codArea = sltCodArea.SelectedItem != null ? sltCodArea.SelectedItem.ToString() : "",
-                telephone = txtTelNumber.Text,
-                enterprise = txtEnterprise.Text,
-                email = txtMail.Text.Contains('@') ? new MailAddress(txtMail.Text) : new MailAddress("vacio@vacio.com"),
-                gender = sltGender.SelectedItem != null ? sltGender.SelectedItem.ToString() : "",
-                birthday = sltDate.Value != null ? sltDate.Value : new DateTime(2022, 28, 05),
-                nationality = sltNationality.SelectedItem != null ? sltNationality.SelectedItem.ToString() : "",
-                residenceCountry = sltResidence.SelectedItem != null ? sltResidence.SelectedItem.ToString() : "",
-                age = txtAge.Text.Length > 0 ? Convert.ToInt32(txtAge.Text) : 0
-            };
+                    User newUser = new User()
+                {
+                    firstName = txtName.Text,
+                    dni = txtDni.Text,
+                    surName = txtSurname.Text,
+                    codCountry = sltCodArea.SelectedItem != null ? sltCodArea.SelectedItem.ToString():"",
+                    codArea = sltCodArea.SelectedItem != null ? sltCodArea.SelectedItem.ToString() : "",
+                    telephone = txtTelNumber.Text,
+                    enterprise = txtEnterprise.Text,
+                    email = txtMail.Text.Contains('@') ? new MailAddress(txtMail.Text) : new MailAddress("vacio@vacio.com"),
+                    gender = sltGender.SelectedItem != null ? sltGender.SelectedItem.ToString() : "",
+                    birthday = sltDate.Value != null ? sltDate.Value : new DateTime(2022, 28, 05),
+                    age = txtAge.Text.Length > 0 ? Convert.ToInt32(txtAge.Text) : 0,
+                    nationality = sltNationality.SelectedItem != null ? sltNationality.SelectedItem.ToString() : "",
+                    residenceCountry = sltResidence.SelectedItem != null ? sltResidence.SelectedItem.ToString() : ""
+                };
 
-            DeclarationFields declarationFields = new DeclarationFields()
-            {
-                isRiskGroup = optRGroupYes.Checked || optRGroupNo.Checked,
-                isVaccinated = optVacYes.Checked || optVacNo.Checked,
-                departamentName = sltDepartment.SelectedItem.ToString(),
-                visitDate = sltDateTime.Value,
-                isTraveler = optTravelerY.Checked || optTravelerN.Checked,
-                closeContact = (optYTravelOth.Checked || optNTravelOth.Checked) &&
-                               (optYCContact.Checked || optNCContact.Checked) &&
-                               (optCloseContactY.Checked || optCloseContactN.Checked),
-                hasSymptom = optSymY.Checked || optSymN.Checked
-            };
+                DeclarationFields declarationFields = new DeclarationFields()
+                {
+                    isRiskGroup = optRGroupYes.Checked || optRGroupNo.Checked,
+                    isVaccinated = optVacYes.Checked || optVacNo.Checked,
+                    departamentName = sltDepartment.SelectedItem.ToString(),
+                    visitDate = sltDateTime.Value,
+                    isTraveler = optTravelerY.Checked || optTravelerN.Checked,
+                    closeContact = (optYTravelOth.Checked || optNTravelOth.Checked) &&
+                                   (optYCContact.Checked || optNCContact.Checked) &&
+                                   (optCloseContactY.Checked || optCloseContactN.Checked),
+                    hasSymptom = optSymY.Checked || optSymN.Checked
+                };
 
-           DeclaracionJurada declaracionJuradaTmp = new DeclaracionJurada()
-            {
-                newUser = newUser,
-                declarationFields = declarationFields,
-                createdAt = DateTime.Now,
-            };
+                    DeclaracionJurada declaracionJuradaTmp = new DeclaracionJurada(newUser, declarationFields);
+   
 
                 
-                bool resultado = validationFinal.validationDeclaracionFields(declaracionJuradaTmp);
+                    string resultado = validationFinal.validationDeclaracionFields(declaracionJuradaTmp);
 
-                if (resultado == true)
-                {
-                    MessageBox.Show("Aceptado " + declaracionJuradaTmp.createdAt.ToShortDateString());
-                }
-                else { MessageBox.Show("Rechazado " + declaracionJuradaTmp.createdAt.ToShortDateString()); }
+                    if (resultado == string.Empty)
+                    {
+                        MaterialMessageBox.Show("Envio exitoso " + declaracionJuradaTmp.createdAt.ToShortDateString());
+                        //guarda la declaración jurada en la entidad de datos.
+                        securityServices.createDeclaration(declaracionJuradaTmp);                        
+                    }
+                    else { MaterialMessageBox.Show("Ocurrió un error : "+ resultado +" "+ declaracionJuradaTmp.createdAt.ToShortDateString()); }
             }
             catch (Exception error)
             {
-                MessageBox.Show("Algo salió mal : " + error);
+                MaterialMessageBox.Show("Algo salió mal : " + error);
+                
             }
         }
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            //chequear bien los null.
-            executeValidationService();
-
-        }
-
-
-
-
-
-
-
-
-
-        /*{
             if (requiredFieldsTab1())
             {
                 if (requiredFieldsTab2())
                 {
                     if (requiredFieldsTab3()) {
 
+                        //validaciones backend
+                        executeValidationService();
+
+                        //resultado
                         if (declarationResult())
                         {
                             //Ingreso aprobado
@@ -276,7 +267,7 @@ namespace DDJJDesktop
                 imgAlert.Visible = true;
             }
 
-        }*/
+        }
 
         private void CalulateAge(DateTime birthday) {
 
