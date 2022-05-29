@@ -177,18 +177,18 @@ namespace DDJJDesktop
                 codArea=sltCodArea.SelectedItem!=null? sltCodArea.SelectedItem.ToString() : "",
                 telephone = txtTelNumber.Text,
                 enterprise = txtEnterprise.Text,
-                email = new MailAddress(txtMail.Text),
+                email =txtMail.Text.Contains('@')? new MailAddress(txtMail.Text): new MailAddress("vacio@vacio.com"),
                 gender = sltGender.SelectedItem!=null? sltGender.SelectedItem.ToString() : "",
-                birthday = sltDate.Value,
+                birthday = sltDate.Value!=null? sltDate.Value :new DateTime(2022, 28, 05),
                 nationality = sltNationality.SelectedItem!=null? sltNationality.SelectedItem.ToString() : "",
                 residenceCountry = sltResidence.SelectedItem!=null? sltResidence.SelectedItem.ToString() : "",
-                age = Convert.ToInt32(txtAge.Text)
+                age = txtAge.Text.Length>0?Convert.ToInt32(txtAge.Text):0
             };
 
             DeclarationFields declarationFields = new DeclarationFields() {
                 isRiskGroup = optRGroupYes.Checked || optRGroupNo.Checked,
                 isVaccinated = optVacYes.Checked || optVacNo.Checked,
-                departamentName = sltDepartment.SelectedText,
+                departamentName = sltDepartment.SelectedItem.ToString(),
                 visitDate = sltDateTime.Value,
                 isTraveler = optTravelerY.Checked || optTravelerN.Checked,
                 closeContact = (optYTravelOth.Checked || optNTravelOth.Checked) &&
@@ -200,14 +200,14 @@ namespace DDJJDesktop
             DeclaracionJurada declaracionJuradaTmp = new DeclaracionJurada() { 
                         newUser = newUser, 
                         declarationFields = declarationFields,
-                        createdAt = DateTime.Now
+                        createdAt = DateTime.Now,
             };
             bool resultado = validationFinal.validationDeclaracionFields(declaracionJuradaTmp);
 
             if (resultado == true) {
-                MessageBox.Show("Aceptado " + declaracionJuradaTmp.createdAt);
+                MessageBox.Show("Aceptado " + declaracionJuradaTmp.createdAt.ToShortDateString());
             }
-            else { MessageBox.Show("Rechazado " + declaracionJuradaTmp.createdAt); }
+            else { MessageBox.Show("Rechazado " + declaracionJuradaTmp.createdAt.ToShortDateString()); }
 
         }
 

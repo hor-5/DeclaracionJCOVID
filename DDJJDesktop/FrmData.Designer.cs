@@ -628,7 +628,6 @@
             this.txtMail.Size = new System.Drawing.Size(194, 52);
             this.txtMail.TabIndex = 11;
             this.txtMail.TabStop = false;
-            this.txtMail.Text = "jhondoe@gmail.com";
             this.txtMail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtMail.TrailingIcon = null;
             this.txtMail.UseSystemPasswordChar = false;

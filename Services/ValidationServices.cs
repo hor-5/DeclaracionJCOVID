@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,7 +19,7 @@ namespace Services
            if (declaracionJurada.newUser.codArea.Trim().Length == 0 || declaracionJurada.newUser.codArea == null) return false;
            if (declaracionJurada.newUser.telephone.Trim().Length == 0) return false;
            if (declaracionJurada.newUser.gender.Trim().Length == 0 || declaracionJurada.newUser.gender == null) return false;
-           if (declaracionJurada.newUser.email.Address.Trim().Length==0 || declaracionJurada.newUser.email == null) return false;
+           if (declaracionJurada.newUser.email == null || declaracionJurada.newUser.email == new MailAddress("vacio@vacio.com")) return false;
            if (declaracionJurada.newUser.enterprise.Trim().Length == 0) return false;
            if (declaracionJurada.newUser.age<=0) return false;
            if (declaracionJurada.newUser.nationality.Trim().Length == 0 || declaracionJurada.newUser.nationality == null) return false;
