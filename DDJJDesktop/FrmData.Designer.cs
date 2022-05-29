@@ -52,6 +52,7 @@
             this.txtEnterprise = new MaterialSkin.Controls.MaterialTextBox2();
             this.btnNext = new MaterialSkin.Controls.MaterialButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.imgAlertTab2 = new System.Windows.Forms.PictureBox();
             this.cardVaccine = new MaterialSkin.Controls.MaterialCard();
             this.optVacNo = new MaterialSkin.Controls.MaterialRadioButton();
             this.optVacYes = new MaterialSkin.Controls.MaterialRadioButton();
@@ -82,6 +83,7 @@
             this.btnBack2 = new MaterialSkin.Controls.MaterialButton();
             this.btnNext2 = new MaterialSkin.Controls.MaterialButton();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnBackToMain = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.imgAlertTab3 = new System.Windows.Forms.PictureBox();
             this.cardSy = new MaterialSkin.Controls.MaterialCard();
             this.btnSy = new MaterialSkin.Controls.MaterialButton();
@@ -121,12 +123,11 @@
             this.btnBack3 = new MaterialSkin.Controls.MaterialButton();
             this.btnConfirm = new MaterialSkin.Controls.MaterialButton();
             this.TabSelector = new MaterialSkin.Controls.MaterialTabSelector();
-            this.imgAlertTab2 = new System.Windows.Forms.PictureBox();
-            this.btnBackToMain = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.tbForm.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgAlert)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAlertTab2)).BeginInit();
             this.cardVaccine.SuspendLayout();
             this.cardModalGR.SuspendLayout();
             this.materialCard3.SuspendLayout();
@@ -140,7 +141,6 @@
             this.materialCard6.SuspendLayout();
             this.materialCard5.SuspendLayout();
             this.materialCard4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAlertTab2)).BeginInit();
             this.SuspendLayout();
             // 
             // tbForm
@@ -628,6 +628,7 @@
             this.txtMail.Size = new System.Drawing.Size(194, 52);
             this.txtMail.TabIndex = 11;
             this.txtMail.TabStop = false;
+            this.txtMail.Text = "jhondoe@gmail.com";
             this.txtMail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtMail.TrailingIcon = null;
             this.txtMail.UseSystemPasswordChar = false;
@@ -743,6 +744,17 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // imgAlertTab2
+            // 
+            this.imgAlertTab2.Image = ((System.Drawing.Image)(resources.GetObject("imgAlertTab2.Image")));
+            this.imgAlertTab2.Location = new System.Drawing.Point(227, 386);
+            this.imgAlertTab2.Name = "imgAlertTab2";
+            this.imgAlertTab2.Size = new System.Drawing.Size(341, 84);
+            this.imgAlertTab2.TabIndex = 89;
+            this.imgAlertTab2.TabStop = false;
+            this.imgAlertTab2.Visible = false;
+            this.imgAlertTab2.Click += new System.EventHandler(this.imgAlertTab2_Click);
             // 
             // cardVaccine
             // 
@@ -1231,6 +1243,19 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "3";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // btnBackToMain
+            // 
+            this.btnBackToMain.Depth = 0;
+            this.btnBackToMain.Icon = ((System.Drawing.Image)(resources.GetObject("btnBackToMain.Icon")));
+            this.btnBackToMain.Location = new System.Drawing.Point(731, 3);
+            this.btnBackToMain.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnBackToMain.Name = "btnBackToMain";
+            this.btnBackToMain.Size = new System.Drawing.Size(56, 56);
+            this.btnBackToMain.TabIndex = 91;
+            this.btnBackToMain.UseVisualStyleBackColor = true;
+            this.btnBackToMain.Visible = false;
+            this.btnBackToMain.Click += new System.EventHandler(this.btnBackToMain_Click);
             // 
             // imgAlertTab3
             // 
@@ -1831,30 +1856,6 @@
             this.TabSelector.TabIndicatorHeight = 4;
             this.TabSelector.Text = "none";
             // 
-            // imgAlertTab2
-            // 
-            this.imgAlertTab2.Image = ((System.Drawing.Image)(resources.GetObject("imgAlertTab2.Image")));
-            this.imgAlertTab2.Location = new System.Drawing.Point(227, 386);
-            this.imgAlertTab2.Name = "imgAlertTab2";
-            this.imgAlertTab2.Size = new System.Drawing.Size(341, 84);
-            this.imgAlertTab2.TabIndex = 89;
-            this.imgAlertTab2.TabStop = false;
-            this.imgAlertTab2.Visible = false;
-            this.imgAlertTab2.Click += new System.EventHandler(this.imgAlertTab2_Click);
-            // 
-            // btnBackToMain
-            // 
-            this.btnBackToMain.Depth = 0;
-            this.btnBackToMain.Icon = ((System.Drawing.Image)(resources.GetObject("btnBackToMain.Icon")));
-            this.btnBackToMain.Location = new System.Drawing.Point(731, 3);
-            this.btnBackToMain.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnBackToMain.Name = "btnBackToMain";
-            this.btnBackToMain.Size = new System.Drawing.Size(56, 56);
-            this.btnBackToMain.TabIndex = 91;
-            this.btnBackToMain.UseVisualStyleBackColor = true;
-            this.btnBackToMain.Visible = false;
-            this.btnBackToMain.Click += new System.EventHandler(this.btnBackToMain_Click);
-            // 
             // FrmData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1873,6 +1874,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgAlert)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAlertTab2)).EndInit();
             this.cardVaccine.ResumeLayout(false);
             this.cardVaccine.PerformLayout();
             this.cardModalGR.ResumeLayout(false);
@@ -1897,7 +1899,6 @@
             this.materialCard5.PerformLayout();
             this.materialCard4.ResumeLayout(false);
             this.materialCard4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAlertTab2)).EndInit();
             this.ResumeLayout(false);
 
         }

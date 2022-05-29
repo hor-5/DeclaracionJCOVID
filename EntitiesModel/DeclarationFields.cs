@@ -10,15 +10,10 @@ namespace EntitiesModel
     {
         public bool isRiskGroup { get; set; }
         public bool isVaccinated { get; set; }
-
         public string departamentName { get; set; }
-
         public DateTime visitDate { get; set; }
-
         public bool isTraveler { get; set; }
-
         public bool closeContact { get; set; }
-
         public bool hasSymptom { get; set; }
 
     }

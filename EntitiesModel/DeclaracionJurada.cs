@@ -14,7 +14,7 @@ namespace EntitiesModel
 
         public DeclarationFields declarationFields { get; set; }
 
-        public DateTime fecha { get; set; }
+        public DateTime createdAt { get; set; }
 
         
     }

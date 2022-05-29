@@ -169,28 +169,45 @@ namespace DDJJDesktop
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            User newUser = new User()
-            {
+            //chequear bien los null.
+            User newUser = new User(){
                 firstName = txtName.Text,
                 dni = txtDni.Text,
-                surName=txtSurname.Text,
-                codArea=sltCodArea.SelectedText,
-                telephone=txtTelNumber.Text,
-                enterprise=txtEnterprise.Text,
-                email=new MailAddress(txtMail.Text),
-                gender=sltGender.SelectedText,
-                birthday=sltDate.Value,
-                nationality=sltNationality.SelectedText,
-                residenceCountry=sltResidence.SelectedText,
-                age=Convert.ToInt32(txtAge.Text)
+                surName = txtSurname.Text,
+                codArea=sltCodArea.SelectedItem!=null? sltCodArea.SelectedItem.ToString() : "",
+                telephone = txtTelNumber.Text,
+                enterprise = txtEnterprise.Text,
+                email = new MailAddress(txtMail.Text),
+                gender = sltGender.SelectedItem!=null? sltGender.SelectedItem.ToString() : "",
+                birthday = sltDate.Value,
+                nationality = sltNationality.SelectedItem!=null? sltNationality.SelectedItem.ToString() : "",
+                residenceCountry = sltResidence.SelectedItem!=null? sltResidence.SelectedItem.ToString() : "",
+                age = Convert.ToInt32(txtAge.Text)
             };
-            DeclaracionJurada declaracionJuradaTmp = new DeclaracionJurada() { newUser = newUser };
+
+            DeclarationFields declarationFields = new DeclarationFields() {
+                isRiskGroup = optRGroupYes.Checked || optRGroupNo.Checked,
+                isVaccinated = optVacYes.Checked || optVacNo.Checked,
+                departamentName = sltDepartment.SelectedText,
+                visitDate = sltDateTime.Value,
+                isTraveler = optTravelerY.Checked || optTravelerN.Checked,
+                closeContact = (optYTravelOth.Checked || optNTravelOth.Checked) &&
+                               (optYCContact.Checked || optNCContact.Checked)   &&
+                               (optCloseContactY.Checked || optCloseContactN.Checked),
+                hasSymptom = optSymY.Checked || optSymN.Checked
+            };
+
+            DeclaracionJurada declaracionJuradaTmp = new DeclaracionJurada() { 
+                        newUser = newUser, 
+                        declarationFields = declarationFields,
+                        createdAt = DateTime.Now
+            };
             bool resultado = validationFinal.validationDeclaracionFields(declaracionJuradaTmp);
 
             if (resultado == true) {
-                MessageBox.Show("Aceptado");
+                MessageBox.Show("Aceptado " + declaracionJuradaTmp.createdAt);
             }
-            else { MessageBox.Show("Rechazado"); }
+            else { MessageBox.Show("Rechazado " + declaracionJuradaTmp.createdAt); }
 
         }
 
