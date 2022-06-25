@@ -75,3 +75,10 @@ C:\Users\pc250282\source\repos\DeclaracionJCOVID\DDJJDesktop\bin\Debug\net6.0-wi
 C:\Users\pc250282\source\repos\DeclaracionJCOVID\DDJJDesktop\bin\Debug\net6.0-windows\Services.dll
 C:\Users\pc250282\source\repos\DeclaracionJCOVID\DDJJDesktop\bin\Debug\net6.0-windows\Services.pdb
 C:\Users\pc250282\source\repos\DeclaracionJCOVID\DDJJDesktop\bin\Debug\net6.0-windows\DataStore.pdb
+C:\Users\pc250282\source\repos\DeclaracionJCOVID\DDJJDesktop\bin\Debug\net6.0-windows\Dapper.dll
+C:\Users\pc250282\source\repos\DeclaracionJCOVID\DDJJDesktop\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\Users\pc250282\source\repos\DeclaracionJCOVID\DDJJDesktop\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\pc250282\source\repos\DeclaracionJCOVID\DDJJDesktop\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\pc250282\source\repos\DeclaracionJCOVID\DDJJDesktop\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\pc250282\source\repos\DeclaracionJCOVID\DDJJDesktop\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\pc250282\source\repos\DeclaracionJCOVID\DDJJDesktop\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll

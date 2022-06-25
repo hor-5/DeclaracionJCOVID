@@ -13,6 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Mail;
+using DataStore;
 
 namespace DDJJDesktop
 {
@@ -24,6 +25,7 @@ namespace DDJJDesktop
         private HTTPRequests httpRequests;
         public ValidationServices validationFinal = new ValidationServices();
         private SecurityServices securityServices = new SecurityServices();
+        public DatosMaestros datosMaestros=new DatosMaestros();
         public FrmData()
         {
             InitializeComponent();
@@ -34,6 +36,8 @@ namespace DDJJDesktop
             materialSkinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Indigo500, MaterialSkin.Primary.Indigo700, MaterialSkin.Primary.Indigo100, MaterialSkin.Accent.Blue400, MaterialSkin.TextShade.WHITE);
 
             fillSelects();
+            fillGenders();
+            fillDepartaments();
         }
 
         public FrmData(User currentUser)
@@ -98,6 +102,26 @@ namespace DDJJDesktop
                 sltResidence.Items.Add(country.name.common);
                 sltCodArea.Items.Add(country.name.common + ": " + (country.idd.root != null ? country.idd.root : "-") + (country.idd.suffixes != null ? country.idd.suffixes[0] : "-"));
             }
+        }
+
+        public async void fillGenders()
+        {
+            List<Generos> lstGenders = datosMaestros.GetGenero();
+            foreach(Generos genero in lstGenders)
+            {
+                sltGender.Items.Add(genero.nombreGenero);
+            }
+
+        }
+
+        public async void fillDepartaments()
+        {
+            List<Departament> lstDepartaments = datosMaestros.GetDepartaments();
+            foreach (Departament departament in lstDepartaments)
+            {
+                sltDepartment.Items.Add(departament.nameDepartament);
+            }
+
         }
 
         private void btnNext_Click(object sender, EventArgs e)

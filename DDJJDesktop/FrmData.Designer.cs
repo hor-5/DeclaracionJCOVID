@@ -587,11 +587,6 @@
             this.sltGender.Hint = "Seleccione genero";
             this.sltGender.IntegralHeight = false;
             this.sltGender.ItemHeight = 29;
-            this.sltGender.Items.AddRange(new object[] {
-            "Masculino",
-            "Femenino",
-            "Prefiero no decirlo",
-            "Otro"});
             this.sltGender.Location = new System.Drawing.Point(521, 182);
             this.sltGender.MaxDropDownItems = 4;
             this.sltGender.MouseState = MaterialSkin.MouseState.OUT;
@@ -1073,10 +1068,6 @@
             this.sltDepartment.Hint = "Departamento";
             this.sltDepartment.IntegralHeight = false;
             this.sltDepartment.ItemHeight = 29;
-            this.sltDepartment.Items.AddRange(new object[] {
-            "Sistemas",
-            "Ventas",
-            "Logística"});
             this.sltDepartment.Location = new System.Drawing.Point(47, 59);
             this.sltDepartment.MaxDropDownItems = 4;
             this.sltDepartment.MouseState = MaterialSkin.MouseState.OUT;
