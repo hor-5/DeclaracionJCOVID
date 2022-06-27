@@ -58,13 +58,11 @@
             this.optVacYes = new MaterialSkin.Controls.MaterialRadioButton();
             this.lblVaccine = new MaterialSkin.Controls.MaterialLabel();
             this.cardModalGR = new MaterialSkin.Controls.MaterialCard();
+            this.lblGroupR3 = new MaterialSkin.Controls.MaterialLabel();
+            this.lblGroupR2 = new MaterialSkin.Controls.MaterialLabel();
+            this.lblGroupR1 = new MaterialSkin.Controls.MaterialLabel();
             this.btnCloseModal = new MaterialSkin.Controls.MaterialFloatingActionButton();
-            this.materialLabel14 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel13 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel12 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel11 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
+            this.lblGroupR = new MaterialSkin.Controls.MaterialLabel();
             this.lblGroupRisk2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard3 = new MaterialSkin.Controls.MaterialCard();
             this.optTravelerN = new MaterialSkin.Controls.MaterialRadioButton();
@@ -92,17 +90,13 @@
             this.materialLabel33 = new MaterialSkin.Controls.MaterialLabel();
             this.imgResult = new System.Windows.Forms.PictureBox();
             this.ModalSy = new MaterialSkin.Controls.MaterialCard();
-            this.materialLabel29 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel30 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel31 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel32 = new MaterialSkin.Controls.MaterialLabel();
             this.btnCloseSy = new MaterialSkin.Controls.MaterialFloatingActionButton();
-            this.materialLabel22 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel23 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel24 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel25 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel26 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel27 = new MaterialSkin.Controls.MaterialLabel();
+            this.lblSintoma5 = new MaterialSkin.Controls.MaterialLabel();
+            this.lblSintoma4 = new MaterialSkin.Controls.MaterialLabel();
+            this.lblSintoma3 = new MaterialSkin.Controls.MaterialLabel();
+            this.lblSintoma2 = new MaterialSkin.Controls.MaterialLabel();
+            this.lblSintoma1 = new MaterialSkin.Controls.MaterialLabel();
+            this.lblSintoma = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel28 = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard6 = new MaterialSkin.Controls.MaterialCard();
             this.materialLabel19 = new MaterialSkin.Controls.MaterialLabel();
@@ -816,13 +810,11 @@
             // 
             this.cardModalGR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cardModalGR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.cardModalGR.Controls.Add(this.lblGroupR3);
+            this.cardModalGR.Controls.Add(this.lblGroupR2);
+            this.cardModalGR.Controls.Add(this.lblGroupR1);
             this.cardModalGR.Controls.Add(this.btnCloseModal);
-            this.cardModalGR.Controls.Add(this.materialLabel14);
-            this.cardModalGR.Controls.Add(this.materialLabel13);
-            this.cardModalGR.Controls.Add(this.materialLabel12);
-            this.cardModalGR.Controls.Add(this.materialLabel11);
-            this.cardModalGR.Controls.Add(this.materialLabel10);
-            this.cardModalGR.Controls.Add(this.materialLabel9);
+            this.cardModalGR.Controls.Add(this.lblGroupR);
             this.cardModalGR.Controls.Add(this.lblGroupRisk2);
             this.cardModalGR.Depth = 0;
             this.cardModalGR.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -834,6 +826,49 @@
             this.cardModalGR.Size = new System.Drawing.Size(433, 161);
             this.cardModalGR.TabIndex = 6;
             this.cardModalGR.Visible = false;
+            this.cardModalGR.Paint += new System.Windows.Forms.PaintEventHandler(this.cardModalGR_Paint);
+            // 
+            // lblGroupR3
+            // 
+            this.lblGroupR3.AutoSize = true;
+            this.lblGroupR3.Depth = 0;
+            this.lblGroupR3.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lblGroupR3.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
+            this.lblGroupR3.Location = new System.Drawing.Point(17, 109);
+            this.lblGroupR3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblGroupR3.Name = "lblGroupR3";
+            this.lblGroupR3.Size = new System.Drawing.Size(19, 17);
+            this.lblGroupR3.TabIndex = 13;
+            this.lblGroupR3.Text = "      ";
+            this.lblGroupR3.UseAccent = true;
+            // 
+            // lblGroupR2
+            // 
+            this.lblGroupR2.AutoSize = true;
+            this.lblGroupR2.Depth = 0;
+            this.lblGroupR2.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lblGroupR2.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
+            this.lblGroupR2.Location = new System.Drawing.Point(17, 81);
+            this.lblGroupR2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblGroupR2.Name = "lblGroupR2";
+            this.lblGroupR2.Size = new System.Drawing.Size(19, 17);
+            this.lblGroupR2.TabIndex = 12;
+            this.lblGroupR2.Text = "      ";
+            this.lblGroupR2.UseAccent = true;
+            // 
+            // lblGroupR1
+            // 
+            this.lblGroupR1.AutoSize = true;
+            this.lblGroupR1.Depth = 0;
+            this.lblGroupR1.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lblGroupR1.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
+            this.lblGroupR1.Location = new System.Drawing.Point(17, 61);
+            this.lblGroupR1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblGroupR1.Name = "lblGroupR1";
+            this.lblGroupR1.Size = new System.Drawing.Size(19, 17);
+            this.lblGroupR1.TabIndex = 11;
+            this.lblGroupR1.Text = "      ";
+            this.lblGroupR1.UseAccent = true;
             // 
             // btnCloseModal
             // 
@@ -849,90 +884,20 @@
             this.btnCloseModal.UseVisualStyleBackColor = true;
             this.btnCloseModal.Click += new System.EventHandler(this.btnCloseModal_Click);
             // 
-            // materialLabel14
+            // lblGroupR
             // 
-            this.materialLabel14.AutoSize = true;
-            this.materialLabel14.Depth = 0;
-            this.materialLabel14.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel14.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
-            this.materialLabel14.Location = new System.Drawing.Point(17, 138);
-            this.materialLabel14.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel14.Name = "materialLabel14";
-            this.materialLabel14.Size = new System.Drawing.Size(154, 17);
-            this.materialLabel14.TabIndex = 9;
-            this.materialLabel14.Text = "-Personas con obesidad";
-            this.materialLabel14.UseAccent = true;
-            // 
-            // materialLabel13
-            // 
-            this.materialLabel13.AutoSize = true;
-            this.materialLabel13.Depth = 0;
-            this.materialLabel13.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel13.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
-            this.materialLabel13.Location = new System.Drawing.Point(17, 121);
-            this.materialLabel13.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel13.Name = "materialLabel13";
-            this.materialLabel13.Size = new System.Drawing.Size(78, 17);
-            this.materialLabel13.TabIndex = 8;
-            this.materialLabel13.Text = "-Fumadores";
-            this.materialLabel13.UseAccent = true;
-            // 
-            // materialLabel12
-            // 
-            this.materialLabel12.AutoSize = true;
-            this.materialLabel12.Depth = 0;
-            this.materialLabel12.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel12.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
-            this.materialLabel12.Location = new System.Drawing.Point(17, 104);
-            this.materialLabel12.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel12.Name = "materialLabel12";
-            this.materialLabel12.Size = new System.Drawing.Size(126, 17);
-            this.materialLabel12.TabIndex = 7;
-            this.materialLabel12.Text = "-Inmunodeprimidos";
-            this.materialLabel12.UseAccent = true;
-            // 
-            // materialLabel11
-            // 
-            this.materialLabel11.AutoSize = true;
-            this.materialLabel11.Depth = 0;
-            this.materialLabel11.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel11.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
-            this.materialLabel11.Location = new System.Drawing.Point(17, 87);
-            this.materialLabel11.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel11.Name = "materialLabel11";
-            this.materialLabel11.Size = new System.Drawing.Size(151, 17);
-            this.materialLabel11.TabIndex = 6;
-            this.materialLabel11.Text = "-Personas con diabetes";
-            this.materialLabel11.UseAccent = true;
-            // 
-            // materialLabel10
-            // 
-            this.materialLabel10.AutoSize = true;
-            this.materialLabel10.Depth = 0;
-            this.materialLabel10.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel10.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
-            this.materialLabel10.Location = new System.Drawing.Point(17, 65);
-            this.materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel10.Name = "materialLabel10";
-            this.materialLabel10.Size = new System.Drawing.Size(277, 17);
-            this.materialLabel10.TabIndex = 5;
-            this.materialLabel10.Text = "-Pacientes con enfermedades respiratorias";
-            this.materialLabel10.UseAccent = true;
-            // 
-            // materialLabel9
-            // 
-            this.materialLabel9.AutoSize = true;
-            this.materialLabel9.Depth = 0;
-            this.materialLabel9.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel9.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
-            this.materialLabel9.Location = new System.Drawing.Point(17, 45);
-            this.materialLabel9.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel9.Name = "materialLabel9";
-            this.materialLabel9.Size = new System.Drawing.Size(93, 17);
-            this.materialLabel9.TabIndex = 4;
-            this.materialLabel9.Text = "-Embarazadas";
-            this.materialLabel9.UseAccent = true;
-            this.materialLabel9.Click += new System.EventHandler(this.materialLabel9_Click);
+            this.lblGroupR.AutoSize = true;
+            this.lblGroupR.Depth = 0;
+            this.lblGroupR.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lblGroupR.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
+            this.lblGroupR.Location = new System.Drawing.Point(17, 42);
+            this.lblGroupR.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblGroupR.Name = "lblGroupR";
+            this.lblGroupR.Size = new System.Drawing.Size(19, 17);
+            this.lblGroupR.TabIndex = 4;
+            this.lblGroupR.Text = "      ";
+            this.lblGroupR.UseAccent = true;
+            this.lblGroupR.Click += new System.EventHandler(this.materialLabel9_Click);
             // 
             // lblGroupRisk2
             // 
@@ -1355,17 +1320,13 @@
             // 
             this.ModalSy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ModalSy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ModalSy.Controls.Add(this.materialLabel29);
-            this.ModalSy.Controls.Add(this.materialLabel30);
-            this.ModalSy.Controls.Add(this.materialLabel31);
-            this.ModalSy.Controls.Add(this.materialLabel32);
             this.ModalSy.Controls.Add(this.btnCloseSy);
-            this.ModalSy.Controls.Add(this.materialLabel22);
-            this.ModalSy.Controls.Add(this.materialLabel23);
-            this.ModalSy.Controls.Add(this.materialLabel24);
-            this.ModalSy.Controls.Add(this.materialLabel25);
-            this.ModalSy.Controls.Add(this.materialLabel26);
-            this.ModalSy.Controls.Add(this.materialLabel27);
+            this.ModalSy.Controls.Add(this.lblSintoma5);
+            this.ModalSy.Controls.Add(this.lblSintoma4);
+            this.ModalSy.Controls.Add(this.lblSintoma3);
+            this.ModalSy.Controls.Add(this.lblSintoma2);
+            this.ModalSy.Controls.Add(this.lblSintoma1);
+            this.ModalSy.Controls.Add(this.lblSintoma);
             this.ModalSy.Controls.Add(this.materialLabel28);
             this.ModalSy.Depth = 0;
             this.ModalSy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -1377,62 +1338,6 @@
             this.ModalSy.Size = new System.Drawing.Size(433, 161);
             this.ModalSy.TabIndex = 15;
             this.ModalSy.Visible = false;
-            // 
-            // materialLabel29
-            // 
-            this.materialLabel29.AutoSize = true;
-            this.materialLabel29.Depth = 0;
-            this.materialLabel29.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel29.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
-            this.materialLabel29.Location = new System.Drawing.Point(253, 104);
-            this.materialLabel29.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel29.Name = "materialLabel29";
-            this.materialLabel29.Size = new System.Drawing.Size(168, 17);
-            this.materialLabel29.TabIndex = 14;
-            this.materialLabel29.Text = "-Renitis/Congestion nasal";
-            this.materialLabel29.UseAccent = true;
-            // 
-            // materialLabel30
-            // 
-            this.materialLabel30.AutoSize = true;
-            this.materialLabel30.Depth = 0;
-            this.materialLabel30.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel30.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
-            this.materialLabel30.Location = new System.Drawing.Point(253, 87);
-            this.materialLabel30.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel30.Name = "materialLabel30";
-            this.materialLabel30.Size = new System.Drawing.Size(118, 17);
-            this.materialLabel30.TabIndex = 13;
-            this.materialLabel30.Text = "-Vomitos y diarrea";
-            this.materialLabel30.UseAccent = true;
-            // 
-            // materialLabel31
-            // 
-            this.materialLabel31.AutoSize = true;
-            this.materialLabel31.Depth = 0;
-            this.materialLabel31.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel31.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
-            this.materialLabel31.Location = new System.Drawing.Point(253, 65);
-            this.materialLabel31.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel31.Name = "materialLabel31";
-            this.materialLabel31.Size = new System.Drawing.Size(54, 17);
-            this.materialLabel31.TabIndex = 12;
-            this.materialLabel31.Text = "-Mialgia";
-            this.materialLabel31.UseAccent = true;
-            // 
-            // materialLabel32
-            // 
-            this.materialLabel32.AutoSize = true;
-            this.materialLabel32.Depth = 0;
-            this.materialLabel32.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel32.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
-            this.materialLabel32.Location = new System.Drawing.Point(253, 45);
-            this.materialLabel32.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel32.Name = "materialLabel32";
-            this.materialLabel32.Size = new System.Drawing.Size(56, 17);
-            this.materialLabel32.TabIndex = 11;
-            this.materialLabel32.Text = "-Cefalea";
-            this.materialLabel32.UseAccent = true;
             // 
             // btnCloseSy
             // 
@@ -1448,89 +1353,89 @@
             this.btnCloseSy.UseVisualStyleBackColor = true;
             this.btnCloseSy.Click += new System.EventHandler(this.btnCloseSy_Click);
             // 
-            // materialLabel22
+            // lblSintoma5
             // 
-            this.materialLabel22.AutoSize = true;
-            this.materialLabel22.Depth = 0;
-            this.materialLabel22.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel22.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
-            this.materialLabel22.Location = new System.Drawing.Point(17, 138);
-            this.materialLabel22.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel22.Name = "materialLabel22";
-            this.materialLabel22.Size = new System.Drawing.Size(197, 17);
-            this.materialLabel22.TabIndex = 9;
-            this.materialLabel22.Text = "-Alteraciones de olfato o gusto";
-            this.materialLabel22.UseAccent = true;
+            this.lblSintoma5.AutoSize = true;
+            this.lblSintoma5.Depth = 0;
+            this.lblSintoma5.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lblSintoma5.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
+            this.lblSintoma5.Location = new System.Drawing.Point(17, 138);
+            this.lblSintoma5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblSintoma5.Name = "lblSintoma5";
+            this.lblSintoma5.Size = new System.Drawing.Size(10, 17);
+            this.lblSintoma5.TabIndex = 9;
+            this.lblSintoma5.Text = "   ";
+            this.lblSintoma5.UseAccent = true;
             // 
-            // materialLabel23
+            // lblSintoma4
             // 
-            this.materialLabel23.AutoSize = true;
-            this.materialLabel23.Depth = 0;
-            this.materialLabel23.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel23.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
-            this.materialLabel23.Location = new System.Drawing.Point(17, 121);
-            this.materialLabel23.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel23.Name = "materialLabel23";
-            this.materialLabel23.Size = new System.Drawing.Size(87, 17);
-            this.materialLabel23.TabIndex = 8;
-            this.materialLabel23.Text = "-Conjuntivitis";
-            this.materialLabel23.UseAccent = true;
+            this.lblSintoma4.AutoSize = true;
+            this.lblSintoma4.Depth = 0;
+            this.lblSintoma4.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lblSintoma4.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
+            this.lblSintoma4.Location = new System.Drawing.Point(17, 121);
+            this.lblSintoma4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblSintoma4.Name = "lblSintoma4";
+            this.lblSintoma4.Size = new System.Drawing.Size(10, 17);
+            this.lblSintoma4.TabIndex = 8;
+            this.lblSintoma4.Text = "   ";
+            this.lblSintoma4.UseAccent = true;
             // 
-            // materialLabel24
+            // lblSintoma3
             // 
-            this.materialLabel24.AutoSize = true;
-            this.materialLabel24.Depth = 0;
-            this.materialLabel24.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel24.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
-            this.materialLabel24.Location = new System.Drawing.Point(17, 104);
-            this.materialLabel24.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel24.Name = "materialLabel24";
-            this.materialLabel24.Size = new System.Drawing.Size(52, 17);
-            this.materialLabel24.TabIndex = 7;
-            this.materialLabel24.Text = "-Resfrio";
-            this.materialLabel24.UseAccent = true;
+            this.lblSintoma3.AutoSize = true;
+            this.lblSintoma3.Depth = 0;
+            this.lblSintoma3.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lblSintoma3.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
+            this.lblSintoma3.Location = new System.Drawing.Point(17, 104);
+            this.lblSintoma3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblSintoma3.Name = "lblSintoma3";
+            this.lblSintoma3.Size = new System.Drawing.Size(10, 17);
+            this.lblSintoma3.TabIndex = 7;
+            this.lblSintoma3.Text = "   ";
+            this.lblSintoma3.UseAccent = true;
             // 
-            // materialLabel25
+            // lblSintoma2
             // 
-            this.materialLabel25.AutoSize = true;
-            this.materialLabel25.Depth = 0;
-            this.materialLabel25.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel25.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
-            this.materialLabel25.Location = new System.Drawing.Point(17, 87);
-            this.materialLabel25.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel25.Name = "materialLabel25";
-            this.materialLabel25.Size = new System.Drawing.Size(120, 17);
-            this.materialLabel25.TabIndex = 6;
-            this.materialLabel25.Text = "-Dolor de garganta";
-            this.materialLabel25.UseAccent = true;
+            this.lblSintoma2.AutoSize = true;
+            this.lblSintoma2.Depth = 0;
+            this.lblSintoma2.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lblSintoma2.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
+            this.lblSintoma2.Location = new System.Drawing.Point(17, 87);
+            this.lblSintoma2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblSintoma2.Name = "lblSintoma2";
+            this.lblSintoma2.Size = new System.Drawing.Size(10, 17);
+            this.lblSintoma2.TabIndex = 6;
+            this.lblSintoma2.Text = "   ";
+            this.lblSintoma2.UseAccent = true;
             // 
-            // materialLabel26
+            // lblSintoma1
             // 
-            this.materialLabel26.AutoSize = true;
-            this.materialLabel26.Depth = 0;
-            this.materialLabel26.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel26.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
-            this.materialLabel26.Location = new System.Drawing.Point(17, 65);
-            this.materialLabel26.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel26.Name = "materialLabel26";
-            this.materialLabel26.Size = new System.Drawing.Size(30, 17);
-            this.materialLabel26.TabIndex = 5;
-            this.materialLabel26.Text = "-Tos";
-            this.materialLabel26.UseAccent = true;
+            this.lblSintoma1.AutoSize = true;
+            this.lblSintoma1.Depth = 0;
+            this.lblSintoma1.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lblSintoma1.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
+            this.lblSintoma1.Location = new System.Drawing.Point(17, 65);
+            this.lblSintoma1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblSintoma1.Name = "lblSintoma1";
+            this.lblSintoma1.Size = new System.Drawing.Size(10, 17);
+            this.lblSintoma1.TabIndex = 5;
+            this.lblSintoma1.Text = "   ";
+            this.lblSintoma1.UseAccent = true;
             // 
-            // materialLabel27
+            // lblSintoma
             // 
-            this.materialLabel27.AutoSize = true;
-            this.materialLabel27.Depth = 0;
-            this.materialLabel27.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel27.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
-            this.materialLabel27.Location = new System.Drawing.Point(17, 45);
-            this.materialLabel27.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel27.Name = "materialLabel27";
-            this.materialLabel27.Size = new System.Drawing.Size(47, 17);
-            this.materialLabel27.TabIndex = 4;
-            this.materialLabel27.Text = "-Fiebre";
-            this.materialLabel27.UseAccent = true;
+            this.lblSintoma.AutoSize = true;
+            this.lblSintoma.Depth = 0;
+            this.lblSintoma.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lblSintoma.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
+            this.lblSintoma.Location = new System.Drawing.Point(17, 45);
+            this.lblSintoma.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblSintoma.Name = "lblSintoma";
+            this.lblSintoma.Size = new System.Drawing.Size(10, 17);
+            this.lblSintoma.TabIndex = 4;
+            this.lblSintoma.Text = "   ";
+            this.lblSintoma.UseAccent = true;
             // 
             // materialLabel28
             // 
@@ -1934,31 +1839,22 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel8;
         private MaterialSkin.Controls.MaterialLabel lblInDate;
         private MaterialSkin.Controls.MaterialCard cardModalGR;
-        private MaterialSkin.Controls.MaterialLabel materialLabel9;
+        private MaterialSkin.Controls.MaterialLabel lblGroupR;
         private MaterialSkin.Controls.MaterialLabel lblGroupRisk2;
-        private MaterialSkin.Controls.MaterialLabel materialLabel13;
-        private MaterialSkin.Controls.MaterialLabel materialLabel12;
-        private MaterialSkin.Controls.MaterialLabel materialLabel11;
-        private MaterialSkin.Controls.MaterialLabel materialLabel10;
         private MaterialSkin.Controls.MaterialFloatingActionButton btnCloseModal;
-        private MaterialSkin.Controls.MaterialLabel materialLabel14;
         private MaterialSkin.Controls.MaterialCard cardVaccine;
         private MaterialSkin.Controls.MaterialRadioButton optVacNo;
         private MaterialSkin.Controls.MaterialRadioButton optVacYes;
         private MaterialSkin.Controls.MaterialLabel lblVaccine;
         private PictureBox imgResult;
         private MaterialSkin.Controls.MaterialCard ModalSy;
-        private MaterialSkin.Controls.MaterialLabel materialLabel29;
-        private MaterialSkin.Controls.MaterialLabel materialLabel30;
-        private MaterialSkin.Controls.MaterialLabel materialLabel31;
-        private MaterialSkin.Controls.MaterialLabel materialLabel32;
         private MaterialSkin.Controls.MaterialFloatingActionButton btnCloseSy;
-        private MaterialSkin.Controls.MaterialLabel materialLabel22;
-        private MaterialSkin.Controls.MaterialLabel materialLabel23;
-        private MaterialSkin.Controls.MaterialLabel materialLabel24;
-        private MaterialSkin.Controls.MaterialLabel materialLabel25;
-        private MaterialSkin.Controls.MaterialLabel materialLabel26;
-        private MaterialSkin.Controls.MaterialLabel materialLabel27;
+        private MaterialSkin.Controls.MaterialLabel lblSintoma5;
+        private MaterialSkin.Controls.MaterialLabel lblSintoma4;
+        private MaterialSkin.Controls.MaterialLabel lblSintoma3;
+        private MaterialSkin.Controls.MaterialLabel lblSintoma2;
+        private MaterialSkin.Controls.MaterialLabel lblSintoma1;
+        private MaterialSkin.Controls.MaterialLabel lblSintoma;
         private MaterialSkin.Controls.MaterialLabel materialLabel28;
         private MaterialSkin.Controls.MaterialCard materialCard6;
         private MaterialSkin.Controls.MaterialLabel materialLabel19;
@@ -1990,5 +1886,8 @@
         private PictureBox imgAlertTab3;
         private PictureBox imgAlertTab2;
         private MaterialSkin.Controls.MaterialFloatingActionButton btnBackToMain;
+        private MaterialSkin.Controls.MaterialLabel lblGroupR1;
+        private MaterialSkin.Controls.MaterialLabel lblGroupR3;
+        private MaterialSkin.Controls.MaterialLabel lblGroupR2;
     }
 }

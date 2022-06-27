@@ -15,9 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DDJJDesktop", "DDJJDesktop\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntitiesModel", "EntitiesModel\EntitiesModel.csproj", "{D7E67FD5-AF9B-4AC5-8A8A-56CCEBCF9D25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStore", "DataStore\DataStore.csproj", "{3E1B494F-E692-4CF4-9586-39B057222589}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStore", "DataStore\DataStore.csproj", "{3E1B494F-E692-4CF4-9586-39B057222589}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{0BDD1061-9578-42CF-A2A2-A0E80443CF87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{0BDD1061-9578-42CF-A2A2-A0E80443CF87}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

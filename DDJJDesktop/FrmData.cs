@@ -25,7 +25,6 @@ namespace DDJJDesktop
         private HTTPRequests httpRequests;
         public ValidationServices validationFinal = new ValidationServices();
         private SecurityServices securityServices = new SecurityServices();
-        public DatosMaestros datosMaestros=new DatosMaestros();
         public FrmData()
         {
             InitializeComponent();
@@ -50,7 +49,7 @@ namespace DDJJDesktop
             materialSkinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Indigo500, MaterialSkin.Primary.Indigo700, MaterialSkin.Primary.Indigo100, MaterialSkin.Accent.Blue400, MaterialSkin.TextShade.WHITE);
 
             fillTextBox(currentUser);
-
+            fillDepartaments();
         }
 
         private void FrmData_Load(object sender, EventArgs e)
@@ -75,7 +74,7 @@ namespace DDJJDesktop
             txtTelNumber.Enabled = false;
             txtEnterprise.Text = currentUser.enterprise;
             txtEnterprise.Enabled = false;
-            txtMail.Text = currentUser.email.Address;
+            txtMail.Text = currentUser.email;
             txtMail.Enabled = false;
             sltGender.Items.Add(currentUser.gender);
             sltGender.SelectedItem = currentUser.gender;
@@ -104,9 +103,9 @@ namespace DDJJDesktop
             }
         }
 
-        public async void fillGenders()
+        public void fillGenders()
         {
-            List<Generos> lstGenders = datosMaestros.GetGenero();
+            List<Generos> lstGenders = securityServices.getGenero();
             foreach(Generos genero in lstGenders)
             {
                 sltGender.Items.Add(genero.nombreGenero);
@@ -114,15 +113,91 @@ namespace DDJJDesktop
 
         }
 
-        public async void fillDepartaments()
+        public void fillDepartaments()
         {
-            List<Departament> lstDepartaments = datosMaestros.GetDepartaments();
+            List<Departament> lstDepartaments = securityServices.getDepartaments();
             foreach (Departament departament in lstDepartaments)
             {
                 sltDepartment.Items.Add(departament.nameDepartament);
             }
 
         }
+        public void fillRiskGroups()
+        {
+            List<RiskGroup> lstRiskGroups = securityServices.getRiskGroups();
+            int cont = 0;
+            foreach (RiskGroup riskGroup in lstRiskGroups) {
+                try
+                {
+                    if (cont == 0)
+                    {
+                        lblGroupR.Text += "-" + riskGroup.nombreGrupo + (lstRiskGroups.Count >= 2 ? "                            -" + lstRiskGroups[cont + 1].nombreGrupo : "");
+                    }
+                    else if (cont == 2)
+                    {
+                        lblGroupR1.Text += "-" + riskGroup.nombreGrupo + (lstRiskGroups.Count >= 4 ? "        -" + lstRiskGroups[cont + 1].nombreGrupo : ""); ;
+                    }
+                    else if (cont == 4)
+                    {
+                        lblGroupR2.Text += "-" + riskGroup.nombreGrupo + (lstRiskGroups.Count >= 6 ? "        -" + lstRiskGroups[cont + 1].nombreGrupo : "");
+                    }
+                    else if (cont == 6)
+                    {
+                        lblGroupR3.Text += "-" + riskGroup.nombreGrupo + (lstRiskGroups.Count >= 8 ? "       -" + lstRiskGroups[cont + 1].nombreGrupo : ""); ;
+                    }
+                    //solamente puede mostrar hasta 8 grupos de riesgo.
+                    cont++;
+                }
+                catch (Exception err) {
+                    lblGroupR.Text = err.Message;
+                }
+            }
+
+
+        }
+        public void fillSymptoms() 
+        {
+            List<SintomasCovid> lstSintomas = securityServices.getSintomas();
+            int cont = 0;
+            foreach (SintomasCovid sintoma in lstSintomas)
+            {
+                try
+                {
+                    if (cont == 0)
+                    {
+                        lblSintoma.Text += "-" + sintoma.nombreSintoma + (lstSintomas.Count >= 2 ? "         -" + lstSintomas[cont + 1].nombreSintoma : "");
+                    }
+                    else if (cont == 2)
+                    {
+                        lblSintoma1.Text += "-" + sintoma.nombreSintoma + (lstSintomas.Count >= 4 ? "                           -" + lstSintomas[cont + 1].nombreSintoma : ""); ;
+                    }
+                    else if (cont == 4)
+                    {
+                        lblSintoma2.Text += "-" + sintoma.nombreSintoma + (lstSintomas.Count >= 6 ? "      -" + lstSintomas[cont + 1].nombreSintoma : "");
+                    }
+                    else if (cont == 6)
+                    {
+                        lblSintoma3.Text += "-" + sintoma.nombreSintoma + (lstSintomas.Count >= 8 ? "       -" + lstSintomas[cont + 1].nombreSintoma : ""); ;
+                    }
+                    else if (cont == 8)
+                    {
+                        lblSintoma4.Text += "-" + sintoma.nombreSintoma + (lstSintomas.Count >= 10 ? "       -" + lstSintomas[cont + 1].nombreSintoma : ""); ;
+                    }
+                    else if (cont == 10)
+                    {
+                        lblSintoma5.Text += "-" + sintoma.nombreSintoma + (lstSintomas.Count >= 12 ? "       -" + lstSintomas[cont + 1].nombreSintoma : ""); ;
+                    }
+                    //solamente puede mostrar hasta 12 sintomas.
+                    cont++;
+                }
+                catch (Exception err)
+                {
+                    lblGroupR.Text = err.Message;
+                }
+            }
+        }
+
+
 
         private void btnNext_Click(object sender, EventArgs e)
         {
@@ -174,16 +249,28 @@ namespace DDJJDesktop
             cardVaccine.Visible = true;
         }
 
+        bool filledRiskG = false;
         private void btnRiskGroup_Click(object sender, EventArgs e)
         {
             cardVaccine.Visible = false;
             cardModalGR.Visible = true;
+            if (!filledRiskG) {
+               fillRiskGroups();
+               filledRiskG = true;
+            }
+            
         }
 
+        bool filledSymptoms = false;
         private void btnSy_Click(object sender, EventArgs e)
         {
             cardSy.Visible = false;
             ModalSy.Visible = true;
+            if (!filledSymptoms)
+            {
+                fillSymptoms();
+                filledSymptoms = true;
+            }
         }
 
         private void btnCloseSy_Click(object sender, EventArgs e)
@@ -203,7 +290,7 @@ namespace DDJJDesktop
                     codArea = sltCodArea.SelectedItem != null ? sltCodArea.SelectedItem.ToString() : "",
                     telephone = txtTelNumber.Text,
                     enterprise = txtEnterprise.Text,
-                    email = txtMail.Text.Contains('@') ? new MailAddress(txtMail.Text) : new MailAddress("vacio@vacio.com"),
+                    //email = txtMail.Text.Contains('@') ? new MailAddress(txtMail.Text) : new MailAddress("vacio@vacio.com"),
                     gender = sltGender.SelectedItem != null ? sltGender.SelectedItem.ToString() : "",
                     birthday = sltDate.Value != null ? sltDate.Value : new DateTime(2022, 28, 05),
                     age = txtAge.Text.Length > 0 ? Convert.ToInt32(txtAge.Text) : 0,
@@ -234,7 +321,7 @@ namespace DDJJDesktop
                     {
                         MaterialMessageBox.Show("Envio exitoso " + declaracionJuradaTmp.createdAt.ToShortDateString());
                         //guarda la declaración jurada en la entidad de datos.
-                        securityServices.createDeclaration(declaracionJuradaTmp);                        
+                        //securityServices.createDeclaration(declaracionJuradaTmp);                        
                     }
                     else { MaterialMessageBox.Show("Ocurrió un error : "+ resultado +" "+ declaracionJuradaTmp.createdAt.ToShortDateString()); }
             }
@@ -423,6 +510,11 @@ namespace DDJJDesktop
         {
             this.Close();
             new FrmLogin().Show();
+        }
+
+        private void cardModalGR_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

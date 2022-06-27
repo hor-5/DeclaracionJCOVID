@@ -18,7 +18,7 @@ namespace EntitiesModel
         public string codCountry { get; set; }
         public string telephone { get; set; }
         public string enterprise { get; set; }
-        public MailAddress email { get; set; }
+        public string email { get; set; }
         public string gender { get; set; }
         public DateTime birthday { get; set; }
         public int age { get; set; }
@@ -26,7 +26,7 @@ namespace EntitiesModel
         public string residenceCountry  { get; set; }
 
         public User(string userName, string password, string dni, string firstName, string surName, string codArea, string codCountry,
-            string telephone, string enterprise, MailAddress email, string gender, 
+            string telephone, string enterprise, string email, string gender, 
             DateTime birthday, int age, string nationality, string residenceCountry) {
             
             this.userName = userName;

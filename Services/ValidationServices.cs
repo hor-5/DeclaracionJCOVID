@@ -23,8 +23,8 @@ namespace Services
                declaracionJurada.newUser.codArea == null) return "Debe completar el código de area";
            if (declaracionJurada.newUser.telephone.Trim().Length == 0) return "Debe completar el telefono";
            if (declaracionJurada.newUser.enterprise.Trim().Length == 0) return "Debe completar la empresa";
-           if (declaracionJurada.newUser.email == null ||
-               declaracionJurada.newUser.email == new MailAddress("vacio@vacio.com")) return "Debe ingresar un email válido";
+           //if (declaracionJurada.newUser.email == null ||
+           //    declaracionJurada.newUser.email == new MailAddress("vacio@vacio.com")) return "Debe ingresar un email válido";
            if (declaracionJurada.newUser.gender.Trim().Length == 0 || declaracionJurada.newUser.gender == null) return "Debe seleccionar el género";
            if (declaracionJurada.newUser.birthday == null) return "Debe selecionar su fecha de nacimiento";
            if (declaracionJurada.newUser.age<=0) return "Seleccione su fecha de nacimiento";
