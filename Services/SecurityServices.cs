@@ -33,6 +33,10 @@ namespace Services
             return datosMaestros.GetUsers();
         }
 
+        public List<Person> getPersons(int idUser)
+        {
+            return datosMaestros.GetPersons(idUser);
+        }
         public List<Country> getCountries() {
             return datosMaestros.GetCountries();
         }

@@ -60,13 +60,15 @@ namespace DataStore
             LstCountries = dbOperation.OperationQuery<Country>(sql);
             return LstCountries;
         }
-        
-       //public List<Person>GetPersons()
-       // {
-       //     List <Person> LstGetPersons = new List<Person>();
-       //     string sql=
-       //     return LstPerson;
-       // }
+
+        public List<Person> GetPersons(int idUser)
+        {
+            
+            List<Person> LstPersons = new List<Person>();
+            string sql = "select * from Users inner join Persons on Persons.fk_idUser="+idUser;
+            LstPersons=dbOperation.OperationQuery<Person>(sql);
+            return LstPersons;
+        }
 
 
     }

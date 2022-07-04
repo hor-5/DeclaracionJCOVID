@@ -44,8 +44,9 @@ namespace DDJJDesktop
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Indigo500, MaterialSkin.Primary.Indigo700, MaterialSkin.Primary.Indigo100, MaterialSkin.Accent.Blue400, MaterialSkin.TextShade.WHITE);
-
-            //fillTextBox(currentUser);
+            List<Person> lstPersons=securityServices.getPersons(currentUser.idUser);
+            Person currentPerson = lstPersons[0];
+            fillTextBox(currentPerson);
             fillDepartaments();
         }
 
@@ -56,6 +57,7 @@ namespace DDJJDesktop
 
         private void fillTextBox(Person currentUser)
         {
+            
             txtDni.Text = currentUser.dni;
             txtDni.Enabled = false;
             txtName.Text = currentUser.firstName;
@@ -78,7 +80,7 @@ namespace DDJJDesktop
             sltGender.Enabled = false;
             sltDate.Value = currentUser.birthday;
             sltDate.Enabled = false;
-            //txtAge.Text = currentUser.age.ToString();
+            CalulateAge(currentUser.birthday);
             txtAge.Enabled = false;
             //sltNationality.Items.Add(currentUser.nationality);
             //sltNationality.SelectedItem = currentUser.nationality;
