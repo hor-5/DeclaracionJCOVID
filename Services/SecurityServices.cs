@@ -7,35 +7,14 @@ namespace Services
 {
     public class SecurityServices
     {
-        
+
         DatosMaestros datosMaestros = new DatosMaestros();
-        //public User login(String txtUser, String txtPass)
-        //{
-        //    User result = null;            
-        //    List<User> users = data.getUsers();
-        //    foreach (User u in users)
-        //    {
-        //        if (u.userName == txtUser && u.password == txtPass)
-        //        {
-        //            result = u;
-        //            break;
-        //        }
-        //    }
-        //    return result;
-        //}
 
-        //public void createDeclaration(DeclaracionJurada declaracion) {
-
-        //   data.setDeclaraciones(declaracion);         
-            
-
-        //}
-
-        public List<SintomasCovid> getSintomas() {
+        public List<CovidSymptom> getSintomas() {
             return datosMaestros.GetSintomas();
         }
 
-        public List<Generos> getGenero()
+        public List<Gender> getGenero()
         {
             return datosMaestros.GetGenero();
         }
@@ -49,27 +28,13 @@ namespace Services
             return datosMaestros.GetRiskGroup();
         }
 
-        public List<User> getUsers()
+        public List<Person> getUsers()
         {
             return datosMaestros.GetUsers();
         }
-        public string getUserGender(int idGender) {
-            return datosMaestros.GetUserGender(idGender);
-        }
 
-        public User login(String txtUser, String txtPass)
-        {
-            User result = null;
-            List<User> users = this.getUsers();
-            foreach (User user in users)
-            {
-                if (user.userName == txtUser && user.password == txtPass)
-                {
-                    result = user;
-                    break;
-                }
-            }
-            return result;
+        public List<Country> getCountries() {
+            return datosMaestros.GetCountries();
         }
 
 

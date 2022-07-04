@@ -12,11 +12,11 @@ namespace DataStore
     public class DatosMaestros
     {
         DBOperation dbOperation = new DBOperation();
-        public List<SintomasCovid> GetSintomas()
+        public List<CovidSymptom> GetSintomas()
         {
-            List<SintomasCovid> Lstsintomas = new List<SintomasCovid>();
-            string sql = "SELECT idSintoma, nombreSintoma FROM SintomasCovid";
-            Lstsintomas = dbOperation.OperationQuery<SintomasCovid>(sql);
+            List<CovidSymptom> Lstsintomas = new List<CovidSymptom>();
+            string sql = "SELECT idSymptom, nameSymptom FROM CovidSymptoms";
+            Lstsintomas = dbOperation.OperationQuery<CovidSymptom>(sql);
             return Lstsintomas;
         }
 
@@ -24,17 +24,17 @@ namespace DataStore
         public List<RiskGroup> GetRiskGroup()
         {
             List<RiskGroup> LstGroupRisk = new List<RiskGroup>();
-            string sql = "SELECT idGrupoRiesgo, nombreGrupo FROM GruposDeRiesgo";
+            string sql = "SELECT idRiskGroup, nameRiskGroup FROM RiskGroups";
             LstGroupRisk = dbOperation.OperationQuery<RiskGroup>(sql);
             return LstGroupRisk;
         }
 
-        public List<Generos> GetGenero()
+        public List<Gender> GetGenero()
         {
-            List<Generos> LstGeneros = new List<Generos>();
-            string sql = "SELECT idGenero,nombreGenero FROM Generos";
-            LstGeneros =dbOperation.OperationQuery<Generos>(sql);
-            return LstGeneros;
+            List<Gender> LstGenders = new List<Gender>();
+            string sql = "SELECT idGender,nameGender FROM Genders";
+            LstGenders = dbOperation.OperationQuery<Gender>(sql);
+            return LstGenders;
         }
 
         public List<Departament> GetDepartaments()
@@ -45,29 +45,22 @@ namespace DataStore
             return LstDepartaments;
         }
 
-        public List<User> GetUsers()
+        public List<Person> GetUsers()
         {
-            List<User> LstUsers = new List<User>();
+            List<Person> LstUsers = new List<Person>();
             string sql = "SELECT * FROM Users";
-            LstUsers = dbOperation.OperationQuery<User>(sql);
+            LstUsers = dbOperation.OperationQuery<Person>(sql);
             return LstUsers;
         }
 
-        public string GetUserGender(int idGen)
+        public List<Country> GetCountries()
         {
-            List<Generos> lstGender = new List<Generos>();
-            string sql = "SELECT idGenero nombreGenero from Generos WHERE idGenero =" + idGen.ToString();
-
-            using (var connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Usuario\source\repos\DDJJAdministrator\DataStore\DateBase\BBDDdeclaracionJurada.mdf;Integrated Security=True;Connect Timeout=30"))
-            {
-                lstGender = connection.Query<Generos>(sql).ToList();
-            }
-             try {
-                return lstGender[0].nombreGenero; 
-            } catch (Exception err){ 
-                return err.Message; 
-            };
+            List<Country> LstCountries = new List<Country>();
+            string sql = "SELECT idCountry,nameCountry,codCountry FROM Countrys";
+            LstCountries = dbOperation.OperationQuery<Country>(sql);
+            return LstCountries;
         }
+
 
     }
 }

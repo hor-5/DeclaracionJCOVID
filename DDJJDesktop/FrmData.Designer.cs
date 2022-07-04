@@ -465,7 +465,7 @@
             this.sltNationality.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.sltNationality.Depth = 0;
             this.sltNationality.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.sltNationality.DropDownHeight = 118;
+            this.sltNationality.DropDownHeight = 2902;
             this.sltNationality.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.sltNationality.DropDownWidth = 121;
             this.sltNationality.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
@@ -572,7 +572,7 @@
             this.sltGender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.sltGender.Depth = 0;
             this.sltGender.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.sltGender.DropDownHeight = 118;
+            this.sltGender.DropDownHeight = 147;
             this.sltGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.sltGender.DropDownWidth = 121;
             this.sltGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
@@ -582,7 +582,7 @@
             this.sltGender.IntegralHeight = false;
             this.sltGender.ItemHeight = 29;
             this.sltGender.Location = new System.Drawing.Point(521, 182);
-            this.sltGender.MaxDropDownItems = 4;
+            this.sltGender.MaxDropDownItems = 5;
             this.sltGender.MouseState = MaterialSkin.MouseState.OUT;
             this.sltGender.Name = "sltGender";
             this.sltGender.Size = new System.Drawing.Size(194, 35);

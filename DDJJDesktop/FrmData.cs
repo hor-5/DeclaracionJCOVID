@@ -1,7 +1,6 @@
 ﻿using EntitiesModel;
 using Services;
 using MaterialSkin.Controls;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,8 +11,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Net.Mail;
-using DataStore;
+
 
 namespace DDJJDesktop
 {
@@ -22,7 +20,6 @@ namespace DDJJDesktop
     {
         readonly MaterialSkin.MaterialSkinManager materialSkinManager;
 
-        private HTTPRequests httpRequests;
         public ValidationServices validationFinal = new ValidationServices();
         private SecurityServices securityServices = new SecurityServices();
         public FrmData()
@@ -34,12 +31,12 @@ namespace DDJJDesktop
             materialSkinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Indigo500, MaterialSkin.Primary.Indigo700, MaterialSkin.Primary.Indigo100, MaterialSkin.Accent.Blue400, MaterialSkin.TextShade.WHITE);
 
-            fillSelects();
+            fillCountries();
             fillGenders();
             fillDepartaments();
         }
 
-        public FrmData(User currentUser)
+        public FrmData(Person currentUser)
         {
             InitializeComponent();
             materialSkinManager = MaterialSkin.MaterialSkinManager.Instance;
@@ -57,7 +54,7 @@ namespace DDJJDesktop
 
         }
 
-        private void fillTextBox(User currentUser)
+        private void fillTextBox(Person currentUser)
         {
             txtDni.Text = currentUser.dni;
             txtDni.Enabled = false;
@@ -65,8 +62,8 @@ namespace DDJJDesktop
             txtName.Enabled = false;
             txtSurname.Text = currentUser.surName;
             txtSurname.Enabled = false;
-            sltCodArea.Items.Add(currentUser.codCountry);
-            sltCodArea.SelectedItem = currentUser.codCountry;
+            //sltCodArea.Items.Add(currentUser.codCountry);
+            //sltCodArea.SelectedItem = currentUser.codCountry;
             sltCodArea.Enabled = false;
             txtCodArea.Text = currentUser.codArea;
             txtCodArea.Enabled = false;
@@ -76,50 +73,40 @@ namespace DDJJDesktop
             txtEnterprise.Enabled = false;
             txtMail.Text = currentUser.email;
             txtMail.Enabled = false;
-            sltGender.Items.Add(currentUser.gender);
-            sltGender.SelectedItem = currentUser.gender;
+            //sltGender.Items.Add(currentUser.gender);
+            //sltGender.SelectedItem = currentUser.gender;
             sltGender.Enabled = false;
             sltDate.Value = currentUser.birthday;
             sltDate.Enabled = false;
-            txtAge.Text = currentUser.age.ToString();
+            //txtAge.Text = currentUser.age.ToString();
             txtAge.Enabled = false;
-            sltNationality.Items.Add(currentUser.nationality);
-            sltNationality.SelectedItem = currentUser.nationality;
+            //sltNationality.Items.Add(currentUser.nationality);
+            //sltNationality.SelectedItem = currentUser.nationality;
             sltNationality.Enabled = false;
-            sltResidence.Items.Add(currentUser.residenceCountry);
-            sltResidence.SelectedItem = currentUser.residenceCountry;
+            //sltResidence.Items.Add(currentUser.residenceCountry);
+            //sltResidence.SelectedItem = currentUser.residenceCountry;
             sltResidence.Enabled = false;
 
-        }
-        private async void fillSelects() {
-            httpRequests = new HTTPRequests();
-            string countrys = await httpRequests.getCountrys();
-            List<Country> lstCountries = JsonConvert.DeserializeObject<List<Country>>(countrys);
-            foreach (Country country in lstCountries)
-            {
-                sltNationality.Items.Add(country.name.common);
-                sltResidence.Items.Add(country.name.common);
-                sltCodArea.Items.Add(country.name.common + ": " + (country.idd.root != null ? country.idd.root : "-") + (country.idd.suffixes != null ? country.idd.suffixes[0] : "-"));
-            }
         }
 
         public void fillGenders()
         {
-            List<Generos> lstGenders = securityServices.getGenero();
-            foreach(Generos genero in lstGenders)
-            {
-                sltGender.Items.Add(genero.nombreGenero);
-            }
+            List<Gender> lstGenders = securityServices.getGenero();
+
+            sltGender.DisplayMember = "nameGender";
+            sltGender.ValueMember = "idGender";
+            sltGender.DataSource = lstGenders;
 
         }
 
         public void fillDepartaments()
         {
             List<Departament> lstDepartaments = securityServices.getDepartaments();
-            foreach (Departament departament in lstDepartaments)
-            {
-                sltDepartment.Items.Add(departament.nameDepartament);
-            }
+
+            sltDepartment.DisplayMember = "nameDepartament";
+            sltDepartment.ValueMember = "idDepartament";            
+            sltDepartment.DataSource = lstDepartaments;
+            
 
         }
         public void fillRiskGroups()
@@ -131,19 +118,19 @@ namespace DDJJDesktop
                 {
                     if (cont == 0)
                     {
-                        lblGroupR.Text += "-" + riskGroup.nombreGrupo + (lstRiskGroups.Count >= 2 ? "                            -" + lstRiskGroups[cont + 1].nombreGrupo : "");
+                        lblGroupR.Text += "-" + riskGroup.nameRiskGroup + (lstRiskGroups.Count >= 2 ? "                            -" + lstRiskGroups[cont + 1].nameRiskGroup : "");
                     }
                     else if (cont == 2)
                     {
-                        lblGroupR1.Text += "-" + riskGroup.nombreGrupo + (lstRiskGroups.Count >= 4 ? "        -" + lstRiskGroups[cont + 1].nombreGrupo : ""); ;
+                        lblGroupR1.Text += "-" + riskGroup.nameRiskGroup + (lstRiskGroups.Count >= 4 ? "        -" + lstRiskGroups[cont + 1].nameRiskGroup : ""); ;
                     }
                     else if (cont == 4)
                     {
-                        lblGroupR2.Text += "-" + riskGroup.nombreGrupo + (lstRiskGroups.Count >= 6 ? "        -" + lstRiskGroups[cont + 1].nombreGrupo : "");
+                        lblGroupR2.Text += "-" + riskGroup.nameRiskGroup + (lstRiskGroups.Count >= 6 ? "        -" + lstRiskGroups[cont + 1].nameRiskGroup : "");
                     }
                     else if (cont == 6)
                     {
-                        lblGroupR3.Text += "-" + riskGroup.nombreGrupo + (lstRiskGroups.Count >= 8 ? "       -" + lstRiskGroups[cont + 1].nombreGrupo : ""); ;
+                        lblGroupR3.Text += "-" + riskGroup.nameRiskGroup + (lstRiskGroups.Count >= 8 ? "       -" + lstRiskGroups[cont + 1].nameRiskGroup : ""); ;
                     }
                     //solamente puede mostrar hasta 8 grupos de riesgo.
                     cont++;
@@ -157,35 +144,35 @@ namespace DDJJDesktop
         }
         public void fillSymptoms() 
         {
-            List<SintomasCovid> lstSintomas = securityServices.getSintomas();
+            List<CovidSymptom> lstSintomas = securityServices.getSintomas();
             int cont = 0;
-            foreach (SintomasCovid sintoma in lstSintomas)
+            foreach (CovidSymptom sintoma in lstSintomas)
             {
                 try
                 {
                     if (cont == 0)
                     {
-                        lblSintoma.Text += "-" + sintoma.nombreSintoma + (lstSintomas.Count >= 2 ? "         -" + lstSintomas[cont + 1].nombreSintoma : "");
+                        lblSintoma.Text += "-" + sintoma.nameSymptom + (lstSintomas.Count >= 2 ? "         -" + lstSintomas[cont + 1].nameSymptom : "");
                     }
                     else if (cont == 2)
                     {
-                        lblSintoma1.Text += "-" + sintoma.nombreSintoma + (lstSintomas.Count >= 4 ? "                           -" + lstSintomas[cont + 1].nombreSintoma : ""); ;
+                        lblSintoma1.Text += "-" + sintoma.nameSymptom + (lstSintomas.Count >= 4 ? "                           -" + lstSintomas[cont + 1].nameSymptom : ""); ;
                     }
                     else if (cont == 4)
                     {
-                        lblSintoma2.Text += "-" + sintoma.nombreSintoma + (lstSintomas.Count >= 6 ? "      -" + lstSintomas[cont + 1].nombreSintoma : "");
+                        lblSintoma2.Text += "-" + sintoma.nameSymptom + (lstSintomas.Count >= 6 ? "      -" + lstSintomas[cont + 1].nameSymptom : "");
                     }
                     else if (cont == 6)
                     {
-                        lblSintoma3.Text += "-" + sintoma.nombreSintoma + (lstSintomas.Count >= 8 ? "       -" + lstSintomas[cont + 1].nombreSintoma : ""); ;
+                        lblSintoma3.Text += "-" + sintoma.nameSymptom + (lstSintomas.Count >= 8 ? "       -" + lstSintomas[cont + 1].nameSymptom : ""); ;
                     }
                     else if (cont == 8)
                     {
-                        lblSintoma4.Text += "-" + sintoma.nombreSintoma + (lstSintomas.Count >= 10 ? "       -" + lstSintomas[cont + 1].nombreSintoma : ""); ;
+                        lblSintoma4.Text += "-" + sintoma.nameSymptom + (lstSintomas.Count >= 10 ? "       -" + lstSintomas[cont + 1].nameSymptom : ""); ;
                     }
                     else if (cont == 10)
                     {
-                        lblSintoma5.Text += "-" + sintoma.nombreSintoma + (lstSintomas.Count >= 12 ? "       -" + lstSintomas[cont + 1].nombreSintoma : ""); ;
+                        lblSintoma5.Text += "-" + sintoma.nameSymptom + (lstSintomas.Count >= 12 ? "       -" + lstSintomas[cont + 1].nameSymptom : ""); ;
                     }
                     //solamente puede mostrar hasta 12 sintomas.
                     cont++;
@@ -197,6 +184,21 @@ namespace DDJJDesktop
             }
         }
 
+        public void fillCountries() {
+            List<Country> lstCountries =securityServices.getCountries();
+
+            sltCodArea.DisplayMember = "codCountry";
+            sltCodArea.ValueMember = "codCountry";
+            sltCodArea.DataSource = lstCountries;
+
+            sltNationality.DisplayMember = "nameCountry";
+            sltNationality.ValueMember = "idCountry";
+            sltNationality.DataSource = lstCountries;
+
+            sltResidence.DisplayMember = "nameCountry";
+            sltResidence.ValueMember = "idCountry";
+            sltResidence.DataSource = lstCountries;
+        }
 
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -281,28 +283,28 @@ namespace DDJJDesktop
         private void executeValidationService() {
             try
             {
-                    User newUser = new User()
+                    Person newUser = new Person()
                 {
                     firstName = txtName.Text,
                     dni = txtDni.Text,
                     surName = txtSurname.Text,
-                    codCountry = sltCodArea.SelectedItem != null ? sltCodArea.SelectedItem.ToString():"",
+                    //codCountry = sltCodArea.SelectedItem != null ? sltCodArea.SelectedItem.ToString():"",
                     codArea = sltCodArea.SelectedItem != null ? sltCodArea.SelectedItem.ToString() : "",
                     telephone = txtTelNumber.Text,
                     enterprise = txtEnterprise.Text,
                     //email = txtMail.Text.Contains('@') ? new MailAddress(txtMail.Text) : new MailAddress("vacio@vacio.com"),
-                    gender = sltGender.SelectedItem != null ? sltGender.SelectedItem.ToString() : "",
+                    //gender = sltGender.SelectedItem != null ? sltGender.SelectedItem.ToString() : "",
                     birthday = sltDate.Value != null ? sltDate.Value : new DateTime(2022, 28, 05),
-                    age = txtAge.Text.Length > 0 ? Convert.ToInt32(txtAge.Text) : 0,
-                    nationality = sltNationality.SelectedItem != null ? sltNationality.SelectedItem.ToString() : "",
-                    residenceCountry = sltResidence.SelectedItem != null ? sltResidence.SelectedItem.ToString() : ""
+                    //age = txtAge.Text.Length > 0 ? Convert.ToInt32(txtAge.Text) : 0,
+                    //nationality = sltNationality.SelectedItem != null ? sltNationality.SelectedItem.ToString() : "",
+                    //residenceCountry = sltResidence.SelectedItem != null ? sltResidence.SelectedItem.ToString() : ""
                 };
 
                 DeclarationFields declarationFields = new DeclarationFields()
                 {
                     isRiskGroup = optRGroupYes.Checked || optRGroupNo.Checked,
                     isVaccinated = optVacYes.Checked || optVacNo.Checked,
-                    departamentName = sltDepartment.SelectedItem.ToString(),
+                    //departamentName = sltDepartment.SelectedItem.ToString(),
                     visitDate = sltDateTime.Value,
                     isTraveler = optTravelerY.Checked || optTravelerN.Checked,
                     closeContact = (optYTravelOth.Checked || optNTravelOth.Checked) &&
@@ -311,7 +313,7 @@ namespace DDJJDesktop
                     hasSymptom = optSymY.Checked || optSymN.Checked
                 };
 
-                    DeclaracionJurada declaracionJuradaTmp = new DeclaracionJurada(newUser, declarationFields);
+                    Declarations declaracionJuradaTmp = new Declarations(newUser, declarationFields);
    
 
                 
@@ -319,11 +321,11 @@ namespace DDJJDesktop
 
                     if (resultado == string.Empty)
                     {
-                        MaterialMessageBox.Show("Envio exitoso " + declaracionJuradaTmp.createdAt.ToShortDateString());
+                        MaterialMessageBox.Show("Envio exitoso " + declaracionJuradaTmp.created_at.ToShortDateString());
                         //guarda la declaración jurada en la entidad de datos.
                         //securityServices.createDeclaration(declaracionJuradaTmp);                        
                     }
-                    else { MaterialMessageBox.Show("Ocurrió un error : "+ resultado +" "+ declaracionJuradaTmp.createdAt.ToShortDateString()); }
+                    else { MaterialMessageBox.Show("Ocurrió un error : "+ resultado +" "+ declaracionJuradaTmp.created_at.ToShortDateString()); }
             }
             catch (Exception error)
             {

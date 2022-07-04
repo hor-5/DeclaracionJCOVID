@@ -44,20 +44,20 @@ namespace DDJJDesktop
 
         private void txtIngresar_Click(object sender, EventArgs e)
         {            
-            User currentUser = securityServices.login(txtUser.Text,txtPass.Text);
+            //Person currentUser = securityServices.login(txtUser.Text,txtPass.Text);
             
-            if (currentUser != null)
-            {
-                showNotification("success");
-                FrmData frmData = new FrmData(currentUser);
-                frmData.Show();
-                this.Hide();
+            //if (currentUser != null)
+            //{
+            //    showNotification("success");
+            //    FrmData frmData = new FrmData(currentUser);
+            //    frmData.Show();
+            //    this.Hide();
                 
                 
-            }
-            else {                
-                showNotification("danger");
-            }
+            //}
+            //else {                
+            //    showNotification("danger");
+            //}
 
         }
 

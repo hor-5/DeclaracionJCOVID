@@ -8,8 +8,8 @@ namespace EntitiesModel
 {
     public class RiskGroup
     {
-        public int idGrupoRiesgo { get; set; }
-        public string nombreGrupo { get; set; }
-        public bool activo { get; set; }
+        public int idRiskGroup { get; set; }
+        public string nameRiskGroup { get; set; }
+        public bool active { get; set; }
     }
 }
