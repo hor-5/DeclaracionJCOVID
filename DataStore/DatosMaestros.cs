@@ -45,11 +45,11 @@ namespace DataStore
             return LstDepartaments;
         }
 
-        public List<Person> GetUsers()
+        public List<User> GetUsers()
         {
-            List<Person> LstUsers = new List<Person>();
+            List<User> LstUsers = new List<User>();
             string sql = "SELECT * FROM Users";
-            LstUsers = dbOperation.OperationQuery<Person>(sql);
+            LstUsers = dbOperation.OperationQuery<User>(sql);
             return LstUsers;
         }
 
@@ -61,12 +61,12 @@ namespace DataStore
             return LstCountries;
         }
         
-       public List<Person>GetPersons()
-        {
-            List <Person> LstGetPersons = new List<Person>();
-            string sql=
-            return LstPerson;
-        }
+       //public List<Person>GetPersons()
+       // {
+       //     List <Person> LstGetPersons = new List<Person>();
+       //     string sql=
+       //     return LstPerson;
+       // }
 
 
     }

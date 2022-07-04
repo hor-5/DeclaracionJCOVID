@@ -28,7 +28,7 @@ namespace Services
             return datosMaestros.GetRiskGroup();
         }
 
-        public List<Person> getUsers()
+        public List<User> getUsers()
         {
             return datosMaestros.GetUsers();
         }
@@ -43,11 +43,13 @@ namespace Services
             List<User> users = this.getUsers();
             foreach (User user in users)
             {
+                
                 if (user.username == txtUser && user.pass == txtPass)
                 {
                     result = user;
                     break;
                 }
+
             }
             return result;
         }

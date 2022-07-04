@@ -43,21 +43,22 @@ namespace DDJJDesktop
         }
 
         private void txtIngresar_Click(object sender, EventArgs e)
-        {            
-            //Person currentUser = securityServices.login(txtUser.Text,txtPass.Text);
-            
-            //if (currentUser != null)
-            //{
-            //    showNotification("success");
-            //    FrmData frmData = new FrmData(currentUser);
-            //    frmData.Show();
-            //    this.Hide();
-                
-                
-            //}
-            //else {                
-            //    showNotification("danger");
-            //}
+        {
+            User currentUser = securityServices.login(txtUser.Text, txtPass.Text);
+
+            if (currentUser != null)
+            {
+                showNotification("success");
+                FrmData frmData = new FrmData(currentUser);
+                frmData.Show();
+                this.Hide();
+
+
+            }
+            else
+            {
+                showNotification("danger");
+            }
 
         }
 
