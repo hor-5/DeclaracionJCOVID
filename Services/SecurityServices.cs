@@ -10,6 +10,7 @@ namespace Services
 
         DatosMaestros datosMaestros = new DatosMaestros();
 
+        //selects a la db
         public List<CovidSymptom> getSintomas() {
             return datosMaestros.GetSintomas();
         }
@@ -41,9 +42,17 @@ namespace Services
             return datosMaestros.GetCountries();
         }
 
-        public Country getCountryById(int idCountry) {
-            return datosMaestros.GetCountryById(idCountry);
+        //inserciones a la db
+
+        public int insertDeclarationFields(DeclarationFields declarationFields) {
+            return datosMaestros.InsertDeclarationFields(declarationFields);
         }
+
+        public int insertDeclaration(int idPerson, int idDeclarationFields, DateTime created_at) {
+            return datosMaestros.InsertDeclaration(idPerson, idDeclarationFields, created_at);
+        }
+
+        //logueo
         public User login(String txtUser, String txtPass)
         {
             User result = null;

@@ -11,7 +11,7 @@ namespace EntitiesModel
         public int idDeclarationField { get; set; }
         public bool isRiskGroup { get; set; }
         public bool isVaccinated { get; set; }
-        public bool fk_idDepartament { get; set; }
+        public int fk_idDepartament { get; set; }
         public DateTime visitDate { get; set; }
         public bool isTraveler { get; set; }
         public bool closeContact { get; set; }

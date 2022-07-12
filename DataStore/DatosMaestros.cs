@@ -69,14 +69,45 @@ namespace DataStore
             Person currentPerson = LstPersons[0];
             return currentPerson;
         }
-        public Country GetCountryById(int idCountry) 
-        {
-            List<Country> LstCountries = new List<Country>();
-            string sql = "SELECT * FROM Countrys WHERE idCountry="+idCountry;
-            LstCountries = dbOperation.OperationQuery<Country>(sql);
-            Console.WriteLine(LstCountries);
-            Country countryFinded = LstCountries[0];
-            return countryFinded;            
+
+        public int InsertDeclarationFields(DeclarationFields declarationFields) {
+
+            string sql = "INSERT INTO DeclarationFields (isRiskGroup,isVaccinated,fk_idDepartament,visitDate,isTraveler,closeContact,hasSymptom) " +
+                         "OUTPUT INSERTED.idDeclarationField " +
+                         "Values (@isRiskGroup,@isVaccinated,@fk_idDepartament,@visitDate,@isTraveler,@closeContact,@hasSymptom)";
+
+            Object paramList = new
+            {
+                isRiskGroup = declarationFields.isRiskGroup ? 1 : 0,
+                isVaccinated = declarationFields.isVaccinated ? 1 : 0,
+                fk_idDepartament = declarationFields.fk_idDepartament,
+                visitDate = declarationFields.visitDate,
+                isTraveler = declarationFields.isTraveler?1:0,
+                closeContact = declarationFields.closeContact?1:0,
+                hasSymptom = declarationFields.hasSymptom?1:0
+            };
+
+            int execute = dbOperation.OperationExecuteWithIdentity(sql, paramList);
+
+            return execute;
+
+        }
+
+        public int InsertDeclaration(int idPerson, int idDeclarationFields, DateTime created_at) {
+
+            string sql = "INSERT INTO Declarations (fk_idPerson, fk_idDeclarationFields, created_at)  Values" +
+                "(@fk_idPerson, @fk_idDeclarationFields, @created_at)";
+
+            Object paramList = new {
+                                     fk_idPerson = idPerson,
+                                     fk_idDeclarationFields = idDeclarationFields,
+                                     created_at = created_at
+            };
+
+            int result = dbOperation.OperationExecute(sql, paramList);
+
+            return result;
+            
         }
 
 

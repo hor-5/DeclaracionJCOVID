@@ -22,6 +22,7 @@ namespace DDJJDesktop
 
         public ValidationServices validationFinal = new ValidationServices();
         private SecurityServices securityServices = new SecurityServices();
+        private User currentUser;
         public FrmData()
         {
             InitializeComponent();
@@ -31,7 +32,8 @@ namespace DDJJDesktop
             materialSkinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Indigo500, MaterialSkin.Primary.Indigo700, MaterialSkin.Primary.Indigo100, MaterialSkin.Accent.Blue400, MaterialSkin.TextShade.WHITE);
 
-            fillCountries();
+            fillResidenceCountries();
+            fillNationality();
             fillGenders();
             fillDepartaments();
         }
@@ -45,7 +47,9 @@ namespace DDJJDesktop
             materialSkinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Indigo500, MaterialSkin.Primary.Indigo700, MaterialSkin.Primary.Indigo100, MaterialSkin.Accent.Blue400, MaterialSkin.TextShade.WHITE);
 
-            fillCountries();
+            this.currentUser = currentUser;
+            fillResidenceCountries();
+            fillNationality();
             fillGenders();
             fillDepartaments();
             fillTextBox(securityServices.getUserData(currentUser.idUser));
@@ -58,18 +62,14 @@ namespace DDJJDesktop
 
         private void fillTextBox(Person currentUser)
         {
-            /*COMPORTAMIENTO EXTRAÑO             * 
-             * Completa igual los campos de cod country y nacionalidad aunque estén comentados
-             Completa todos para el mismo pais
-            No discrimina residencia de nacionalidad*/
+
             txtDni.Text = currentUser.dni;
             txtDni.Enabled = false;
             txtName.Text = currentUser.firstName;
             txtName.Enabled = false;
             txtSurname.Text = currentUser.surName;
-            txtSurname.Enabled = false;
-            //Country userResidenceCountry = securityServices.getCountryById(currentUser.fk_residenceCountry); 
-            //sltCodArea.SelectedValue = userResidenceCountry.codCountry;
+            txtSurname.Enabled = false;            
+            sltCodArea.SelectedValue = currentUser.fk_residenceCountry;
             sltCodArea.Enabled = false;
             txtCodArea.Text = currentUser.codArea;
             txtCodArea.Enabled = false;
@@ -85,7 +85,7 @@ namespace DDJJDesktop
             sltDate.Enabled = false;
             CalulateAge(currentUser.birthday);
             txtAge.Enabled = false;           
-            //sltNationality.SelectedValue = currentUser.fk_nationalityCountry;
+            sltNationality.SelectedValue = currentUser.fk_nationalityCountry;
             sltNationality.Enabled = false;            
             sltResidence.SelectedValue= currentUser.fk_residenceCountry;
             sltResidence.Enabled = false;
@@ -187,20 +187,23 @@ namespace DDJJDesktop
             }
         }
 
-        public void fillCountries() {
-            List<Country> lstCountries =securityServices.getCountries();
+        public void fillResidenceCountries() {
+            List<Country> lstCountries = securityServices.getCountries();
 
             sltCodArea.DisplayMember = "codCountry";
             sltCodArea.ValueMember = "codCountry";
             sltCodArea.DataSource = lstCountries;
 
-            sltNationality.DisplayMember = "nameCountry";
-            sltNationality.ValueMember = "idCountry";
-            sltNationality.DataSource = lstCountries;
-
             sltResidence.DisplayMember = "nameCountry";
             sltResidence.ValueMember = "idCountry";
             sltResidence.DataSource = lstCountries;
+        }
+
+        public void fillNationality() {
+            List<Country> lstCountriesNat = securityServices.getCountries();
+            sltNationality.DisplayMember = "nameCountry";
+            sltNationality.ValueMember = "idCountry";
+            sltNationality.DataSource = lstCountriesNat;
         }
 
 
@@ -286,45 +289,58 @@ namespace DDJJDesktop
         private void executeValidationService() {
             try
             {
-                    Person newUser = new Person()
-                {
-                    firstName = txtName.Text,
+
+                Person newUser = new Person()
+                {                    
                     dni = txtDni.Text,
+                    firstName = txtName.Text,
                     surName = txtSurname.Text,
-                    //codCountry = sltCodArea.SelectedItem != null ? sltCodArea.SelectedItem.ToString():"",
                     codArea = sltCodArea.SelectedItem != null ? sltCodArea.SelectedItem.ToString() : "",
                     telephone = txtTelNumber.Text,
                     enterprise = txtEnterprise.Text,
-                    //email = txtMail.Text.Contains('@') ? new MailAddress(txtMail.Text) : new MailAddress("vacio@vacio.com"),
-                    //gender = sltGender.SelectedItem != null ? sltGender.SelectedItem.ToString() : "",
+                    email = txtMail.Text,                    
+                    fk_idGender = int.Parse(sltGender.SelectedValue.ToString()),
                     birthday = sltDate.Value != null ? sltDate.Value : new DateTime(2022, 28, 05),
-                    //age = txtAge.Text.Length > 0 ? Convert.ToInt32(txtAge.Text) : 0,
-                    //nationality = sltNationality.SelectedItem != null ? sltNationality.SelectedItem.ToString() : "",
-                    //residenceCountry = sltResidence.SelectedItem != null ? sltResidence.SelectedItem.ToString() : ""
+                    fk_nationalityCountry = int.Parse(sltNationality.SelectedValue.ToString()),
+                    fk_residenceCountry = int.Parse(sltResidence.SelectedValue.ToString())
                 };
 
                 DeclarationFields declarationFields = new DeclarationFields()
                 {
-                    isRiskGroup = optRGroupYes.Checked || optRGroupNo.Checked,
-                    isVaccinated = optVacYes.Checked || optVacNo.Checked,
-                    //departamentName = sltDepartment.SelectedItem.ToString(),
+                    isRiskGroup = optRGroupYes.Checked,
+                    isVaccinated = optVacYes.Checked,
+                    fk_idDepartament = int.Parse(sltDepartment.SelectedValue.ToString()),
                     visitDate = sltDateTime.Value,
-                    isTraveler = optTravelerY.Checked || optTravelerN.Checked,
-                    closeContact = (optYTravelOth.Checked || optNTravelOth.Checked) &&
-                                   (optYCContact.Checked || optNCContact.Checked) &&
-                                   (optCloseContactY.Checked || optCloseContactN.Checked),
-                    hasSymptom = optSymY.Checked || optSymN.Checked
+                    isTraveler = optTravelerY.Checked,
+                    closeContact = (optYTravelOth.Checked) &&
+                                   (optYCContact.Checked) &&
+                                   (optCloseContactY.Checked),
+                    hasSymptom = optSymY.Checked
                 };
 
-                    Declarations declaracionJuradaTmp = new Declarations(newUser, declarationFields);
-   
+                if (currentUser != null)
+                {
+                    int idDeclarationFields = securityServices.insertDeclarationFields(declarationFields);
+                    Person userData = securityServices.getUserData(currentUser.idUser);
+                    int idPerson = userData.idPerson;
+                    int insertResult = securityServices.insertDeclaration(idPerson,idDeclarationFields, DateTime.Now);
+                    
+                    //MaterialMessageBox.Show("Está logueado con el usuario:  " + currentUser.username);
+                }
+                else
+                {
+                    MaterialMessageBox.Show("No hay usuario");
+                }
 
+                Declarations declaracionJuradaTmp = new Declarations(newUser, declarationFields);
+                    
                 
                     string resultado = validationFinal.validationDeclaracionFields(declaracionJuradaTmp);
 
                     if (resultado == string.Empty)
                     {
                         MaterialMessageBox.Show("Envio exitoso " + declaracionJuradaTmp.created_at.ToShortDateString());
+                        
                         //guarda la declaración jurada en la entidad de datos.
                         //securityServices.createDeclaration(declaracionJuradaTmp);                        
                     }
