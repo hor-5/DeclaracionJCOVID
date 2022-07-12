@@ -44,10 +44,11 @@ namespace DDJJDesktop
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Indigo500, MaterialSkin.Primary.Indigo700, MaterialSkin.Primary.Indigo100, MaterialSkin.Accent.Blue400, MaterialSkin.TextShade.WHITE);
-            List<Person> lstPersons=securityServices.getPersons(currentUser.idUser);
-            Person currentPerson = lstPersons[0];
-            fillTextBox(currentPerson);
+
+            fillCountries();
+            fillGenders();
             fillDepartaments();
+            fillTextBox(securityServices.getUserData(currentUser.idUser));
         }
 
         private void FrmData_Load(object sender, EventArgs e)
@@ -57,15 +58,18 @@ namespace DDJJDesktop
 
         private void fillTextBox(Person currentUser)
         {
-            
+            /*COMPORTAMIENTO EXTRAÑO             * 
+             * Completa igual los campos de cod country y nacionalidad aunque estén comentados
+             Completa todos para el mismo pais
+            No discrimina residencia de nacionalidad*/
             txtDni.Text = currentUser.dni;
             txtDni.Enabled = false;
             txtName.Text = currentUser.firstName;
             txtName.Enabled = false;
             txtSurname.Text = currentUser.surName;
             txtSurname.Enabled = false;
-            //sltCodArea.Items.Add(currentUser.codCountry);
-            //sltCodArea.SelectedItem = currentUser.codCountry;
+            //Country userResidenceCountry = securityServices.getCountryById(currentUser.fk_residenceCountry); 
+            //sltCodArea.SelectedValue = userResidenceCountry.codCountry;
             sltCodArea.Enabled = false;
             txtCodArea.Text = currentUser.codArea;
             txtCodArea.Enabled = false;
@@ -75,18 +79,15 @@ namespace DDJJDesktop
             txtEnterprise.Enabled = false;
             txtMail.Text = currentUser.email;
             txtMail.Enabled = false;
-            //sltGender.Items.Add(currentUser.gender);
-            //sltGender.SelectedItem = currentUser.gender;
+            sltGender.SelectedValue = currentUser.fk_idGender;
             sltGender.Enabled = false;
             sltDate.Value = currentUser.birthday;
             sltDate.Enabled = false;
             CalulateAge(currentUser.birthday);
-            txtAge.Enabled = false;
-            //sltNationality.Items.Add(currentUser.nationality);
-            //sltNationality.SelectedItem = currentUser.nationality;
-            sltNationality.Enabled = false;
-            //sltResidence.Items.Add(currentUser.residenceCountry);
-            //sltResidence.SelectedItem = currentUser.residenceCountry;
+            txtAge.Enabled = false;           
+            //sltNationality.SelectedValue = currentUser.fk_nationalityCountry;
+            sltNationality.Enabled = false;            
+            sltResidence.SelectedValue= currentUser.fk_residenceCountry;
             sltResidence.Enabled = false;
 
         }

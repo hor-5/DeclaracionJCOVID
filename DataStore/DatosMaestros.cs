@@ -56,18 +56,27 @@ namespace DataStore
         public List<Country> GetCountries()
         {
             List<Country> LstCountries = new List<Country>();
-            string sql = "SELECT idCountry,nameCountry,codCountry FROM Countrys";
+            string sql = "SELECT idCountry,nameCountry,codCountry FROM Countrys order by nameCountry ASC";
             LstCountries = dbOperation.OperationQuery<Country>(sql);
             return LstCountries;
         }
 
-        public List<Person> GetPersons(int idUser)
-        {
-            
+        public Person GetUserData(int idUser)
+        {            
             List<Person> LstPersons = new List<Person>();
-            string sql = "select * from Users inner join Persons on Persons.fk_idUser="+idUser;
-            LstPersons=dbOperation.OperationQuery<Person>(sql);
-            return LstPersons;
+            string sql = "SELECT * FROM Users INNER JOIN Persons on Persons.fk_idUser="+idUser;
+            LstPersons=dbOperation.OperationQuery<Person>(sql);            
+            Person currentPerson = LstPersons[0];
+            return currentPerson;
+        }
+        public Country GetCountryById(int idCountry) 
+        {
+            List<Country> LstCountries = new List<Country>();
+            string sql = "SELECT * FROM Countrys WHERE idCountry="+idCountry;
+            LstCountries = dbOperation.OperationQuery<Country>(sql);
+            Console.WriteLine(LstCountries);
+            Country countryFinded = LstCountries[0];
+            return countryFinded;            
         }
 
 

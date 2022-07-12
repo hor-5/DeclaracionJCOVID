@@ -33,14 +33,17 @@ namespace Services
             return datosMaestros.GetUsers();
         }
 
-        public List<Person> getPersons(int idUser)
+        public Person getUserData(int idUser)
         {
-            return datosMaestros.GetPersons(idUser);
+            return datosMaestros.GetUserData(idUser);
         }
         public List<Country> getCountries() {
             return datosMaestros.GetCountries();
         }
 
+        public Country getCountryById(int idCountry) {
+            return datosMaestros.GetCountryById(idCountry);
+        }
         public User login(String txtUser, String txtPass)
         {
             User result = null;
