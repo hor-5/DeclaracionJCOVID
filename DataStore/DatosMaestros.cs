@@ -70,6 +70,7 @@ namespace DataStore
             return currentPerson;
         }
 
+        //INSERTS
         public int InsertDeclarationFields(DeclarationFields declarationFields) {
 
             string sql = "INSERT INTO DeclarationFields (isRiskGroup,isVaccinated,fk_idDepartament,visitDate,isTraveler,closeContact,hasSymptom) " +
@@ -87,21 +88,22 @@ namespace DataStore
                 hasSymptom = declarationFields.hasSymptom?1:0
             };
 
-            int execute = dbOperation.OperationExecuteWithIdentity(sql, paramList);
+            int result = dbOperation.OperationExecuteWithIdentity(sql, paramList);
 
-            return execute;
+            return result;
 
         }
 
-        public int InsertDeclaration(int idPerson, int idDeclarationFields, DateTime created_at) {
+        public int InsertDeclaration(int idPerson, int idDeclarationFields) {
 
-            string sql = "INSERT INTO Declarations (fk_idPerson, fk_idDeclarationFields, created_at)  Values" +
-                "(@fk_idPerson, @fk_idDeclarationFields, @created_at)";
+            string sql = "INSERT INTO Declarations (fk_idPerson, fk_idDeclarationFields, created_at, fk_idStatus)  Values" +
+                "(@fk_idPerson, @fk_idDeclarationFields, @created_at,@fk_idStatus)";
 
             Object paramList = new {
                                      fk_idPerson = idPerson,
                                      fk_idDeclarationFields = idDeclarationFields,
-                                     created_at = created_at
+                                     created_at = DateTime.Now,
+                                     fk_idStatus=1
             };
 
             int result = dbOperation.OperationExecute(sql, paramList);
@@ -110,6 +112,31 @@ namespace DataStore
             
         }
 
+        public int InsertPerson(Person newPerson)
+        {
+            string sql = "INSERT INTO Persons (dni,firstName,surName,codArea,telephone,enterprise,email,fk_idGender,birthday,fk_nationalityCountry,fk_residenceCountry)" +
+                "OUTPUT INSERTED.idPerson " +
+                "VALUES(@dni,@firstName,@surName,@codArea,@telephone,@enterprise,@email,@fk_idGender,@birthday,@fk_nationalityCountry,@fk_residenceCountry) ";
+
+            object paramList = new
+            {
+                dni = newPerson.dni,
+                firstName = newPerson.firstName,
+                surName = newPerson.surName,
+                codArea = newPerson.codArea,
+                telephone = newPerson.telephone,
+                enterprise = newPerson.enterprise,
+                email = newPerson.email,
+                fk_idGender = newPerson.fk_idGender,
+                birthday = newPerson.birthday,
+                fk_nationalityCountry = newPerson.fk_nationalityCountry,
+                fk_residenceCountry = newPerson.fk_residenceCountry
+            };
+
+            int result=dbOperation.OperationExecuteWithIdentity(sql, paramList);
+
+            return result;
+        }
 
     }
 }

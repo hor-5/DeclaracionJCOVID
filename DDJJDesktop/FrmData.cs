@@ -290,12 +290,12 @@ namespace DDJJDesktop
             try
             {
 
-                Person newUser = new Person()
+                Person newPerson = new Person()
                 {                    
                     dni = txtDni.Text,
                     firstName = txtName.Text,
                     surName = txtSurname.Text,
-                    codArea = sltCodArea.SelectedItem != null ? sltCodArea.SelectedItem.ToString() : "",
+                    codArea = txtCodArea.Text,
                     telephone = txtTelNumber.Text,
                     enterprise = txtEnterprise.Text,
                     email = txtMail.Text,                    
@@ -323,16 +323,20 @@ namespace DDJJDesktop
                     int idDeclarationFields = securityServices.insertDeclarationFields(declarationFields);
                     Person userData = securityServices.getUserData(currentUser.idUser);
                     int idPerson = userData.idPerson;
-                    int insertResult = securityServices.insertDeclaration(idPerson,idDeclarationFields, DateTime.Now);
+                    int insertResult = securityServices.insertDeclaration(idPerson,idDeclarationFields);
                     
                     //MaterialMessageBox.Show("Está logueado con el usuario:  " + currentUser.username);
                 }
                 else
                 {
-                    MaterialMessageBox.Show("No hay usuario");
+                    //MaterialMessageBox.Show("No hay usuario");
+                    int idPerson= securityServices.insertPerson(newPerson);
+                    int idDeclarationFields = securityServices.insertDeclarationFields(declarationFields);
+                    int insertResult = securityServices.insertDeclaration(idPerson, idDeclarationFields);
+
                 }
 
-                Declarations declaracionJuradaTmp = new Declarations(newUser, declarationFields);
+                Declarations declaracionJuradaTmp = new Declarations(newPerson, declarationFields);
                     
                 
                     string resultado = validationFinal.validationDeclaracionFields(declaracionJuradaTmp);
@@ -350,6 +354,7 @@ namespace DDJJDesktop
             {
                 MaterialMessageBox.Show("Algo salió mal : " + error);
                 
+               
             }
         }
         private void btnConfirm_Click(object sender, EventArgs e)

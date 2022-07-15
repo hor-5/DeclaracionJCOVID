@@ -48,9 +48,15 @@ namespace Services
             return datosMaestros.InsertDeclarationFields(declarationFields);
         }
 
-        public int insertDeclaration(int idPerson, int idDeclarationFields, DateTime created_at) {
-            return datosMaestros.InsertDeclaration(idPerson, idDeclarationFields, created_at);
+        public int insertDeclaration(int idPerson, int idDeclarationFields) {
+            return datosMaestros.InsertDeclaration(idPerson, idDeclarationFields);
         }
+
+        public int insertPerson(Person newPerson)
+        {
+            return datosMaestros.InsertPerson(newPerson);
+        }
+
 
         //logueo
         public User login(String txtUser, String txtPass)
@@ -70,6 +76,7 @@ namespace Services
             return result;
         }
 
+        
 
 
     }
