@@ -610,23 +610,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Pablo\\.nuget\\packages\\": {},
-    "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Usuario\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Pablo\\source\\repos\\DeclaracionJCOVID\\DDJJDesktop\\DDJJDesktop.csproj",
+      "projectUniqueName": "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\DDJJDesktop\\DDJJDesktop.csproj",
       "projectName": "DDJJDesktop",
-      "projectPath": "C:\\Users\\Pablo\\source\\repos\\DeclaracionJCOVID\\DDJJDesktop\\DDJJDesktop.csproj",
-      "packagesPath": "C:\\Users\\Pablo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Pablo\\source\\repos\\DeclaracionJCOVID\\DDJJDesktop\\obj\\",
+      "projectPath": "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\DDJJDesktop\\DDJJDesktop.csproj",
+      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\DDJJDesktop\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Pablo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -641,11 +641,11 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\Pablo\\source\\repos\\DeclaracionJCOVID\\EntitiesModel\\EntitiesModel.csproj": {
-              "projectPath": "C:\\Users\\Pablo\\source\\repos\\DeclaracionJCOVID\\EntitiesModel\\EntitiesModel.csproj"
+            "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\EntitiesModel\\EntitiesModel.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\EntitiesModel\\EntitiesModel.csproj"
             },
-            "C:\\Users\\Pablo\\source\\repos\\DeclaracionJCOVID\\Services\\Services.csproj": {
-              "projectPath": "C:\\Users\\Pablo\\source\\repos\\DeclaracionJCOVID\\Services\\Services.csproj"
+            "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\Services\\Services.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\source\\repos\\DDJJAdministrator\\Services\\Services.csproj"
             }
           }
         }
@@ -687,7 +687,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -16,6 +16,8 @@ namespace EntitiesModel
 
         public DateTime created_at { get; set; }
 
+        public int fk_idStatus { get; set; }
+
         public Declarations(Person person, DeclarationFields declarationFields) {            
             this.fk_idPerson = person;
             this.fk_idDeclarationFields = declarationFields;

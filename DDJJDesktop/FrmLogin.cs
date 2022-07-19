@@ -48,10 +48,34 @@ namespace DDJJDesktop
 
             if (currentUser != null)
             {
-                showNotification("success");
-                FrmData frmData = new FrmData(currentUser);
-                frmData.Show();
-                this.Hide();
+                if (currentUser.is_admin)
+                {
+                    //MaterialMessageBox.Show("El usuario es administrador:  " + currentUser.username);
+                    showNotification("success");
+                    FrmAdmin frmAdmin = new FrmAdmin();
+                    frmAdmin.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    //MaterialMessageBox.Show("El usuario no es administrador " + currentUser.username);
+                    showNotification("success");
+                    Person currentPerson = securityServices.getUserData(currentUser.idUser);
+                    if (securityServices.asThePersonPendientsDeclarations(currentPerson.idPerson))
+                    {
+
+                        MaterialMessageBox.Show("El usuario " + currentUser.username + " ya tiene una delaración pendiente. " +
+                                                "No puede ingresar una nueva, hasta que se actualice el estado de la vigente.");
+                        
+                    }
+                    else
+                    {
+                        FrmData frmData = new FrmData(currentUser);
+                        frmData.Show();
+                        this.Hide();
+                    }
+
+                }
 
 
             }

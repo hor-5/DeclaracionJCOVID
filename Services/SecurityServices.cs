@@ -42,6 +42,10 @@ namespace Services
             return datosMaestros.GetCountries();
         }
 
+        public Boolean asThePersonPendientsDeclarations(int id) {
+            return datosMaestros.HasThePersonPendientsDeclarations(id);
+        }
+
         //inserciones a la db
 
         public int insertDeclarationFields(DeclarationFields declarationFields) {

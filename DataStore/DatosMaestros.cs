@@ -70,6 +70,14 @@ namespace DataStore
             return currentPerson;
         }
 
+        public Boolean HasThePersonPendientsDeclarations(int id) {
+            List<int> LstStatus = new List<int>();
+            string sql = "SELECT fk_idStatus FROM Declarations WHERE fk_idPerson="+id;
+            LstStatus = dbOperation.OperationQuery<int>(sql);
+            Boolean Result = LstStatus.Contains(1);
+            return Result;
+        }
+
         //INSERTS
         public int InsertDeclarationFields(DeclarationFields declarationFields) {
 

@@ -23,6 +23,8 @@ namespace DDJJDesktop
         public ValidationServices validationFinal = new ValidationServices();
         private SecurityServices securityServices = new SecurityServices();
         private User currentUser;
+
+
         public FrmData()
         {
             InitializeComponent();
@@ -52,12 +54,19 @@ namespace DDJJDesktop
             fillNationality();
             fillGenders();
             fillDepartaments();
-            fillTextBox(securityServices.getUserData(currentUser.idUser));
+            Person currentPerson = securityServices.getUserData(currentUser.idUser);
+            fillTextBox(currentPerson);   
+
         }
 
         private void FrmData_Load(object sender, EventArgs e)
         {
 
+        }
+        private void backTologin()
+        {
+            this.Close();
+            new FrmLogin().Show();
         }
 
         private void fillTextBox(Person currentUser)
@@ -534,8 +543,7 @@ namespace DDJJDesktop
 
         private void btnBackToMain_Click(object sender, EventArgs e)
         {
-            this.Close();
-            new FrmLogin().Show();
+            backTologin();
         }
 
         private void cardModalGR_Paint(object sender, PaintEventArgs e)
