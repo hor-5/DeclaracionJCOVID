@@ -46,6 +46,22 @@ namespace Services
             return datosMaestros.HasThePersonPendientsDeclarations(id);
         }
 
+        public List<DeclarationAdmin> getDeclarations() {
+            return datosMaestros.GetDeclarations();
+        }
+
+        public List<Status> getStatus() {
+            return datosMaestros.GetStatus();
+        }
+
+        //fin selects a la db
+
+        // actualizaciones en la db
+        public int editDeclarationStatus(int idDeclaration, int idStatus) {
+            return datosMaestros.EditDeclarationStatus(idDeclaration, idStatus);
+        }
+        // fin actualizaciones en la db
+
         //inserciones a la db
 
         public int insertDeclarationFields(DeclarationFields declarationFields) {
@@ -60,6 +76,8 @@ namespace Services
         {
             return datosMaestros.InsertPerson(newPerson);
         }
+
+        //fin inserciones a la db
 
 
         //logueo
@@ -79,6 +97,8 @@ namespace Services
             }
             return result;
         }
+
+        //fin logueo
 
         
 

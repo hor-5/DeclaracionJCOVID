@@ -12,6 +12,8 @@ namespace DataStore
     public class DatosMaestros
     {
         DBOperation dbOperation = new DBOperation();
+
+        //SELECTS
         public List<CovidSymptom> GetSintomas()
         {
             List<CovidSymptom> Lstsintomas = new List<CovidSymptom>();
@@ -77,6 +79,43 @@ namespace DataStore
             Boolean Result = LstStatus.Contains(1);
             return Result;
         }
+
+        public List<DeclarationAdmin> GetDeclarations()
+        {
+            List<DeclarationAdmin> LstDeclarations = new List<DeclarationAdmin>();
+            string sql = "SELECT D.idDeclaration,D.created_at,"
+                        + "P.dni, P.firstName, P.surName,P.telephone,"
+                        + "DF.closeContact,DF.hasSymptom,DF.isVaccinated,DF.isRiskGroup,DF.isTraveler,DF.visitDate,"
+                        + "DP.nameDepartament,"
+                        + "S.nameStatus "
+                        + "FROM Declarations D "
+                        + "INNER JOIN Persons P ON D.fk_idPerson = P.idPerson "
+                        + "INNER JOIN DeclarationFields DF ON D.fk_idDeclarationFields = DF.idDeclarationField "
+                        + "INNER JOIN Status S ON D.fk_idStatus = S.idStatus "
+                        + "INNER JOIN Departaments DP ON DF.fk_idDepartament = DP.idDepartament";
+            LstDeclarations = dbOperation.OperationQuery<DeclarationAdmin>(sql);
+            return LstDeclarations;
+        }
+
+        public List<Status> GetStatus() {
+            List<Status> LstStatus = new List<Status>();
+            string sql = "SELECT idStatus, nameStatus FROM Status";
+            LstStatus = dbOperation.OperationQuery<Status>(sql);
+            return LstStatus;
+        }
+
+
+        //END OF SELECTS
+
+        // UPDATES
+        public int EditDeclarationStatus(int idDeclaration, int idStatus) {
+            string sql = "UPDATE Declarations SET fk_idStatus = @idStatus WHERE idDeclaration = @idDeclaration";
+            Object paramList = new { idDeclaration= idDeclaration , idStatus = idStatus };
+            int affectedRows = dbOperation.OperationExecute(sql,paramList);
+
+            return affectedRows;
+        }
+        // END OF UPDATES
 
         //INSERTS
         public int InsertDeclarationFields(DeclarationFields declarationFields) {
@@ -145,6 +184,8 @@ namespace DataStore
 
             return result;
         }
+
+        //END OF INSERTS
 
     }
 }
